@@ -12,3 +12,6 @@ uploads/
 *.log
 .env
 data/
+# Backups de sincronização (opcional - pode querer versionar)
+backup_*.tar.gz
+sync_temp_*.tar.gz

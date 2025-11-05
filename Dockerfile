@@ -20,6 +20,9 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 # Copiar código da aplicação
 COPY . .
 
+# Copiar script de sincronização
+COPY sync_data.py .
+
 # Criar diretórios necessários
 RUN mkdir -p uploads data
 
