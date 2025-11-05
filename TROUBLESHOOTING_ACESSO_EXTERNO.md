@@ -1,22 +1,22 @@
 # Troubleshooting: Acesso Externo Não Funciona
 
-**NOTA:** A aplicação usa a porta **3000** (não 6000) para evitar bloqueio de navegadores.
+**NOTA:** A aplicação usa a porta **5001** (não 6000) para evitar bloqueio de navegadores.
 
 ## ✅ Verificações Rápidas
 
 ### 1. Verificar se o container está rodando e escutando
 ```bash
 docker-compose ps
-netstat -tlnp | grep 3000
+netstat -tlnp | grep 5001
 # ou
-ss -tlnp | grep 3000
+ss -tlnp | grep 5001
 ```
 
 ### 2. Testar localmente no servidor
 ```bash
-curl http://localhost:3000/login
+curl http://localhost:5001/login
 # ou
-curl http://127.0.0.1:3000/login
+curl http://127.0.0.1:5001/login
 ```
 
 Se funcionar localmente mas não externamente, o problema é firewall/rede.
@@ -33,10 +33,10 @@ sudo ufw status
 ### Permitir porta 8080:
 ```bash
 # Permitir porta específica
-sudo ufw allow 3000/tcp
+sudo ufw allow 5001/tcp
 
 # Ou permitir por IP específico (mais seguro)
-sudo ufw allow from SEU_IP to any port 3000
+sudo ufw allow from SEU_IP to any port 5001
 
 # Recarregar firewall
 sudo ufw reload
@@ -61,7 +61,7 @@ sudo ufw delete NUMERO_DA_REGRA
 sudo firewall-cmd --state
 
 # Permitir porta
-sudo firewall-cmd --permanent --add-port=3000/tcp
+sudo firewall-cmd --permanent --add-port=5001/tcp
 sudo firewall-cmd --reload
 
 # Verificar
@@ -85,7 +85,7 @@ sudo firewall-cmd --list-ports
 ### Google Cloud (Firewall Rules)
 ```bash
 gcloud compute firewall-rules create allow-iso27001 \
-    --allow tcp:3000 \
+    --allow tcp:5001 \
     --source-ranges 0.0.0.0/0 \
     --description "Allow ISO 27001 app"
 ```
@@ -93,7 +93,7 @@ gcloud compute firewall-rules create allow-iso27001 \
 ### Azure (Network Security Group)
 1. Portal Azure → Network Security Groups
 2. Adicione regra de entrada:
-   - Port: 3000
+   - Port: 5001
    - Protocol: TCP
    - Action: Allow
 
@@ -103,7 +103,7 @@ gcloud compute firewall-rules create allow-iso27001 \
 3. Adicione regra de entrada:
    - Type: Custom
    - Protocol: TCP
-   - Port Range: 3000
+   - Port Range: 5001
    - Sources: All IPv4, All IPv6
 
 ---
@@ -112,10 +112,10 @@ gcloud compute firewall-rules create allow-iso27001 \
 
 ### 1. Verificar se a porta está realmente escutando em todas as interfaces:
 ```bash
-sudo netstat -tlnp | grep 3000
-# Deve mostrar: 0.0.0.0:3000 ou :::3000
+sudo netstat -tlnp | grep 5001
+# Deve mostrar: 0.0.0.0:5001 ou :::5001
 
-# Se mostrar apenas 127.0.0.1:3000, o problema é na configuração
+# Se mostrar apenas 127.0.0.1:5001, o problema é na configuração
 ```
 
 ### 2. Verificar IP do servidor:
@@ -129,13 +129,13 @@ hostname -I
 ### 3. Testar de outro servidor (se possível):
 ```bash
 # De outro servidor/PC
-curl http://IP_DO_SERVIDOR:3000/login
-telnet IP_DO_SERVIDOR 3000
+curl http://IP_DO_SERVIDOR:5001/login
+telnet IP_DO_SERVIDOR 5001
 ```
 
 ### 4. Verificar se há outros serviços na porta:
 ```bash
-sudo lsof -i :3000
+sudo lsof -i :5001
 ```
 
 ---
@@ -145,13 +145,13 @@ sudo lsof -i :3000
 ### Verificar se o Docker está mapeando corretamente:
 ```bash
 docker port teinsta_web_1
-# Deve mostrar: 6000/tcp -> 0.0.0.0:3000
+# Deve mostrar: 6000/tcp -> 0.0.0.0:5001
 ```
 
 ### Se não estiver mapeando, verificar docker-compose.yml:
 ```yaml
 ports:
-  - "0.0.0.0:3000:6000"  # Externa:3000 -> Interna:6000
+  - "0.0.0.0:5001:6000"  # Externa:5001 -> Interna:6000
 ```
 
 ### Reiniciar container:
@@ -171,19 +171,19 @@ Execute este script para verificar e corrigir automaticamente:
 echo "=== Verificando Firewall ==="
 sudo ufw status
 
-echo -e "\n=== Permitindo porta 3000 ==="
-sudo ufw allow 3000/tcp
+echo -e "\n=== Permitindo porta 5001 ==="
+sudo ufw allow 5001/tcp
 
-echo -e "\n=== Verificando porta 3000 ==="
-sudo netstat -tlnp | grep 3000
+echo -e "\n=== Verificando porta 5001 ==="
+sudo netstat -tlnp | grep 5001
 
 echo -e "\n=== Testando acesso local ==="
-curl -I http://localhost:3000/login
+curl -I http://localhost:5001/login
 
 echo -e "\n=== IP do servidor ==="
 hostname -I
 
-echo -e "\n✅ Verifique se consegue acessar: http://$(hostname -I | awk '{print $1}'):3000"
+echo -e "\n✅ Verifique se consegue acessar: http://$(hostname -I | awk '{print $1}'):5001"
 ```
 
 ---
@@ -200,7 +200,7 @@ server {
     server_name seu-dominio.com;
 
     location / {
-        proxy_pass http://127.0.0.1:3000;
+        proxy_pass http://127.0.0.1:5001;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -226,7 +226,7 @@ ssh -L 6000:localhost:6000 usuario@servidor
 ### Opção 3: IP Whitelist
 ```bash
 # Permitir apenas IPs específicos
-sudo ufw allow from SEU_IP to any port 3000
+sudo ufw allow from SEU_IP to any port 5001
 ```
 
 ---
@@ -243,16 +243,16 @@ echo -e "\n=== Porta no Docker ==="
 docker port teinsta_web_1 2>/dev/null || echo "Container não encontrado"
 
 echo -e "\n=== Porta no Sistema ==="
-sudo netstat -tlnp | grep 3000 || echo "Porta não encontrada"
+sudo netstat -tlnp | grep 5001 || echo "Porta não encontrada"
 
 echo -e "\n=== Firewall UFW ==="
-sudo ufw status | grep 3000 || echo "Porta não encontrada no firewall"
+sudo ufw status | grep 5001 || echo "Porta não encontrada no firewall"
 
 echo -e "\n=== Teste Local ==="
-curl -I http://localhost:3000/login 2>&1 | head -1
+curl -I http://localhost:5001/login 2>&1 | head -1
 
 echo -e "\n=== IP do Servidor ==="
-echo "Acesse: http://$(hostname -I | awk '{print $1}'):3000"
+echo "Acesse: http://$(hostname -I | awk '{print $1}'):5001"
 ```
 
 ---
@@ -260,7 +260,7 @@ echo "Acesse: http://$(hostname -I | awk '{print $1}'):3000"
 ## ❓ Problemas Comuns
 
 ### "Connection refused" ou "ERR_UNSAFE_PORT"
-- **ERR_UNSAFE_PORT:** A porta 6000 é bloqueada por navegadores. Use porta 3000!
+- **ERR_UNSAFE_PORT:** A porta 6000 é bloqueada por navegadores. Use porta 5001!
 - Firewall bloqueando
 - Porta não está escutando
 - Container não está rodando

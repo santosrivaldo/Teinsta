@@ -30,7 +30,7 @@ bash deploy.sh
 
 ## Passo 3: Acessar
 
-Abra no navegador: `http://SEU_IP:3000`
+Abra no navegador: `http://SEU_IP:5001`
 
 Senha: a que você configurou no `.env`
 
@@ -39,7 +39,7 @@ Senha: a que você configurou no `.env`
 ## 🔥 Abrir Firewall (Apenas 1 vez)
 
 ```bash
-sudo ufw allow 3000/tcp
+sudo ufw allow 5001/tcp
 ```
 
 ---
@@ -65,7 +65,7 @@ docker-compose ps
 ## ❓ Problemas?
 
 1. **Container não inicia?** → Ver logs: `docker-compose logs`
-2. **Acesso externo não funciona?** → Abrir firewall: `sudo ufw allow 3000/tcp`
+2. **Acesso externo não funciona?** → Abrir firewall: `sudo ufw allow 5001/tcp`
 3. **Erro de build?** → Ver conexão com internet do servidor
 
 ---

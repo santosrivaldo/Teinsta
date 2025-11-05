@@ -13,7 +13,7 @@ chmod +x deploy.sh
 deploy.bat
 ```
 
-**Pronto!** Acesse: `http://localhost:3000`
+**Pronto!** Acesse: `http://localhost:5001`
 
 ---
 
@@ -28,7 +28,7 @@ nano .env
 docker-compose up -d --build
 
 # 3. Abrir firewall (se necessário)
-sudo ufw allow 3000/tcp
+sudo ufw allow 5001/tcp
 ```
 
 ---
@@ -54,10 +54,10 @@ python3 -c "import secrets; print(secrets.token_hex(32))"
 Se não conseguir acessar de fora do servidor:
 
 ```bash
-sudo ufw allow 3000/tcp
+sudo ufw allow 5001/tcp
 ```
 
-Depois acesse: `http://IP_DO_SERVIDOR:3000`
+Depois acesse: `http://IP_DO_SERVIDOR:5001`
 
 ---
 
