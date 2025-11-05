@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "6000:6000"
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-change-this-in-production}
+      - DASHBOARD_PASSWORD=${DASHBOARD_PASSWORD:-admin123}
+      - FLASK_ENV=production
+    volumes:
+      # Persistir banco de dados
+      - ./data:/app/data
+      # Persistir uploads
+      - ./uploads:/app/uploads
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6000/login"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+

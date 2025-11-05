@@ -13,17 +13,30 @@ from pathlib import Path
 from werkzeug.utils import secure_filename
 from functools import wraps
 
+# Tentar carregar variáveis de ambiente do arquivo .env
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # python-dotenv não está instalado, continuar normalmente
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'iso27001-secret-key-change-in-production'
+
+# Configurações de segurança - usar variáveis de ambiente em produção
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'iso27001-secret-key-change-in-production')
 app.config['PASSWORD'] = os.environ.get('DASHBOARD_PASSWORD', 'admin123')  # Senha padrão: admin123
-app.config['UPLOAD_FOLDER'] = Path('uploads')
+
+# Configurações de arquivos
+data_dir = Path(os.environ.get('DATA_DIR', '.'))
+data_dir.mkdir(exist_ok=True)
+
+app.config['UPLOAD_FOLDER'] = data_dir / 'uploads'
+app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
+
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'doc', 'docx', 'xls', 'xlsx', 'txt', 'png', 'jpg', 'jpeg', 'zip', 'rar'}
 
-DB_PATH = Path('iso27001.db')
-
-# Criar pasta de uploads se não existir
-app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
+DB_PATH = data_dir / 'iso27001.db'
 
 def login_required(f):
     """Decorator para proteger rotas que requerem autenticação"""
@@ -1446,4 +1459,7 @@ def api_stats():
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True, host='0.0.0.0', port=6000)
+    # Em produção, usar gunicorn ao invés de app.run()
+    debug_mode = os.environ.get('FLASK_ENV') == 'development'
+    port = int(os.environ.get('PORT', 6000))
+    app.run(debug=debug_mode, host='0.0.0.0', port=port)

@@ -24,8 +24,10 @@ python app.py
 
 3. Acesse no navegador:
 ```
-http://localhost:5000
+http://localhost:6000
 ```
+
+**Nota:** A senha padrão é `admin123`. Configure a variável de ambiente `DASHBOARD_PASSWORD` para alterar.
 
 ## Estrutura
 
@@ -58,6 +60,22 @@ http://localhost:5000
 - O banco de dados SQLite é criado automaticamente na primeira execução
 - Alguns controles padrão da ISO 27001 são inseridos automaticamente
 - Os dados são armazenados localmente no arquivo `iso27001.db`
+
+## Deploy para Produção
+
+Para fazer deploy em produção, consulte o guia completo em **[DEPLOY.md](DEPLOY.md)**.
+
+O guia inclui instruções para:
+- 🐳 Docker e Docker Compose
+- ☁️ Plataformas cloud (Render, Railway, Heroku, PythonAnywhere)
+- 🖥️ Servidor VPS próprio
+- 🔒 Configurações de segurança
+- 💾 Backup e monitoramento
+
+**Importante:** Antes de fazer deploy, configure:
+- Variável de ambiente `SECRET_KEY` (obrigatório)
+- Variável de ambiente `DASHBOARD_PASSWORD` (obrigatório)
+- Veja `.env.example` para referência
 
 ## Desenvolvimento
 
