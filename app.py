@@ -239,6 +239,73 @@ def init_db():
         )
     ''')
     
+    # Tabela de Normas
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS normas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            codigo TEXT UNIQUE NOT NULL,
+            nome TEXT NOT NULL,
+            descricao TEXT,
+            tipo TEXT,
+            data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+    
+    # Tabela de Relacionamento Controle-Norma
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS controle_normas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            controle_id INTEGER NOT NULL,
+            norma_id INTEGER NOT NULL,
+            FOREIGN KEY (controle_id) REFERENCES controles(id),
+            FOREIGN KEY (norma_id) REFERENCES normas(id),
+            UNIQUE(controle_id, norma_id)
+        )
+    ''')
+    
+    # Tabela de Tasks de Controle
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS tasks_controle (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            controle_id INTEGER NOT NULL,
+            ordem INTEGER NOT NULL,
+            titulo TEXT NOT NULL,
+            descricao TEXT,
+            concluido INTEGER DEFAULT 0,
+            responsavel TEXT,
+            data_conclusao DATE,
+            data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (controle_id) REFERENCES controles(id)
+        )
+    ''')
+    
+    # Tabela de Relacionamento Task-Norma
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS tasks_normas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            task_id INTEGER NOT NULL,
+            norma_id INTEGER NOT NULL,
+            FOREIGN KEY (task_id) REFERENCES tasks_controle(id),
+            FOREIGN KEY (norma_id) REFERENCES normas(id),
+            UNIQUE(task_id, norma_id)
+        )
+    ''')
+    
+    # Tabela de Documentos Necessários por Controle
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS documentos_controle (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            controle_id INTEGER NOT NULL,
+            nome_documento TEXT NOT NULL,
+            tipo_documento TEXT,
+            descricao TEXT,
+            obrigatorio INTEGER DEFAULT 0,
+            template TEXT,
+            data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (controle_id) REFERENCES controles(id)
+        )
+    ''')
+    
     # Inserir todos os módulos da ISO 27001
     modulos_padrao = [
         ('A.5', 'Política de Segurança', 'Políticas de segurança da informação', None, None, None, None),
@@ -589,10 +656,14 @@ def index():
         })
     
     # Estatísticas por norma
-    c.execute('SELECT * FROM normas ORDER BY codigo')
-    normas_rows = c.fetchall()
     normas_progresso = []
     normas_faltantes = 0
+    try:
+        c.execute('SELECT * FROM normas ORDER BY codigo')
+        normas_rows = c.fetchall()
+    except sqlite3.OperationalError:
+        # Tabela normas não existe ainda, pular esta seção
+        normas_rows = []
     
     for norma_row in normas_rows:
         norma_id, codigo, nome, descricao, tipo, data_criacao = norma_row
@@ -658,16 +729,21 @@ def index():
         })
     
     # Contar tasks compartilhadas (tasks que aparecem em múltiplas normas)
-    c.execute('''
-        SELECT COUNT(*)
-        FROM (
-            SELECT tn.task_id
-            FROM tasks_normas tn
-            GROUP BY tn.task_id
-            HAVING COUNT(DISTINCT tn.norma_id) > 1
-        )
-    ''')
-    tasks_compartilhadas_count = c.fetchone()[0] or 0
+    tasks_compartilhadas_count = 0
+    try:
+        c.execute('''
+            SELECT COUNT(*)
+            FROM (
+                SELECT tn.task_id
+                FROM tasks_normas tn
+                GROUP BY tn.task_id
+                HAVING COUNT(DISTINCT tn.norma_id) > 1
+            )
+        ''')
+        tasks_compartilhadas_count = c.fetchone()[0] or 0
+    except sqlite3.OperationalError:
+        # Tabela não existe ainda
+        pass
     
     conn.close()
     
@@ -757,8 +833,12 @@ def controles():
     grupos = [row[0] for row in c.fetchall()]
     
     # Buscar normas para filtro
-    c.execute('SELECT id, codigo, nome FROM normas ORDER BY codigo')
-    normas_list = [{'id': row[0], 'codigo': row[1], 'nome': row[2]} for row in c.fetchall()]
+    try:
+        c.execute('SELECT id, codigo, nome FROM normas ORDER BY codigo')
+        normas_list = [{'id': row[0], 'codigo': row[1], 'nome': row[2]} for row in c.fetchall()]
+    except sqlite3.OperationalError:
+        # Tabela normas não existe ainda
+        normas_list = []
     
     # Mapear colunas na ordem correta do banco
     # Ordem: id, codigo, titulo, descricao, categoria, status, responsavel, 
@@ -780,13 +860,17 @@ def controles():
     
     # Buscar normas para cada controle
     for controle in controles_dict:
-        c.execute('''
-            SELECT n.id, n.codigo, n.nome
-            FROM normas n
-            INNER JOIN controle_normas cn ON n.id = cn.norma_id
-            WHERE cn.controle_id = ?
-        ''', (controle['id'],))
-        controle['normas'] = [{'id': row[0], 'codigo': row[1], 'nome': row[2]} for row in c.fetchall()]
+        try:
+            c.execute('''
+                SELECT n.id, n.codigo, n.nome
+                FROM normas n
+                INNER JOIN controle_normas cn ON n.id = cn.norma_id
+                WHERE cn.controle_id = ?
+            ''', (controle['id'],))
+            controle['normas'] = [{'id': row[0], 'codigo': row[1], 'nome': row[2]} for row in c.fetchall()]
+        except sqlite3.OperationalError:
+            # Tabela não existe ainda
+            controle['normas'] = []
     
     conn.close()
     
@@ -904,14 +988,18 @@ def controle_detalhe(id):
     anexos = [dict(zip(anexos_columns, row)) for row in anexos_rows]
     
     # Buscar normas associadas ao controle
-    c.execute('''
-        SELECT n.id, n.codigo, n.nome, n.descricao
-        FROM normas n
-        INNER JOIN controle_normas cn ON n.id = cn.norma_id
-        WHERE cn.controle_id = ?
-        ORDER BY n.codigo
-    ''', (id,))
-    normas_controle = [{'id': row[0], 'codigo': row[1], 'nome': row[2], 'descricao': row[3]} for row in c.fetchall()]
+    try:
+        c.execute('''
+            SELECT n.id, n.codigo, n.nome, n.descricao
+            FROM normas n
+            INNER JOIN controle_normas cn ON n.id = cn.norma_id
+            WHERE cn.controle_id = ?
+            ORDER BY n.codigo
+        ''', (id,))
+        normas_controle = [{'id': row[0], 'codigo': row[1], 'nome': row[2], 'descricao': row[3]} for row in c.fetchall()]
+    except sqlite3.OperationalError:
+        # Tabela não existe ainda
+        normas_controle = []
     
     conn.close()
     
