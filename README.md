@@ -82,10 +82,10 @@ nano .env  # Edite com suas configurações
 docker-compose up -d --build
 
 # 3. Abrir firewall (se necessário)
-sudo ufw allow 6000/tcp
+sudo ufw allow 3000/tcp
 ```
 
-**Acesse:** `http://localhost:6000` ou `http://SEU_IP:6000`
+**Acesse:** `http://localhost:3000` ou `http://SEU_IP:3000`
 
 📖 **Guias detalhados:**
 - [Guia Rápido](README_DEPLOY.md) - Deploy simplificado

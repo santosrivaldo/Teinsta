@@ -71,9 +71,9 @@ if docker-compose ps | grep -q "Up"; then
     SERVER_IP=$(hostname -I | awk '{print $1}' 2>/dev/null || echo "localhost")
     
     echo "🌐 Acesse a aplicação em:"
-    echo "   http://$SERVER_IP:6000"
+    echo "   http://$SERVER_IP:3000"
     echo "   ou"
-    echo "   http://localhost:6000"
+    echo "   http://localhost:3000"
     echo ""
     echo "🔐 Senha: (veja no arquivo .env - DASHBOARD_PASSWORD)"
     echo ""

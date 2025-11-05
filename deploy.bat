@@ -67,7 +67,7 @@ if %ERRORLEVEL% EQU 0 (
     echo 📊 Status:
     docker-compose ps
     echo.
-    echo 🌐 Acesse a aplicação em: http://localhost:6000
+    echo 🌐 Acesse a aplicação em: http://localhost:3000
     echo.
     echo 🔐 Senha: (veja no arquivo .env - DASHBOARD_PASSWORD)
     echo.
