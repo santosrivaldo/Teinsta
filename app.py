@@ -573,26 +573,16 @@ def init_db():
     total_controles = c.fetchone()[0]
     
     if total_controles == 0:
-        # Todos os controles padrão da ISO 27001 são obrigatórios
+        # Inserir controles padrão da ISO 27001 como boas práticas por padrão
+        # O usuário pode marcar manualmente quais são obrigatórios
         controles_padrao_com_obrigatorio = [
-            (codigo, titulo, descricao, categoria, 1)  # obrigatorio = 1 (obrigatório)
+            (codigo, titulo, descricao, categoria, 0)  # obrigatorio = 0 (boas práticas por padrão)
             for codigo, titulo, descricao, categoria in controles_padrao
         ]
         c.executemany('''
             INSERT INTO controles (codigo, titulo, descricao, categoria, obrigatorio)
             VALUES (?, ?, ?, ?, ?)
         ''', controles_padrao_com_obrigatorio)
-    
-    # SEMPRE atualizar controles existentes que são padrão da ISO 27001 para obrigatórios
-    # Isso garante que mesmo se o banco já tiver dados, eles serão corrigidos
-    codigos_padrao = [codigo for codigo, _, _, _ in controles_padrao]
-    if codigos_padrao:
-        placeholders = ','.join(['?' for _ in codigos_padrao])
-        c.execute(f'''
-            UPDATE controles 
-            SET obrigatorio = 1 
-            WHERE codigo IN ({placeholders}) AND (obrigatorio = 0 OR obrigatorio IS NULL)
-        ''', codigos_padrao)
     
     conn.commit()
     conn.close()

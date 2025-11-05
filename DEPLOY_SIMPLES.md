@@ -67,6 +67,7 @@ docker-compose ps
 1. **Container não inicia?** → Ver logs: `docker-compose logs`
 2. **Acesso externo não funciona?** → Abrir firewall: `sudo ufw allow 5001/tcp`
 3. **Erro de build?** → Ver conexão com internet do servidor
+4. **Todos os controles como obrigatórios?** → Execute: `bash fix_obrigatorios.sh` (ou `fix_obrigatorios.bat` no Windows)
 
 ---
 
