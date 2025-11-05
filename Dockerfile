@@ -1,6 +1,5 @@
 # Dockerfile para Sistema ISO 27001
-FROM python:3.11-slim
-# Se tiver problemas de conexão, tente: FROM python:3-slim
+FROM python:3-slim
 
 # Definir diretório de trabalho
 WORKDIR /app

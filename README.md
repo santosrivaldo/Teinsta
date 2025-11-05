@@ -61,21 +61,35 @@ http://localhost:6000
 - Alguns controles padrão da ISO 27001 são inseridos automaticamente
 - Os dados são armazenados localmente no arquivo `iso27001.db`
 
-## Deploy para Produção
+## 🚀 Deploy para Produção
 
-Para fazer deploy em produção, consulte o guia completo em **[DEPLOY.md](DEPLOY.md)**.
+### Opção Rápida (Recomendada):
+```bash
+# Linux/Mac
+chmod +x deploy.sh && ./deploy.sh
 
-O guia inclui instruções para:
-- 🐳 Docker e Docker Compose
-- ☁️ Plataformas cloud (Render, Railway, Heroku, PythonAnywhere)
-- 🖥️ Servidor VPS próprio
-- 🔒 Configurações de segurança
-- 💾 Backup e monitoramento
+# Windows
+deploy.bat
+```
 
-**Importante:** Antes de fazer deploy, configure:
-- Variável de ambiente `SECRET_KEY` (obrigatório)
-- Variável de ambiente `DASHBOARD_PASSWORD` (obrigatório)
-- Veja `.env.example` para referência
+### Opção Manual:
+```bash
+# 1. Configurar .env
+cp .env.example .env
+nano .env  # Edite com suas configurações
+
+# 2. Deploy
+docker-compose up -d --build
+
+# 3. Abrir firewall (se necessário)
+sudo ufw allow 6000/tcp
+```
+
+**Acesse:** `http://localhost:6000` ou `http://SEU_IP:6000`
+
+📖 **Guias detalhados:**
+- [Guia Rápido](README_DEPLOY.md) - Deploy simplificado
+- [Deploy Completo](DEPLOY.md) - Todas as opções (Docker, Cloud, VPS, etc.)
 
 ## Desenvolvimento
 
