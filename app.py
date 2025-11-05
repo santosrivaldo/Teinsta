@@ -570,7 +570,9 @@ def init_db():
     ]
     
     c.execute('SELECT COUNT(*) FROM controles')
-    if c.fetchone()[0] == 0:
+    total_controles = c.fetchone()[0]
+    
+    if total_controles == 0:
         # Todos os controles padrão da ISO 27001 são obrigatórios
         controles_padrao_com_obrigatorio = [
             (codigo, titulo, descricao, categoria, 1)  # obrigatorio = 1 (obrigatório)
@@ -580,7 +582,8 @@ def init_db():
             INSERT INTO controles (codigo, titulo, descricao, categoria, obrigatorio)
             VALUES (?, ?, ?, ?, ?)
         ''', controles_padrao_com_obrigatorio)
-    # Sempre atualizar controles existentes que são padrão da ISO 27001 para obrigatórios
+    
+    # SEMPRE atualizar controles existentes que são padrão da ISO 27001 para obrigatórios
     # Isso garante que mesmo se o banco já tiver dados, eles serão corrigidos
     codigos_padrao = [codigo for codigo, _, _, _ in controles_padrao]
     if codigos_padrao:
@@ -593,20 +596,6 @@ def init_db():
     
     conn.commit()
     conn.close()
-
-# Inicializar banco de dados quando o módulo Flask carregar
-# Isso garante que funcione tanto em desenvolvimento quanto em produção (Gunicorn)
-def initialize_app():
-    """Inicializa o banco de dados quando a aplicação inicia"""
-    try:
-        init_db()
-    except Exception as e:
-        # Se houver erro, logar mas não impedir a aplicação de iniciar
-        import sys
-        print(f"AVISO: Erro ao inicializar banco de dados: {e}", file=sys.stderr)
-
-# Chamar na inicialização do módulo
-initialize_app()
 
 @app.route('/')
 @login_required
@@ -1574,8 +1563,21 @@ def api_stats():
     
     return jsonify(stats)
 
+# Inicializar banco de dados quando o módulo Flask carregar
+# Isso garante que funcione tanto em desenvolvimento quanto em produção (Gunicorn)
+def initialize_app():
+    """Inicializa o banco de dados quando a aplicação inicia"""
+    try:
+        init_db()
+    except Exception as e:
+        # Se houver erro, logar mas não impedir a aplicação de iniciar
+        import sys
+        print(f"AVISO: Erro ao inicializar banco de dados: {e}", file=sys.stderr)
+
+# Chamar na inicialização do módulo
+initialize_app()
+
 if __name__ == '__main__':
-    init_db()
     # Em produção, usar gunicorn ao invés de app.run()
     debug_mode = os.environ.get('FLASK_ENV') == 'development'
     port = int(os.environ.get('PORT', 5001))
