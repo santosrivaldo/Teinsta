@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Novo Controle - ISO 27001{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h2>Novo Controle</h2>
+        <a href="{{ url_for('controles') }}" class="btn btn-secondary">← Voltar</a>
+    </div>
+
+    <div class="form-container">
+        <form id="controleForm">
+            <div class="form-group">
+                <label>Código *</label>
+                <input type="text" id="codigo" placeholder="Ex: A.5.1.1" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Título *</label>
+                <input type="text" id="titulo" placeholder="Título do controle" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea id="descricao" rows="4" placeholder="Descrição detalhada do controle"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Categoria *</label>
+                <input type="text" id="categoria" placeholder="Ex: A.5 - Políticas de segurança" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Status</label>
+                <select id="status">
+                    <option value="Pendente">Pendente</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Implementado">Implementado</option>
+                    <option value="Não Aplicável">Não Aplicável</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Responsável</label>
+                <input type="text" id="responsavel" placeholder="Nome do responsável">
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="{{ url_for('controles') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById('controleForm').onsubmit = function(e) {
+    e.preventDefault();
+    
+    const data = {
+        codigo: document.getElementById('codigo').value,
+        titulo: document.getElementById('titulo').value,
+        descricao: document.getElementById('descricao').value,
+        categoria: document.getElementById('categoria').value,
+        status: document.getElementById('status').value,
+        responsavel: document.getElementById('responsavel').value
+    };
+    
+    fetch('/controles/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = '/controles';
+        }
+    });
+};
+</script>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Nova Política - ISO 27001{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h2>Nova Política</h2>
+        <a href="{{ url_for('politicas') }}" class="btn btn-secondary">← Voltar</a>
+    </div>
+
+    <div class="form-container">
+        <form id="politicaForm">
+            <div class="form-group">
+                <label>Código *</label>
+                <input type="text" id="codigo" placeholder="Ex: POL-001" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Título *</label>
+                <input type="text" id="titulo" placeholder="Título da política" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea id="descricao" rows="6" placeholder="Descrição detalhada da política"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Versão</label>
+                <input type="text" id="versao" placeholder="Ex: 1.0">
+            </div>
+            
+            <div class="form-group">
+                <label>Status</label>
+                <select id="status">
+                    <option value="Rascunho">Rascunho</option>
+                    <option value="Em Revisão">Em Revisão</option>
+                    <option value="Aprovada">Aprovada</option>
+                    <option value="Revogada">Revogada</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Aprovador</label>
+                <input type="text" id="aprovador" placeholder="Nome do aprovador">
+            </div>
+            
+            <div class="form-group">
+                <label>Data de Aprovação</label>
+                <input type="date" id="data_aprovacao">
+            </div>
+            
+            <div class="form-group">
+                <label>Data de Revisão</label>
+                <input type="date" id="data_revisao">
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="{{ url_for('politicas') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById('politicaForm').onsubmit = function(e) {
+    e.preventDefault();
+    
+    const data = {
+        codigo: document.getElementById('codigo').value,
+        titulo: document.getElementById('titulo').value,
+        descricao: document.getElementById('descricao').value,
+        versao: document.getElementById('versao').value,
+        status: document.getElementById('status').value,
+        aprovador: document.getElementById('aprovador').value,
+        data_aprovacao: document.getElementById('data_aprovacao').value || null,
+        data_revisao: document.getElementById('data_revisao').value || null
+    };
+    
+    fetch('/politicas/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = '/politicas';
+        }
+    });
+};
+</script>
+{% endblock %}

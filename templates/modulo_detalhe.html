@@ -1,0 +1,524 @@
+{% extends "base.html" %}
+
+{% block title %}{{ modulo.nome }} - ISO 27001{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <div>
+            <h2>{{ modulo.codigo }} - {{ modulo.nome }}</h2>
+            <p>{{ modulo.descricao }}</p>
+        </div>
+        <a href="{{ url_for('modulos') }}" class="btn btn-secondary">← Voltar</a>
+    </div>
+
+    <div class="module-stats-card">
+        <div class="stat-item">
+            <div class="stat-value">{{ implementados }} / {{ total }}</div>
+            <div class="stat-label">Controles Implementados</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">{{ percentual }}%</div>
+            <div class="stat-label">Progresso</div>
+        </div>
+        <div class="stat-item">
+            {% if modulo.concluido %}
+            <div class="stat-value" style="color: var(--success-color);">✓ Concluído</div>
+            <div class="stat-label">{{ modulo.data_conclusao }}</div>
+            {% else %}
+            <div class="stat-value" style="color: var(--warning-color);">Em Andamento</div>
+            <div class="stat-label">Pendente</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="progress-section">
+        <div class="progress-bar-large">
+            <div class="progress-fill" style="width: {{ percentual }}%"></div>
+        </div>
+        <p class="progress-text">{{ percentual }}% completo</p>
+    </div>
+
+    {% if not modulo.concluido and percentual == 100 %}
+    <div class="completion-prompt">
+        <h3>🎉 Parabéns! Todos os controles foram implementados.</h3>
+        <p>Você pode marcar este módulo como concluído.</p>
+        <button class="btn btn-success" onclick="concluirModulo('{{ modulo.codigo }}')">Concluir Módulo</button>
+    </div>
+    {% endif %}
+
+    <!-- Cronograma -->
+    <div class="schedule-card">
+        <h3>📅 Cronograma</h3>
+        <div class="schedule-grid">
+            <div class="schedule-item">
+                <label>Data Planejada Início:</label>
+                <input type="date" id="data_planejada_inicio" value="{{ modulo.data_planejada_inicio or '' }}" onchange="atualizarCronograma()">
+            </div>
+            <div class="schedule-item">
+                <label>Data Planejada Fim:</label>
+                <input type="date" id="data_planejada_fim" value="{{ modulo.data_planejada_fim or '' }}" onchange="atualizarCronograma()">
+            </div>
+            <div class="schedule-item">
+                <label>Data Real Início:</label>
+                <input type="date" id="data_inicio" value="{{ modulo.data_inicio or '' }}" onchange="atualizarCronograma()">
+            </div>
+            <div class="schedule-item">
+                <label>Data Real Conclusão:</label>
+                <input type="text" value="{{ modulo.data_conclusao or 'Não concluído' }}" readonly class="readonly-input">
+            </div>
+        </div>
+    </div>
+
+    <!-- Passo a Passo de Ações -->
+    <div class="action-steps-section">
+        <h3>📋 Passo a Passo de Ações</h3>
+        <div class="steps-container">
+            {% for passo in passos %}
+            <div class="step-card {% if passo.concluido %}step-completed{% endif %}">
+                <div class="step-header">
+                    <div class="step-number">{{ passo.ordem }}</div>
+                    <div class="step-content">
+                        <h4>{{ passo.titulo }}</h4>
+                        <p>{{ passo.descricao }}</p>
+                    </div>
+                    <div class="step-actions">
+                        {% if passo.concluido %}
+                        <span class="step-status completed">✓ Concluído</span>
+                        <button class="btn-icon-small" onclick="reabrirPasso({{ passo.id }})" title="Reabrir">↻</button>
+                        {% else %}
+                        <button class="btn btn-success-small" onclick="concluirPasso({{ passo.id }})">Concluir</button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if passo.concluido %}
+                <div class="step-footer">
+                    <small>Concluído em: {{ passo.data_conclusao or '-' }}</small>
+                    {% if passo.responsavel %}
+                    <small>Responsável: {{ passo.responsavel }}</small>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if modulo.observacoes %}
+    <div class="observations-card">
+        <h3>Observações da Conclusão</h3>
+        <p>{{ modulo.observacoes }}</p>
+    </div>
+    {% endif %}
+
+    <div class="module-controls-section">
+        <h3>Controles do Módulo ({{ total }})</h3>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Título</th>
+                        <th>Tipo</th>
+                        <th>Status</th>
+                        <th>Responsável</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for controle in controles %}
+                    <tr>
+                        <td><strong>{{ controle.codigo }}</strong></td>
+                        <td>{{ controle.titulo }}</td>
+                        <td>
+                            {% if controle.obrigatorio == 1 or controle.obrigatorio == True %}
+                            <span class="badge badge-obrigatorio" title="Obrigatório">Obrigatório</span>
+                            {% else %}
+                            <span class="badge badge-boa-pratica" title="Boas Práticas">Boas Práticas</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <span class="status-badge status-{{ controle.status.lower().replace(' ', '-') }}">
+                                {{ controle.status }}
+                            </span>
+                        </td>
+                        <td>{{ controle.responsavel or '-' }}</td>
+                        <td>
+                            <a href="{{ url_for('controle_detalhe', id=controle.id) }}" class="btn-icon" title="Ver Detalhes">👁️</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Conclusão -->
+<div id="conclusionModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Concluir Módulo {{ modulo.codigo }}</h3>
+        <form id="conclusionForm">
+            <div class="form-group">
+                <label>Observações (opcional):</label>
+                <textarea id="observacoes" rows="4" placeholder="Adicione observações sobre a conclusão do módulo"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar Conclusão</button>
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+        </form>
+    </div>
+</div>
+
+<style>
+.module-stats-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.progress-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.progress-bar-large {
+    width: 100%;
+    height: 30px;
+    background: var(--border-color);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-bar-large .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+    transition: width 0.5s;
+}
+
+.progress-text {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.completion-prompt {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 2px solid var(--success-color);
+}
+
+.completion-prompt h3 {
+    color: #065f46;
+    margin-bottom: 0.5rem;
+}
+
+.completion-prompt p {
+    color: #047857;
+    margin-bottom: 1rem;
+}
+
+.observations-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.observations-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.module-controls-section {
+    margin-top: 2rem;
+}
+
+.module-controls-section h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+</style>
+
+<script>
+function concluirModulo(codigo) {
+    document.getElementById('conclusionModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('conclusionModal').style.display = 'none';
+}
+
+function atualizarCronograma() {
+    const codigo = '{{ modulo.codigo }}';
+    const data = {
+        data_planejada_inicio: document.getElementById('data_planejada_inicio').value,
+        data_planejada_fim: document.getElementById('data_planejada_fim').value,
+        data_inicio: document.getElementById('data_inicio').value
+    };
+    
+    fetch(`/modulos/${codigo}/cronograma`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            console.log('Cronograma atualizado');
+        }
+    });
+}
+
+function concluirPasso(passoId) {
+    const responsavel = prompt('Nome do responsável (opcional):');
+    const data = { responsavel: responsavel || '' };
+    
+    fetch(`/passos/${passoId}/concluir`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            location.reload();
+        }
+    });
+}
+
+function reabrirPasso(passoId) {
+    if (!confirm('Tem certeza que deseja reabrir este passo?')) return;
+    
+    fetch(`/passos/${passoId}/reabrir`, { method: 'POST' })
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) location.reload();
+        });
+}
+
+document.getElementById('conclusionForm').onsubmit = function(e) {
+    e.preventDefault();
+    const observacoes = document.getElementById('observacoes').value;
+    const codigo = '{{ modulo.codigo }}';
+    
+    fetch(`/modulos/${codigo}/concluir`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ observacoes: observacoes })
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            closeModal();
+            location.reload();
+        }
+    });
+};
+
+window.onclick = function(event) {
+    const modal = document.getElementById('conclusionModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+</script>
+
+<style>
+.schedule-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.schedule-card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.schedule-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-item label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.schedule-item input[type="date"] {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.readonly-input {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background: var(--bg-color);
+    color: var(--text-light);
+}
+
+.action-steps-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.action-steps-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.step-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.step-card:hover {
+    transform: translateX(4px);
+}
+
+.step-card.step-completed {
+    border-left-color: var(--success-color);
+    background: linear-gradient(to right, #f0fdf4 0%, var(--card-bg) 5%);
+}
+
+.step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.step-number {
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-completed .step-number {
+    background: var(--success-color);
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.step-content p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.step-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.step-status {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.step-status.completed {
+    color: var(--success-color);
+}
+
+.btn-success-small {
+    padding: 0.5rem 1rem;
+    background: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.btn-success-small:hover {
+    background: #059669;
+}
+
+.btn-icon-small {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.25rem;
+}
+
+.step-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+</style>
+{% endblock %}

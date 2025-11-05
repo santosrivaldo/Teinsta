@@ -1,0 +1,774 @@
+{% extends "base.html" %}
+
+{% block title %}{{ controle.codigo }} - {{ controle.titulo }} - ISO 27001{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <div>
+            <h2>{{ controle.codigo }} - {{ controle.titulo }}</h2>
+            <p>{{ controle.categoria }}</p>
+        </div>
+        <a href="{{ url_for('controles') }}" class="btn btn-secondary">← Voltar</a>
+    </div>
+
+    <div class="control-detail-card">
+        <div class="detail-section">
+            <h3>Informações do Controle</h3>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <label>Código:</label>
+                    <span>{{ controle.codigo }}</span>
+                </div>
+                <div class="detail-item">
+                    <label>Status:</label>
+                    <span class="status-badge status-{{ controle.status.lower().replace(' ', '-') }}">
+                        {{ controle.status }}
+                    </span>
+                </div>
+                <div class="detail-item">
+                    <label>Responsável:</label>
+                    <span>{{ controle.responsavel or '-' }}</span>
+                </div>
+                <div class="detail-item">
+                    <label>Categoria:</label>
+                    <span>{{ controle.categoria }}</span>
+                </div>
+                <div class="detail-item">
+                    <label>Tipo:</label>
+                    <span>
+                        {% if controle.obrigatorio == 1 or controle.obrigatorio == True %}
+                        <span class="badge badge-obrigatorio">Obrigatório</span>
+                        {% else %}
+                        <span class="badge badge-boa-pratica">Boas Práticas</span>
+                        {% endif %}
+                    </span>
+                </div>
+                {% if controle.grupo_implementacao %}
+                <div class="detail-item">
+                    <label>Grupo de Implementação:</label>
+                    <span class="badge badge-grupo">{{ controle.grupo_implementacao }}</span>
+                </div>
+                {% endif %}
+                {% if normas %}
+                <div class="detail-item-full">
+                    <label>Normas:</label>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                        {% for norma in normas %}
+                        <span class="badge" style="background: #3b82f6; color: white;">📜 {{ norma.nome }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            
+            {% if controle.descricao %}
+            <div class="detail-item-full">
+                <label>Descrição:</label>
+                <p>{{ controle.descricao }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Seção de Tasks -->
+    <div class="tasks-section">
+        <div class="tasks-header">
+            <div>
+                <h3>✅ Tasks de Implementação ({{ tasks|length }})</h3>
+                <div class="tasks-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {{ progresso_tasks }}%"></div>
+                    </div>
+                    <span class="progress-text">{{ progresso_tasks }}% concluído</span>
+                </div>
+            </div>
+        </div>
+
+        {% if tasks %}
+        <div class="tasks-list">
+            {% for task in tasks %}
+            <div class="task-item {% if task.concluido == 1 %}task-completed{% endif %}">
+                <div class="task-checkbox">
+                    <input type="checkbox" 
+                           id="task_{{ task.id }}" 
+                           {% if task.concluido == 1 %}checked{% endif %}
+                           onchange="toggleTask({{ task.id }}, this.checked)">
+                </div>
+                <div class="task-content">
+                    <div class="task-header">
+                        <label for="task_{{ task.id }}" class="task-title">{{ task.ordem }}. {{ task.titulo }}</label>
+                        {% if task.concluido == 1 and task.data_conclusao %}
+                        <span class="task-date">Concluído em {{ task.data_conclusao }}</span>
+                        {% endif %}
+                    </div>
+                    {% if task.descricao %}
+                    <p class="task-description">{{ task.descricao }}</p>
+                    {% endif %}
+                    {% if task.responsavel %}
+                    <div class="task-meta">
+                        <span>Responsável: {{ task.responsavel }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>Nenhuma task definida para este controle.</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Seção de Documentos Necessários -->
+    <div class="documents-section">
+        <div class="documents-header">
+            <h3>📄 Documentos Necessários ({{ documentos|length }})</h3>
+        </div>
+
+        {% if documentos %}
+        <div class="documents-list">
+            {% for doc in documentos %}
+            <div class="document-item">
+                <div class="document-icon">
+                    📄
+                </div>
+                <div class="document-info">
+                    <div class="document-name">
+                        {{ doc.nome_documento }}
+                        {% if doc.obrigatorio == 1 %}
+                        <span class="badge badge-obrigatorio">Obrigatório</span>
+                        {% else %}
+                        <span class="badge badge-opcional">Opcional</span>
+                        {% endif %}
+                    </div>
+                    <div class="document-type">{{ doc.tipo_documento }}</div>
+                    {% if doc.descricao %}
+                    <div class="document-description">{{ doc.descricao }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>Nenhum documento definido para este controle.</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Seção de Anexos (Documentos Gerados) -->
+    <div class="attachments-section">
+        <div class="attachments-header">
+            <h3>📎 Documentos Gerados/Anexos ({{ anexos|length }})</h3>
+            <button class="btn btn-primary" onclick="document.getElementById('uploadModal').style.display='block'">
+                + Adicionar Documento
+            </button>
+        </div>
+
+        {% if anexos %}
+        <div class="attachments-list">
+            {% for anexo in anexos %}
+            <div class="attachment-item">
+                <div class="attachment-info">
+                    <div class="attachment-icon">
+                        {% if anexo.tipo in ['pdf'] %}
+                            📄
+                        {% elif anexo.tipo in ['doc', 'docx'] %}
+                            📝
+                        {% elif anexo.tipo in ['xls', 'xlsx'] %}
+                            📊
+                        {% elif anexo.tipo in ['png', 'jpg', 'jpeg'] %}
+                            🖼️
+                        {% elif anexo.tipo in ['zip', 'rar'] %}
+                            📦
+                        {% else %}
+                            📎
+                        {% endif %}
+                    </div>
+                    <div class="attachment-details">
+                        <div class="attachment-name">{{ anexo.nome_original }}</div>
+                        <div class="attachment-meta">
+                            {% if anexo.descricao %}
+                            <span>{{ anexo.descricao }}</span> •
+                            {% endif %}
+                            <span>{{ "%.2f"|format(anexo.tamanho / 1024) }} KB</span> •
+                            <span>{{ anexo.data_upload[:10] }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="attachment-actions">
+                    <a href="{{ url_for('download_anexo', id=controle.id, anexo_id=anexo.id) }}" 
+                       class="btn btn-primary-small" title="Download">
+                        ⬇️ Download
+                    </a>
+                    <button class="btn btn-danger-small" 
+                            onclick="deleteAnexo({{ anexo.id }})" 
+                            title="Excluir">
+                        🗑️
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>Nenhum documento gerado ainda. Clique em "Adicionar Documento" para enviar arquivos.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Modal de Upload -->
+<div id="uploadModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeUploadModal()">&times;</span>
+        <h3>Adicionar Anexo</h3>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Arquivo *</label>
+                <input type="file" id="fileInput" name="file" required accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg,.zip,.rar">
+                <small>Tipos permitidos: PDF, DOC, DOCX, XLS, XLSX, TXT, PNG, JPG, JPEG, ZIP, RAR (máx. 16MB)</small>
+            </div>
+            <div class="form-group">
+                <label>Descrição (opcional)</label>
+                <textarea id="descricaoInput" name="descricao" rows="3" placeholder="Descrição do anexo"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeUploadModal()">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+.control-detail-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.detail-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-item label {
+    font-weight: 500;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.detail-item span {
+    color: var(--text-color);
+}
+
+.detail-item-full {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.detail-item-full label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.detail-item-full p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.attachments-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.attachments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.attachments-header h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.attachments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.attachment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.attachment-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.attachment-icon {
+    font-size: 2rem;
+}
+
+.attachment-details {
+    flex: 1;
+}
+
+.attachment-name {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.attachment-meta {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.attachment-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-primary-small, .btn-danger-small {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary-small {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary-small:hover {
+    background: #1d4ed8;
+}
+
+.btn-danger-small {
+    background: #dc2626;
+    color: white;
+}
+
+.btn-danger-small:hover {
+    background: #b91c1c;
+}
+
+.badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.badge-obrigatorio {
+    background: #dc2626;
+    color: white;
+}
+
+.badge-boa-pratica {
+    background: #059669;
+    color: white;
+}
+
+.badge-grupo {
+    background: var(--primary-color);
+    color: white;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-light);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    color: var(--text-light);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-family: inherit;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.tasks-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.tasks-header {
+    margin-bottom: 1.5rem;
+}
+
+.tasks-header h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color);
+}
+
+.tasks-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 1.5rem;
+    background: var(--bg-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #059669, #10b981);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-weight: 500;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.task-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.task-item:hover {
+    border-color: var(--primary-color);
+}
+
+.task-item.task-completed {
+    background: #f0fdf4;
+    border-color: #10b981;
+}
+
+.task-checkbox {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.25rem;
+}
+
+.task-checkbox input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.task-title {
+    font-weight: 500;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.task-item.task-completed .task-title {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.task-date {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.task-description {
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.task-meta {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.documents-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.documents-header {
+    margin-bottom: 1.5rem;
+}
+
+.documents-header h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.documents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.document-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.document-icon {
+    font-size: 2rem;
+}
+
+.document-info {
+    flex: 1;
+}
+
+.document-name {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.document-type {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+}
+
+.document-description {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.badge-opcional {
+    background: #6b7280;
+    color: white;
+}
+</style>
+
+<script>
+function toggleTask(taskId, concluido) {
+    const endpoint = concluido 
+        ? `/controles/{{ controle.id }}/task/${taskId}/concluir`
+        : `/controles/{{ controle.id }}/task/${taskId}/reabrir`;
+    
+    fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            location.reload();
+        } else {
+            alert('Erro ao atualizar task: ' + (data.error || 'Erro desconhecido'));
+            // Reverter checkbox
+            document.getElementById('task_' + taskId).checked = !concluido;
+        }
+    })
+    .catch(error => {
+        alert('Erro ao atualizar task: ' + error.message);
+        // Reverter checkbox
+        document.getElementById('task_' + taskId).checked = !concluido;
+    });
+}
+
+function closeUploadModal() {
+    document.getElementById('uploadModal').style.display = 'none';
+    document.getElementById('uploadForm').reset();
+}
+
+function deleteAnexo(anexoId) {
+    if (!confirm('Tem certeza que deseja excluir este anexo?')) return;
+    
+    fetch(`/controles/{{ controle.id }}/anexo/${anexoId}/delete`, {
+        method: 'POST'
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            location.reload();
+        } else {
+            alert('Erro ao excluir anexo: ' + (data.error || 'Erro desconhecido'));
+        }
+    });
+}
+
+document.getElementById('uploadForm').onsubmit = function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData();
+    const fileInput = document.getElementById('fileInput');
+    const descricaoInput = document.getElementById('descricaoInput');
+    
+    if (!fileInput.files[0]) {
+        alert('Por favor, selecione um arquivo');
+        return;
+    }
+    
+    formData.append('file', fileInput.files[0]);
+    formData.append('descricao', descricaoInput.value);
+    
+    fetch(`/controles/{{ controle.id }}/upload`, {
+        method: 'POST',
+        body: formData
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            closeUploadModal();
+            location.reload();
+        } else {
+            alert('Erro ao enviar arquivo: ' + (data.error || 'Erro desconhecido'));
+        }
+    })
+    .catch(error => {
+        alert('Erro ao enviar arquivo: ' + error.message);
+    });
+};
+
+window.onclick = function(event) {
+    const modal = document.getElementById('uploadModal');
+    if (event.target == modal) {
+        closeUploadModal();
+    }
+}
+</script>
+{% endblock %}

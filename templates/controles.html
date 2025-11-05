@@ -1,0 +1,319 @@
+{% extends "base.html" %}
+
+{% block title %}Controles - ISO 27001{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h2>Controles de Segurança</h2>
+        <a href="{{ url_for('adicionar_controle') }}" class="btn btn-primary">+ Novo Controle</a>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters-card">
+        <div class="filters-header">
+            <h3>🔍 Filtros</h3>
+            <span class="results-count">{{ controles|length }} resultado(s)</span>
+        </div>
+        <form method="GET" action="{{ url_for('controles') }}" class="filters-form">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>Tipo:</label>
+                    <select name="tipo" onchange="this.form.submit()">
+                        <option value="">Todos</option>
+                        <option value="obrigatorio" {% if filtro_tipo == 'obrigatorio' %}selected{% endif %}>Obrigatórios</option>
+                        <option value="boas_praticas" {% if filtro_tipo == 'boas_praticas' %}selected{% endif %}>Boas Práticas</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Status:</label>
+                    <select name="status" onchange="this.form.submit()">
+                        <option value="">Todos</option>
+                        <option value="Pendente" {% if filtro_status == 'Pendente' %}selected{% endif %}>Pendente</option>
+                        <option value="Em Andamento" {% if filtro_status == 'Em Andamento' %}selected{% endif %}>Em Andamento</option>
+                        <option value="Implementado" {% if filtro_status == 'Implementado' %}selected{% endif %}>Implementado</option>
+                        <option value="Não Aplicável" {% if filtro_status == 'Não Aplicável' %}selected{% endif %}>Não Aplicável</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Categoria:</label>
+                    <select name="categoria" onchange="this.form.submit()">
+                        <option value="">Todas</option>
+                        {% for cat in categorias %}
+                        <option value="{{ cat }}" {% if filtro_categoria == cat %}selected{% endif %}>{{ cat }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Grupo de Implementação:</label>
+                    <select name="grupo" onchange="this.form.submit()">
+                        <option value="">Todos</option>
+                        {% for grupo in grupos %}
+                        <option value="{{ grupo }}" {% if filtro_grupo == grupo %}selected{% endif %}>{{ grupo }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Norma:</label>
+                    <select name="norma" onchange="this.form.submit()">
+                        <option value="">Todas</option>
+                        {% for norma in normas %}
+                        <option value="{{ norma.id }}" {% if filtro_norma == norma.id|string %}selected{% endif %}>{{ norma.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="filter-group filter-search">
+                    <label>Buscar:</label>
+                    <input type="text" name="busca" value="{{ busca }}" placeholder="Código, título ou descrição...">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    {% if filtro_tipo or filtro_status or filtro_categoria or filtro_grupo or filtro_norma or busca %}
+                    <a href="{{ url_for('controles') }}" class="btn btn-secondary">Limpar</a>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Título</th>
+                    <th>Categoria</th>
+                    <th>Tipo</th>
+                    <th>Status</th>
+                    <th>Responsável</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if controles %}
+                {% for controle in controles %}
+                <tr>
+                    <td><strong>{{ controle.codigo }}</strong></td>
+                    <td>{{ controle.titulo }}</td>
+                    <td><span class="badge">{{ controle.categoria }}</span></td>
+                    <td>
+                        {% if controle.obrigatorio == 1 or controle.obrigatorio == True %}
+                        <span class="badge badge-obrigatorio" title="Obrigatório">Obrigatório</span>
+                        {% else %}
+                        <span class="badge badge-boa-pratica" title="Boas Práticas">Boas Práticas</span>
+                        {% endif %}
+                        {% if controle.grupo_implementacao %}
+                        <br><small>{{ controle.grupo_implementacao }}</small>
+                        {% endif %}
+                        {% if controle.normas %}
+                        <br><small style="color: var(--text-light);">
+                            📜 {% for norma in controle.normas %}{{ norma.codigo }}{% if not loop.last %}, {% endif %}{% endfor %}
+                        </small>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <span class="status-badge status-{{ controle.status.lower().replace(' ', '-') }}">
+                            {{ controle.status }}
+                        </span>
+                    </td>
+                    <td>{{ controle.responsavel or '-' }}</td>
+                    <td>
+                        <a href="{{ url_for('controle_detalhe', id=controle.id) }}" class="btn-icon" title="Ver Detalhes">👁️</a>
+                        <button class="btn-icon" onclick="editControle({{ controle.id }})" title="Editar">✏️</button>
+                        <button class="btn-icon" onclick="deleteControle({{ controle.id }})" title="Excluir">🗑️</button>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="7" style="text-align: center; padding: 3rem; color: var(--text-light);">
+                        <div style="font-size: 1.1rem; margin-bottom: 0.5rem;">🔍</div>
+                        <div>Nenhum controle encontrado com os filtros aplicados.</div>
+                        <a href="{{ url_for('controles') }}" style="margin-top: 1rem; display: inline-block; color: var(--primary-color);">Limpar filtros</a>
+                    </td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal de Edição -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Editar Controle</h3>
+        <form id="editForm">
+            <input type="hidden" id="editId">
+            <div class="form-group">
+                <label>Código:</label>
+                <input type="text" id="editCodigo" required>
+            </div>
+            <div class="form-group">
+                <label>Título:</label>
+                <input type="text" id="editTitulo" required>
+            </div>
+            <div class="form-group">
+                <label>Descrição:</label>
+                <textarea id="editDescricao" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Categoria:</label>
+                <input type="text" id="editCategoria" required>
+            </div>
+            <div class="form-group">
+                <label>Status:</label>
+                <select id="editStatus">
+                    <option value="Pendente">Pendente</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Implementado">Implementado</option>
+                    <option value="Não Aplicável">Não Aplicável</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Responsável:</label>
+                <input type="text" id="editResponsavel">
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
+</div>
+
+<style>
+.filters-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.filters-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.results-count {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.filters-form {
+    width: 100%;
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.filter-group select,
+.filter-group input[type="text"] {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.filter-search {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-search input[type="text"] {
+    flex: 1;
+}
+
+.filter-search .btn {
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const controlesData = {{ controles | tojson }};
+
+function editControle(id) {
+    const controle = controlesData.find(c => c.id === id);
+    if (!controle) return;
+    
+    document.getElementById('editId').value = controle.id;
+    document.getElementById('editCodigo').value = controle.codigo;
+    document.getElementById('editTitulo').value = controle.titulo;
+    document.getElementById('editDescricao').value = controle.descricao || '';
+    document.getElementById('editCategoria').value = controle.categoria;
+    document.getElementById('editStatus').value = controle.status;
+    document.getElementById('editResponsavel').value = controle.responsavel || '';
+    
+    document.getElementById('editModal').style.display = 'block';
+}
+
+function deleteControle(id) {
+    if (!confirm('Tem certeza que deseja excluir este controle?')) return;
+    
+    fetch(`/controles/${id}/delete`, { method: 'POST' })
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) location.reload();
+        });
+}
+
+document.getElementById('editForm').onsubmit = function(e) {
+    e.preventDefault();
+    const id = document.getElementById('editId').value;
+    const data = {
+        codigo: document.getElementById('editCodigo').value,
+        titulo: document.getElementById('editTitulo').value,
+        descricao: document.getElementById('editDescricao').value,
+        categoria: document.getElementById('editCategoria').value,
+        status: document.getElementById('editStatus').value,
+        responsavel: document.getElementById('editResponsavel').value
+    };
+    
+    fetch(`/controles/${id}/edit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) location.reload();
+    });
+};
+
+document.querySelector('.close').onclick = function() {
+    document.getElementById('editModal').style.display = 'none';
+};
+</script>
+{% endblock %}

@@ -1,0 +1,2312 @@
+[
+  {
+    "codigo": "0.1",
+    "titulo": "nomeou um \nGestor de Tecnologia \nda Informação e \nComunicação",
+    "descricao": "Gestor de Tecnologia da \nInformação e Comunicação, dentre \noutras atribuições, nos termos da \nPortaria nº 778, de 4 de abril de \n2019, responsável por planejar, \nimplementar e melhorar \ncontinuamente os controles de \nprivacidade e segurança da \ninformação em solu ções de \ntecnologia da informação e \ncomunicações, considerando a \ncadeia de suprimentos relacionada à \nsolução . Portaria nº 778, \nde 4 de abril de \n2019",
+    "categoria": "Controle 0: Estruturação Básica",
+    "tipo": "Estruturação Básica"
+  },
+  {
+    "codigo": "0.2",
+    "titulo": "nomeou um \nGestor de Segurança \nda Informação",
+    "descricao": "Gestor de Segurança da \nInformação, dentre outras \natribuições, nos termos da Instrução \nNormativa nº 1, de 27 de maio de \n2020, do Gabinete de Segurança \nInstitucional, da Presidência da \nRepública - GSI/PR, responsável por \nplanejar, implementar e melhorar \ncontinuamente os controles de \nsegurança da informação em ativos \nde informação . Art. 15, inciso I \nda Instrução \nNormativa GSI \nnº 1, de 27 de \nmaio de 2020",
+    "categoria": "Controle 0: Estruturação Básica",
+    "tipo": "Estruturação Básica"
+  },
+  {
+    "codigo": "0.3",
+    "titulo": "nomeou um \nResponsável pela \nUnidade de Controle \nInterno",
+    "descricao": "Responsável pela Unidade  de \nControle Interno, atuará no apoio, \nsupervisão e monitoramento das \natividades desenvolvidas pela \nprimeira linha de defesa prevista pela \nInstrução Normativa CGU nº 3, de 9 \nde junho de 2017 . Instrução \nNormativa CGU \nnº 3, de 9 de \njunho de 2017",
+    "categoria": "Controle 0: Estruturação Básica",
+    "tipo": "Estruturação Básica"
+  },
+  {
+    "codigo": "0.4",
+    "titulo": "instituiu um \nComitê de Segurança \nda Informação?  Instituir um Comitê de Segurança da \nInformação ou estrutura equivalente, \npara deliberar sobre os assuntos \nrelativos à Política Nacional de \nSegurança da Informação.  Art. 15, inciso II \nda Instrução \nNormativa GSI \nnº 1, de 27 de \nmaio de 2020  \n0.5 ------ O órgão instituiu uma \nEquipe de \nTratamento e \nResposta a \nIncidentes \nCibernéticos - ETIR?  Instituir e implementar Equipe de \nTratamento e Resposta a Incidentes \nCibernéticos - ETIR, que constituirá a \nrede de equipes, integrada pelos \nórgãos e pelas entidades da \nadministração pública federal, \ncoordenada pelo Centro de \nTratamento e Resposta a Incidentes \nCibernéticos de Governo do \nGabinete de Segurança Institucional \nda Presidência da Repúblic a. Art. 15, inciso \nIV da Instrução \nNormativa GSI \nnº 1, de 27 de \nmaio de 2020  \n0.6 ------ O órgão elaborou \numa Política de \nSegurança da \nInformação - POSIN?  É obrigatório a todos os órgãos e as \nentidades da administração pública \nfederal possuir uma Política de \nSegurança da Informação  - POSIN , \nimplementada a partir da \nformalização e aprovação por parte \nda autoridade máxima da instituição, \ncom o objetivo de estabelecer \ndiretrizes, responsabilidades, \ncompetências e subsídios para a \ngestão da segurança da informação.  Art. 9º da \nInstrução \nNormativa GSI \nnº 1, de 27 de \nmaio de 2020  \n0.7 GOVERNAR -\nP O órgão nomeou um \nEncarregado pelo \nTratamento de Dados \nPessoais",
+    "descricao": "Encarregado pelo Tratamento de \nDados Pessoais, dentre outras \natribuições, nos termos do art. 41, \n§2º, da Lei nº",
+    "categoria": "Controle 0: Estruturação Básica",
+    "tipo": "Estruturação Básica"
+  },
+  {
+    "codigo": "1.1",
+    "titulo": "estabelece e \nmantém um inventário \ndetalhado de ativos \ninstitucionais",
+    "descricao": "Estabelecer e manter um inventário preciso, detalhado e \natualizado de todos os ativos corporativos com potencial \npara armazenar ou processar dados, incluindo: \ndispositivos  de usuário final (incluindo portáteis e móveis), \ndispositivos de  rede, dispositivos não computacionais/IoT \ne servidores. Certificar que o inventário registre o \nendereço de rede (se  estático), endereço de hardware, \nnome da máquina,  proprietário do ativo de dados, \ndepartamento para cada ativo e se o  ativo foi aprova",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "1.2",
+    "titulo": "usa o Dynamic \nHost Configuration \nProtocol DHCP para \nAtualizar o Inventários de \nAtivos",
+    "descricao": "Utilizar o registro (logs) do Dynamic Host Configuration \nProtocol (DHCP) em todos os servidores DHCP ou utilizar \numa ferramenta de gerenciamento de endereços IP para \natualizar o inventário de ativos de hardware do órgão. \nEstabelecer o intervalo de atualiza ção do inventário de no \nmáximo uma semana.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "1.3",
+    "titulo": "usa uma \nferramenta de \ndescoberta ativa",
+    "descricao": "Identificar ativos conectados à rede institucional através de \numa ferramenta de descoberta ativa. Configurar a \nferramenta para que essa descoberta seja executada \ndiariamente ou com mais frequência.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "1.4",
+    "titulo": "usa ferramenta \nde Descoberta Passiva",
+    "descricao": "Utilizar uma ferramenta de descoberta passiva para \nidentificar dispositivos conectados à rede do órgão e \nautomaticamente atualizar o inventário de ativos de \nhardware do órgão. Estabeleça o intervalo de atualização \ndo inventário de no máximo uma semana.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "1.5",
+    "titulo": "endereça ativos \nnão autorizados",
+    "descricao": "Assegurar que exista um processo semanal para lidar com \nativos não autorizados. Optar por remover o ativo da rede, \nnegar que o ativo se conecte remotamente à rede ou \ncolocar o ativo em quarentena.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  1, 2, 3  \n \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "1.1",
+    "titulo": "protege os \ndados de recuperação",
+    "descricao": "Garantir que os dados de recuperação sejam protegidos \nadequadamente por meio de segurança física ou \ncriptografia quando são armazenados, bem como quando \nsão movidos pela rede. Isso inclui backups remotos e \nserviços em nuvem. Devem ser  \nestabelecidos control es que garantam que os dados de \nrecuperação sejam equivalentes aos dados originais.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  1, 2, 3",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "1.2",
+    "titulo": "estabelece e  \nmantém um  \nprocesso de  \nrecuperação de  \ndados",
+    "descricao": "Estabelecer e manter um processo de recuperação de \ndados. Tal processo deve descrever em seu escopo as \natividades de recuperação de dados, priorização da \nrecuperação e a atividade de segurança dos dados de \nbackup. Periodicamente, deve ser realizada uma rev isão \ne/ou atualização deste processo, assim como em casos \nespecíficos quando ocorrerem mudanças significativas na \norganização que venham impactar a organização de forma \nsignificativa.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 4",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "1.3",
+    "titulo": "executa backups \nautomatizados",
+    "descricao": "Garantir que todos os dados dos sistemas tenham cópias \nde segurança (backups) realizadas automaticamente e de \nforma regular.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 1, 2, 3",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "1.4",
+    "titulo": "estabelece e \nmantém uma instância \nisolada de dados de \nrecuperação",
+    "descricao": "Criar e manter pelo menos uma instância isolada dos \ndados de recuperação. Alguns exemplos deste tipo de \nimplementação são",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "1.5",
+    "titulo": "testa os dados \nde recuperação",
+    "descricao": "Realizar o teste de integridade dos dados na mídia de \nbackup regularmente, executando um processo de \nrestauração de dados para garantir que o backup esteja \nfuncionando corretamente.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2, 3 \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 1: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.1",
+    "titulo": "estabelece e \nmantém um inventário de \nsoftware",
+    "descricao": "Estabelecer e manter um inventário detalhado de todos os \nsoftwares licenciados instalados em ativos institucionais. O \ninventário de software deve documentar o título, editor, \ndata inicial de instalação/uso e objetivo de negócio de \ncada entrada; quando apro priado, inclua o Uniform \nResource Locator(URL), app store(s), versão(ões), \nmecanismo de implantação e data de desativação. Revisar \ne atualizar o inventário de software semestralmente ou \ncom mais frequência.  Art. 6º, inciso \nVII \nArt. ",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.2",
+    "titulo": "assegura que o \nsoftware autorizado seja \natualmente suportado",
+    "descricao": "Garantir que apenas aplicações ou sistemas operacionais \natualmente suportados pelo fabricante sejam adicionados \nao inventário de softwares autorizados. Softwares não \nsuportados devem ser indicados no sistema de inventário. \nRevisar o inventário de software para verificar o suporte do \nsoftware pelo menos uma vez por mês ou  \ncom mais frequência.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 1,2,3",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.3",
+    "titulo": "possui lista de \npermissões de Software \nautorizado",
+    "descricao": "Utilizar",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.4",
+    "titulo": "possuí lista de \npermissões de \nbibliotecas autorizadas",
+    "descricao": "Utilizar",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.5",
+    "titulo": "possuí lista de \npermissões de Scripts \nautorizados",
+    "descricao": "Utilize",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.6",
+    "titulo": "utiliza \nferramentas \nautomatizadas de \ninventário de software",
+    "descricao": "Utilizar ferramentas de inventário de software, quando \npossível, em toda a organização para automatizar a \ndescoberta e documentação do software instalado.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  ------ 2, 3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.7",
+    "titulo": "endereça o \nsoftware não autorizado",
+    "descricao": "Assegurar que o software não autorizado seja retirado de \nuso em ativos institucionais ou receba uma exceção \ndocumentada. Revisar mensalmente ou com mais \nfrequência.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50 ------ 1,2,3  \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.1",
+    "titulo": "elabora e \nmantém diagramas de \narquitetura",
+    "descricao": "Elaborar e manter diagramas e demais documentações da \narquitetura de rede da organização. A revisão destas \ndocumentações deve ser realizada de forma periódica ou \nquando ocorrerem mudanças que possam impactar tais \nartefatos.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  2, 3",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.2",
+    "titulo": "garante que a \ninfraestrutura de rede \nestá atualizada",
+    "descricao": "Garantir que a infraestrutura de rede da organização esteja \nsempre atualizada. Deve ser realizada uma revisão das \nversões de software de forma periódica, ou quando for \nidentificada uma vulnerabilidade que eleve o risco da \norganização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 1,2,3",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.3",
+    "titulo": "garante níveis \nde segurança para a \narquitetura de rede",
+    "descricao": "Garantir que a arquitetura de rede se mantenha segura. É \ninteressante buscar implementar políticas de segurança \ncomo segmentação de rede, privilégio mínimo e níveis \nbásicos de disponibilidade.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  2, 3",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.4",
+    "titulo": "gerencia a \ninfraestrutura de rede e \nsegurança",
+    "descricao": "Implementar e gerenciar com segurança a infraestrutura \nde rede da organização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2,3",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.5",
+    "titulo": "centraliza a \nautenticação, autorização \ne auditoria de rede \n(AAA)",
+    "descricao": "Implementar a centralização de (AAA) de rede.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  2, 3",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.6",
+    "titulo": "utiliza protocolos \nde comunicação e gestão \nde rede seguros",
+    "descricao": "Implementar protocolos de comunicação e rede seguros.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  2,3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.7",
+    "titulo": "garante que os \ndispositivos remotos \nutilizem uma VPN e se \nconectem em uma \ninfraestrutura AAA \nsegura da organização",
+    "descricao": "Fazer com que os usuários se autentiquem em serviços de \nautenticação e VPN gerenciados pela organização antes \nde acessar os dispositivos e recursos da organização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2, 3",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "2.8",
+    "titulo": "utiliza e mantém \nrecursos cibernéticos \ndedicados para todo o \ntrabalho administrativo",
+    "descricao": "Habilitar a coleta de Netflow  e registros de log em cada um \ndos dispositivos existentes para a execução de tarefas \nadministrativas, utilize e mantenha recursos cibernéticos \ndedicados, estes devem estar fisicamente ou logicamente \nseparados e seguros. É importante que tais recursos \nsejam segmentados da rede primária  \nda organização, e não deve se r permitido o acesso a rede \nexterna da organização. fronteiras da rede.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 3",
+    "categoria": "Controle 2: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.1",
+    "titulo": "estabelece e \nmantém um processo de \ngestão de dados",
+    "descricao": "Estabelecer e manter um processo de gestão de dados. \nNo processo, tratar a sensibilidade dos dados, o \nproprietário dos dados, o manuseio dos dados, os limites \nde retenção de dados e os requisitos de descarte, com \nbase em padrões de sensibilidade e retenção  para a \norganização.  \nRevisar e atualizar a documentação anualmente ou \nquando ocorrerem mudanças significativas na \norganização que possam impactar esta medida de \nsegurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. ",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.2",
+    "titulo": "estabelece e \nmantém um inventário de \ndados",
+    "descricao": "Estabelecer e manter um inventário de dados, com base \nno processo de gestão de dados do órgão. No mínimo \ninventariar os dados sensíveis. Revisar e atualizar o \ninventário anualmente, priorizando os dados sensíveis.  Art. 6º, inciso \nVII \nArt. 14,  \nArt. 16,  \nArt. 37  \nArt. 46  \nArt. 47,  \nArt. 49  \nArt. 50  IN nº 1/2020  \nIN nº 5/2021  \nIN nº 6/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.3",
+    "titulo": "estabelece e \nmantém um esquema de \nclassificação de dados",
+    "descricao": "Estabelecer e manter um esquema geral de classificação \nde dados para o órgão, podendo ser “Sensíveis”, \n“Confidencial” e “Público.  \nRevisar e atualizar o esquema de classificação \nanualmente ou quando ocorrerem mudanças \nsignificativas que possam impactar essa medida de \nsegurança.  Art. 6º, inciso \nVII \nArt. 14,  \nArt. 37,  \nArt. 46,  \nArt. 47,  \nArt. 49  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  \nNC \n01/IN02/NSC/GSIPR, \ne seus anexos \n(Anexo A e Anexo B)  2,",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.4",
+    "titulo": "documenta os \nFluxos de Dados",
+    "descricao": "Documentar o fluxo de dados, contendo fluxos de dados \ndo provedor de serviços, devendo ser baseada no \nprocesso de gestão de dados do órgão. Revisar e \natualizar a documentação anualmente ou quando \nocorrerem mudanças significativas que possam impactar \nessa medida de segurança.  Art. 6º, inciso \nVII \nArt. 14,  \nArt. 16,  \nArt. 37  \nArt. 46  \nArt. 47,  \nArt. 49  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  2, 3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.5",
+    "titulo": "configura listas \nde controle de acessos a \ndados",
+    "descricao": "Configurar listas de",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.6",
+    "titulo": "aplica retenção \nde dados",
+    "descricao": "Reter os dados de acordo com o processo de gestão de \ndados da organização. A retenção deve incluir prazos \nmínimos e máximos.  Art. 6º, inciso \nVII \nArt. 14,  \nArt. 16,  \nArt. 37,  \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2013  \nIN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 09 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.7",
+    "titulo": "descarta dados \ncom segurança",
+    "descricao": "Descartar os dados com segurança, conforme processo \nde gestão de dados da organização. Certificar que o \nprocesso e método de descarte sejam compatíveis com a \nsensibilidade dos dados.  Art. 6º, inciso \nVII \nArt, 16,  \nArt. 37,  \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  \nIN nº 2/2013  \nIN nº 5/2021  \nIN nº 6/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.8",
+    "titulo": "criptografa \ndados em dispositivos de \nusuário final",
+    "descricao": "Criptografar os dados em dispositivos de usuário final \nque contenham dados sensíveis.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  \nIN nº 5/2021  \nIN nº 6/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  1, 2, 3  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.9",
+    "titulo": "criptografa \ndados em mídia \nremovível",
+    "descricao": "Criptografar os dados em removível.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2013  \nIN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 09 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.10",
+    "titulo": "criptografa \ndados sensíveis em \ntrânsito",
+    "descricao": "Criptografar dados sensíveis em trânsito. Exemplos: \nTransport Layer Security (TLS) e Open Secure Shell \n(Open SSH)  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2013  \nIN nº 4/2020  \nIN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 09 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.11",
+    "titulo": "criptografa \ndados sensíveis em \nrepouso",
+    "descricao": "Criptografar dados sensíveis em repouso em servidores, \naplicações e bancos de dados que contenham dados \nsensíveis. Criptografar a camada de armazenamento, \ntambém conhecida como criptografia do lado do servidor, \natende ao requisito  mínimo desta medida de segurança. \nMétodos de criptografia adicionais podem incluir \ncriptografia de camada de aplicação,  também conhecida \ncomo criptografia do lado do cliente, onde o acesso ao(s) \ndispositivo(s) de armazenamento de dados  não permite o \nacesso ",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.12",
+    "titulo": "segmenta o \nprocessamento e o \narmazenamento de \ndados com base na \nsensibilidade",
+    "descricao": "Segmentar o processamento e armazenamento de dados \ncom base na sensibilidade dos dados. Não processar \ndados sensíveis em ativos institucionais destinados a \ndados de menor sensibilidade.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.13",
+    "titulo": "implanta uma \nsolução de prevenção \ncontra perda de dados",
+    "descricao": "Implementar uma ferramenta automatizada, de \nprevenção de perda de dados (DLP) baseada em host \npara identificar todos os dados sensíveis armazenados, \nprocessados ou transmitidos por meio de ativos  \ninstitucionais, incluindo os dados localizados no site local Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nIN nº 6/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.14",
+    "titulo": "registra o \nacesso a dados \nsensíveis",
+    "descricao": "Registrar o acesso a dados sensíveis, incluindo \nmodificação e descarte.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49, \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 20 \n/IN01/DSIC/GSIPR  3 \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.1",
+    "titulo": "realiza filtragem \nde tráfego entre os \nsegmentos de rede",
+    "descricao": "Realize a filtragem de tráfego entre os segmentos de \nrede.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.2",
+    "titulo": "aplica o \ngerenciamento de controle \nde acesso em ativos \nremotos",
+    "descricao": "Aplique o gerenciamento de",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.3",
+    "titulo": "implanta soluções \npara prevenção de \nintrusão baseada em \nhost",
+    "descricao": "Implante uma solução para prevenção de intrusão \nbaseada em host e ativos institucionais, preferencialmente \ncom suporte do fornecedor.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.4",
+    "titulo": "implanta  \nsoluções para  \nprevenção de  \nintrusão de rede",
+    "descricao": "Implante uma solução para prevenção de intrusão \nbaseada em rede, preferencialmente com suporte do \nfornecedor.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.5",
+    "titulo": "implanta controle \nde acesso a nível de \nporta",
+    "descricao": "Implante o",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.6",
+    "titulo": "realiza a  \nfiltragem de  \ncamada de  \naplicação",
+    "descricao": "Realize a filtragem de camada de aplicação. Exemplos de \nimplementações são proxy de filtragem, firewall desta \ncamada ou gateway.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nIN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.7",
+    "titulo": "centraliza  \nalertas de  \neventos de  \nsegurança",
+    "descricao": "Centralize os alertas de eventos de segurança em ativos \ninstitucionais para que a organização consiga realizar a \ncorrelação e análise do log. Uma boa prática é o uso de \num SIEM que inclua alertas de correlação de eventos \ndefinidos pelo fornecedor. Outra boa prática é a adoção \nde uma platafor ma de análise de log configurada com \naletas de correlação relevantes para a segurança \ncibernética.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSI",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.8",
+    "titulo": "implanta  \nsoluções de  \ndetecção e  \nintrusão baseada  \nem host",
+    "descricao": "Implante soluções para detecção de intrusão baseada em \nhost em ativos institucionais  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.9",
+    "titulo": "implanta soluções \nde detecção e intrusão \nbaseada em rede",
+    "descricao": "Implante soluções para detecção de intrusão de rede em \nativos institucionais  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.10",
+    "titulo": "coleta logs de \nfluxo e tráfego de rede",
+    "descricao": "Realize a coleta dos logs de fluxo e tráfego de rede com o \nobjetivo de checar e alertar sobre dispositivos de rede que \nestejam com comportamento que fujam do padrão. em \nsua necessidade de acesso como parte de suas \nresponsabilidades.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "3.11",
+    "titulo": "ajusta limites de \nalertas de eventos de \nsegurança",
+    "descricao": "Ajuste periodicamente os limites dos alertas de eventos \nde segurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nIN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  3 \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 3: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.1",
+    "titulo": "estabelece e \nmantém um processo de \nconfiguração segura",
+    "descricao": "Estabelecer e manter um processo de configuração \nsegura para ativos corporativos (dispositivos de usuário \nfinal, incluindo portáteis e móveis; dispositivos não \ncomputacionais/IoT; e servidores) e software (sistemas \noperacionais e  \naplicações). Revisar e at ualizar a documentação \nanualmente ou quando ocorrerem mudanças \nsignificativas na organização que possam impactar esta \nmedida de segurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nIN nº 5/2021  \nN",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.2",
+    "titulo": "estabelece e \nmantém um processo de \nconfiguração segura para \na Infraestrutura de Rede",
+    "descricao": "Estabelecer e manter um processo de configuração \nsegura para dispositivos de rede. Revisar e atualizar a \ndocumentação anualmente ou quando ocorrerem \nmudanças significativas na organização que possam \nimpactar esta medida de segurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nNC 08 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.3",
+    "titulo": "configura o \nbloqueio automático de \nsessão nos ativos",
+    "descricao": "Configurar o bloqueio automático de sessão nos ativos \napós um período definido de inatividade. Para sistemas \noperacionais de uso geral, o período não deve exceder \n15 minutos. Para dispositivos móveis de usuário final, o \nperíodo não deve exceder 2 minutos.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  1,2,3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.4",
+    "titulo": "implementa e \ngerencia um firewall nos \nservidores",
+    "descricao": "Implementar e gerenciar um firewall nos servidores, onde \nhouver suporte. Exemplos de implementações incluem o \nfirewall virtual, firewall do sistema operacional ou um \nagente de firewall de terceiros .  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.5",
+    "titulo": "implementa e \ngerencia um firewall nos \ndispositivos de usuário \nfinal",
+    "descricao": "Implementar e gerenciar um firewall baseado em host ou \numa ferramenta de filtragem de porta nos dispositivos de \nusuário final, com uma regra de negação padrão que \nbloqueia todo o tráfego, exceto os serviços e portas que \nsão explicitamente permitidos.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.6",
+    "titulo": "gerencia com \nsegurança os ativos e \nsoftwares institucionais",
+    "descricao": "Gerenciar com segurança os ativos e software \ninstitucionais. Exemplos de implementações incluem \ngestão de configuração por meio de version controlled -\ninfrastructure -as-code e acesso a interfaces \nadministrativas por meio de protocolos de rede seguros, \ncomo Secure Shell (SSH) e Hypertext Transfer Protocol \nSecure (HTTPS). Não usar protocolos de gestão \ninseguros,  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  1, 2, 3  \n \n CIBERSEGURA",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.7",
+    "titulo": "gerencia contas \npadrão nos ativos e \nsoftwares institucionais",
+    "descricao": "Gerenciar contas padrão nos ativos e softwares \ninstitucionais, como root, administrador e outras contas \nde fornecedores pré -configuradas. Exemplo de \nconfiguração incluem desativar ou tornar inutilizáveis as \ncontas padrão de ativos e softwares institucionai s. Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nIN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.8",
+    "titulo": "desinstala ou \ndesativa serviços \ndesnecessários nos ativos \ne softwares  institucionais",
+    "descricao": "Desinstalar ou desativar serviços desnecessários nos \nativos e software institucionais, como o serviço de \ncompartilhamento de arquivo não utilizado, módulo de \naplicação web ou função de serviço.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.9",
+    "titulo": "configura \nservidores DNS confiáveis \nnos ativos institucionais",
+    "descricao": "Configurar servidores DNS confiáveis nos ativos \ninstitucionais. Implementar a configuração de ativos para \nusar servidores DNS controlados pelo órgão e/ou \nservidores DNS confiáveis acessíveis externamente.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.10",
+    "titulo": "impõe a \ncapacidade de limpeza \nremota nos dispositivos \nportáteis do usuário final",
+    "descricao": "Limpar remotamente os dados institucionais de \ndispositivos portáteis de usuário final de propriedade da \norganização quando for considerado apropriado, como \ndispositivos perdidos ou roubados, ou quando um \nindivíduo não trabalha mais no órgão.  Art. 6º, inciso  \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.11",
+    "titulo": "separa os \nEspaços de Trabalho nos \ndispositivos móveis",
+    "descricao": "Certificar de que a separação de espaços de trabalho \nseja usada nos dispositivos móveis de usuário final, ou \nseja, separar aplicações e dados institucionais de \naplicações e dados pessoais nos dispositivos, onde \nhouver suporte.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.12",
+    "titulo": "impõe o bloqueio \nautomático de dispositivos \nnos dispositivos portáteis \ndo usuário final",
+    "descricao": "Impor bloqueio automático de dispositivos quando houver \num número pré -definido de tentativas de autenticação \nlocal com falha nos dispositivos  portáteis de usuário final, \nquando compatível. Não permitir  mais de 20 tentativas de \nautenticação com falha em laptops, já em tablets e \nsmartphones, não permitir mais de 10 tentativas e \nautenticação com falha.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  2,3 \n \n ",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.1",
+    "titulo": "implanta e  \nmantém um  \nprograma de  \nconscientização  \nde segurança",
+    "descricao": "Criar programa de conscientização de segurança para que \ntodos os membros da força de trabalho o realizem \nregularmente com o objetivo de garantir que eles entendam \ne exibam os conhecimentos e comportamentos necessários \npara ajudar a garantir a segurança da instituição. O \nprograma de conscientização de segurança da instituição \ndeve ser comunicado de maneira contínua e envolvente.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  IN nº 6/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC ",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.2",
+    "titulo": "treina  \ncolaboradores  \npara reconhecer  \nataques de  \nengenharia social",
+    "descricao": "Treinar os colaborares sobre como identificar diferentes \nformas de ataques de engenharia social, como phishing, \ngolpes de telefone e chamadas realizadas por impostores.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  IN nº 6/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.3",
+    "titulo": "treina os  \ncolaboradores nas  \nmelhores práticas de  \nautenticação",
+    "descricao": "Treinar os colaboradores sobre a importância de habilitar \nutilizar as melhores práticas de autenticação segura como \nMFA ( Multi -factor Authentication – Autenticação de \nmúltiplos fatores), composição de senha e gestão de \ncredenciais.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.4",
+    "titulo": "treina os \ncolaboradores nas \nMelhores Práticas de \nTratamento de Dados",
+    "descricao": "Treinar os membros da força de trabalho sobre como \nidentificar e armazenar, transferir, arquivar e destruir \ninformações sensíveis (incluindo dados pessoais) \nadequadamente. Isto também inclui o treinamento sobre \npráticas recomendadas de mesa e tela limpas, (não deixar \nsenhas expostas nas mesas de trabalho e bloquear a tela \nda estação de trabalho ao se ausentar), apagar quadros \nfísicos e virtuais após reuniões e armazenar dados e ativos \ncom segurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt.",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.5",
+    "titulo": "treina os \ncolaboradores sobre as \ncausas da exposição não \nintencional de dados",
+    "descricao": "Treinar os membros da força de trabalho para estarem \ncientes das causas de exposições de dados não \nintencionais, como perder seus dispositivos móveis ou \nenviar e -mail para a pessoa errada devido ao \npreenchimento automático de e -mail.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.6",
+    "titulo": "treina os \ncolaboradores sobre \ncomo Reconhecer e \nRelatar incidentes de \nSegurança",
+    "descricao": "Treinar os colaboradores para serem capazes de identificar \nos indicadores mais comuns de um incidente e serem \ncapazes de relatar tal incidente.  Art. 6º, inciso \nVII \nArt. 46,  \n Art. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.7",
+    "titulo": "treina os \ncolaboradores sobre \ncomo identificar e \ncomunicar se os seus \nativos institucionais estão \ndesatualizados em \nrelação a segurança",
+    "descricao": "Treine os colaboradores para entender como verificar e \nrelatar patches de software desatualizados ou quaisquer \nfalhas em ferramentas e processos automatizados. É \nimportante incluir nesse treinamento a etapa de notificação \ndo pessoal de TI sobre quaisquer f alhas em processos e \nferramentas automatizadas que estejam ocorrendo.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1,2,3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.8",
+    "titulo": "treina os \ncolaboradores sobre os \nperigos de se conectar e \ntransmitir dados \ninstitucionais em redes \ninseguras",
+    "descricao": "Treine os colaboradores sobre os perigos de se conectar e \ntransmitir dados em redes inseguras para atividades \ncorporativas. Se a organização tiver funcionários remotos, o \ntreinamento deve incluir orientação para garantir que todos \nos usuários configurem com segurança sua infraestrutura \nde rede doméstic a. Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "4.9",
+    "titulo": "conduz \ntreinamento de \ncompetências e \nconscientização de \nsegurança para funções \nespecíficas",
+    "descricao": "Para colaboradores que atuem em funções específicas, \nrealize o treinamento de conscientização de segurança e \nde competências específicas para estas funções. Exemplos \nde implementações incluem cursos de administração de \nsistema seguro para profissionais de TI, treinamento de \nconscientização e prevenção de vulnerabilidades para \ndesenvolvedores de aplicações da web do OWASP e \ntreinamento avançado de conscientização de engenharia \nsocial para funções de níveis estratégico da organização  Art.",
+    "categoria": "Controle 4: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.1",
+    "titulo": "estabelece e \nmantém um inventário de \ncontas",
+    "descricao": "Estabelecer e manter um inventário de todas as contas \ngerenciadas na organização. O inventário deve incluir \ncontas de usuário e administrador. O inventário, no \nmínimo, deve conter o nome da pessoa, nome de \nusuário, datas de início/término de vínculo e \ndepa rtamento. Validar se todas as contas ativas estão \nautorizadas, trimestralmente ou com mais frequência.   Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 2/2013  \nNC \n01/IN02/NSC/GSIPR, \ne seus anexos \n(Anexo A e Ane",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.2",
+    "titulo": "estabelece e \nmantém um inventário de \ncontas de serviço",
+    "descricao": "Estabelecer e manter um inventário de contas de serviço. \nO inventário, no mínimo, deve conter o departamento \nproprietário, data de revisão e propósito. Realizar \nanálises de contas de serviço para validar se todas as \ncontas ativas estão autorizadas, em uma programação \nrecorrente, no mínimo trimestralmente ou com mais \nfrequência.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  N/A 2, 3",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.3",
+    "titulo": "usa senhas \nexclusivas",
+    "descricao": "Usar senhas exclusivas para todos os ativos \ninstitucionais. Contas que usam MFA (Autenticação \nmultifator) no mínimo senhas de 8 caracteres e uma \nsenha de 14 caracteres para contas que não usam o \nMFA.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 2/2013  1, 2, 3",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.4",
+    "titulo": "restringe \nprivilégios de \nadministrador a contas \nde administrador \ndedicadas",
+    "descricao": "Restringir os privilégios de administrador a contas de \nadministrador dedicados nos ativos institucionais. \nRealizar atividades gerais de computação, como \nnavegação na Internet, e -mail e uso do pacote de \nprodutividade, a partir da conta primária não privilegiada \ndo usuário.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  N/A 1, 2, 3",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.5",
+    "titulo": "centraliza a \ngestão de contas",
+    "descricao": "Centralizar a gestão de contas por meio de serviço de \ndiretório ou de identidade.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  N/A 2, 3",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.6",
+    "titulo": "desabilita \ncontas inativas",
+    "descricao": "Inativar ou desabilitar quaisquer contas inativas a partir \nde 45 dias de inatividade, onde for suportado.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 2/2013  1,2,3  \n \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.1",
+    "titulo": "cria e  \ngerencia o  \ninventário de  \nprovedores de  \nserviços",
+    "descricao": "Crie e gerencie o inventário de provedores de serviços. \nEste inventário deve listar todos os provedores de serviços \nda organização, incluir classificações, e conter contatos \ninstitucionais para cada provedor de serviço. Deve ser \nrealizada uma revisão e/ou atualização deste inventário \nanualmente ou quando ocorrerem mudanças significativas \ndo provedor que venham impactar a organização de forma \nsignificativa.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nIN ",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.2",
+    "titulo": "cria e gerencia \numa política de gestão \nde provedores de \nserviços",
+    "descricao": "Crie e gerencie uma política de gestão de provedores de \nserviços. Faça com que tal política trate de classificação, \ninventário, avaliação, monitoramento e \ndescomissionamento de prestadores e provedores de \nserviço da organização. Deve ser realizada uma revisão \ne/ou alteração desta política periodic amente, em casos \nespecíficos quando ocorrerem mudanças significativas na \norganização que venham impactar a organização de forma \nsignificativa.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. ",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.3",
+    "titulo": "classifica \nprovedores de serviços",
+    "descricao": "Realize a classificação de provedores de serviços. Para \nque seja realizada a classificação podem ser levadas em \nconsideração uma ou mais característica do provedor, \ncomo a sensibilidade dos dados e informações que este \nprovedor opera/gerencia, volume deste s dados e \ninformações, regulamentações aplicáveis, requisitos de \ndisponibilidade e classificação de risco. Deve ser realizada \numa \nrevisão e/ou alteração desta classificação periodicamente, \nem casos específicos quando ocorrerem mudança",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.4",
+    "titulo": "avalia \nprovedores de serviços",
+    "descricao": "Realizar a avaliação de provedores de serviços da \norganização. O escopo da avaliação deve levar em \nconsideração as diretrizes contidas na política de gestão \nde provedores de serviços além de classificações e \nrelatórios de avaliação padronizados, questionários, e \nprocessos rigorosos aplicáveis. A avaliação de provedores \nde serviço deve ser realizada de forma periódica e na \nmedida em que novos contratos estipulados ou renovados.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 5",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.5",
+    "titulo": "garante que os \ncontratos dos provedores \nde serviços contenham \nrequisitos mínimos de \nsegurança",
+    "descricao": "Fazer com que os contratos do provedor de serviços \ncontenham requisitos de segurança, alguns exemplos \ndestes requisitos de segurança são, requisitos mínimos de \nsegurança do software, resposta a incidentes de \nsegurança, criptografia e descarte de dados. Tais \nrequisitos mínimos devem ser concisos com a política de \ngestão de provedores da organização. Deve ser realizada \numa revisão dos contratos de provedores de forma \nperiódica com o objetivo de atualizar e garantir que os \nrequisitos de se",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.6",
+    "titulo": "encerra de \nforma segura o contrato \ncom o provedor de \nserviços",
+    "descricao": "Realizar de forma segura o encerramento de contrato de \nprovedores e prestadores de serviço. Algumas ações que \npossam ser utilizadas para realizar o encerramento de \ncontratos ou desligamento de prestadores são, \ndesativação de contas de usuário e serviço utilizadas \ndurante o contrato, encerramento de fluxo de dados e \ndescarte  \nseguros de dados e informações corporativas em sist emas \ndos provedores de serviço.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nI",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "5.7",
+    "titulo": "monitora \nprovedores de serviço",
+    "descricao": "Realizar a monitoração de provedores de acordo com a \npolítica de gestão dos provedores de serviços. Tal \nmonitoração pode incluir a avaliação periódica do \nprovedor, monitoração de artefatos entregues pelo \nprovedor  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  3 \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 5: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.1",
+    "titulo": "estabelece e \nmantém um inventário de \nsistemas de autenticação \ne autorização",
+    "descricao": "Estabelecer e manter um inventário dos sistemas de \nautenticação e autorização da organização, incluindo \naqueles hospedados no site local ou em um provedor de \nserviços remoto. Revisar e atualizar o inventário \nanualmente ou com mais frequência.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  \nIN nº 2/2013  \nIN nº 5/2021  \nNC \n01/IN02/NSC/GSIPR, \ne seus anexos \n(Anexo A e Anexo B)  2, 3",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.2",
+    "titulo": "estabelece um \nProcesso de Concessão \nde Acesso",
+    "descricao": "Estabelecer e seguir um processo, de preferência \nautomatizado, para conceder acesso aos ativos \ninstitucionais mediante nova contratação, concessão de \ndireitos ou mudança de função de um usuário.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  \nIN nº 2/2013  \nIN nº 5/2021  \nNC \n01/IN02/NSC/GSIPR, \ne seus anexos \n(Anexo A e Anexo B)  1, 2, 3",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.3",
+    "titulo": "estabelece um \nProcesso de Revogação \nde Acesso",
+    "descricao": "Estabelecer e seguir um processo, de preferência \nautomatizado, para revogar o acesso aos ativos \ninstitucionais, por meio da desativação de contas \nimediatamente após o encerramento, revogação de \ndireitos ou mudança de função de um usuário. Desativar \ncontas,  em vez de excluí -las, pode ser necessário para \npreservar as trilhas de auditoria.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC \n01/IN02/NSC/GSIPR, \ne seus anexos \n(Anexo A e Anexo B)  1, 2, 3  \n \n ",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.4",
+    "titulo": "exige MFA para \naplicações expostas \nexternamente",
+    "descricao": "Exigir que todas as aplicações corporativas ou de \nterceiros expostas externamente apliquem o MFA, onde \nhouver suporte. Impor o MFA por meio de um serviço de \ndiretório ou provedor de SSO é uma implementação \nsatisfatória desta medida de segurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC \n01/IN02/NSC/GSIPR, \ne seus anexos \n(Anexo A e Anexo B)  1, 2, 3",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.5",
+    "titulo": "exige MFA para \nacesso remoto à rede",
+    "descricao": "Exigir MFA para acesso remoto à rede.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC \n01/IN02/NSC/GSIPR, \ne seus anexos \n(Anexo A e Anexo B)  1, 2, 3",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.6",
+    "titulo": "exige MFA para \nacesso administrativo",
+    "descricao": "Exigir MFA para todas as contas de acesso \nadministrativo, em todos os ativos institucionais, sejam \ngerenciados no site local ou por meio de um provedor \nterceirizado.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  \nIN nº 5/2021  \nIN nº 6/2021  \n01/IN02/NSC/GSIPR, \ne seus anexos \n(Anexo A e Anexo B)  1, 2, 3  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.7",
+    "titulo": "centraliza o \ncontrole de acesso",
+    "descricao": "Centralizar o",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.8",
+    "titulo": "define e mantém \no controle de acesso \nbaseado em funções",
+    "descricao": "Definir e manter o",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.1",
+    "titulo": "estabelece e  \nmantém um  \nprocesso de  \ndesenvolvimento  \nde aplicações",
+    "descricao": "Estabelecer e manter um processo de desenvolvimento \nde aplicações seguro. Este processo deve tratar de itens \ncomo padrões de design seguro de aplicações (Security \nby Design), práticas de codificação seguras, treinamentos \npara desenvolvedores, gestão de vul nerabilidades, \nsegurança de código de terceiros e procedimentos  \nde teste de segurança de aplicação. Deve ser realizada \numa revisão e/ou alteração deste processo \nperiodicamente, em casos específicos ou quando \nocorrerem mudanças na org",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.2",
+    "titulo": "estabelece e \nmantém um processo para \naceitar e endereçar \nvulnerabilidades de \nsoftware",
+    "descricao": "Estabelecer e manter um processo de aceitação e \ntratamento de informações sobre vulnerabilidades de \nsoftware, incluindo mecanismos para que entidades \nexternas contatem o grupo de segurança da instituição. É \nimportante que o processo inclua itens como: Polí tica de \ntratamento de vulnerabilidades identificadas e relatadas, \nequipe ou profissional responsável por analisar os \nrelatórios de vulnerabilidade e um processo de entrada, \natribuição, correção e testes de correção. Como parte \ndeste p",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.3",
+    "titulo": "executa análise \nde causa raiz em \nvulnerabilidades de \nsegurança",
+    "descricao": "Executar a análise de causa raiz em vulnerabilidades de \nsegurança. A análise da causa raiz é a tarefa capaz de \navaliar os problemas subjacentes que criam \nvulnerabilidades no código da aplicação e permite que as \nequipes de desenvolvimento vão além de apenas  corrigir \nvulnerabilidades individuais conforme elas surgem.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 2,3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.4",
+    "titulo": "estabelece e \ngerencia um inventário de \ncomponentes de software \nde terceiros",
+    "descricao": "Estabelecer e gerenciar um inventário atualizado de \ncomponentes de terceiros usados no desenvolvimento, \ngeralmente chamados de “lista de materiais”, bem como \ncomponentes programados para uso futuro. Este \ninventário deve incluir quaisquer riscos que cada \ncomponente de te rceiros possa representar a \norganização. Deve ser realizada uma revisão e/ou \nalteração deste inventário periodicamente, com o objetivo \nde identificar quaisquer mudanças ou atualização nesses \ncomponentes e validar a compa",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.5",
+    "titulo": "usa componentes \nde software de terceiros \natualizados e confiáveis",
+    "descricao": "Utilizar apenas componentes de terceiros atualizados e \nconfiáveis. Quando possível, escolher bibliotecas e \nestruturas pré -estabelecidas e comprovadas que \nforneçam a segurança adequada. É importante adquirir \ntais componentes de fornecedores e fontes confiáveis ou \nrealizar a avaliação de vulnerabilidades do software antes \nde usar/adquirir.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2013  \nIN nº 5/2021  \nNC 09 \n/IN01/DSIC/GSIPR  2,3",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.6",
+    "titulo": "estabelece e \nmantém um processo para \na classificação de \nseveridade de \nvulnerabilidades",
+    "descricao": "Estabelecer e manter um processo para a classificação de \ngravidade de vulnerabilidades capaz de facilitar a \npriorização na medida em que as vulnerabilidades \ndescobertas são corrigidas. Esse processo deve incluir a \ndefinição de um nível mínimo de aceitabilidade de \nsegurança para a liberação de có digo ou aplicações. A \nclassificação de gravidade deve trazer uma forma \nsistemática de triagem de vulnerabilidades que venha a \nmelhorar a gestão de riscos e ajuda a garantir que os \nbugs mais grav",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.7",
+    "titulo": "usa modelos de \nconfigurações de \nsegurança padrão para \ninfraestrutura de \naplicações",
+    "descricao": "Utilizar modelos de configuração de segurança padrão \n(Segurança by Default) recomendados pela equipe de \nsegurança em componentes de infraestrutura de \naplicações. Isso inclui servidores subjacentes, bancos de \ndados e servidores web e se aplica a contêineres  de \nnuvem, componentes de Platform as a Service (PaaS) e \ncomponentes de Security as a Service (SaaS). Não \npermita que o software desenvolvido internamente \nenfraqueça as configurações de segurança da \norganização.  Art. 6º, inciso \nVII ",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.8",
+    "titulo": "separa sistemas \nde produção e não \nprodução",
+    "descricao": "Manter ambientes separados para sistemas de produção \ne não produção.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 2,3",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.9",
+    "titulo": "treina \ndesenvolvedores em \nconceitos de segurança de \naplicações e codificação \nsegura",
+    "descricao": "Garantir que todos os responsáveis pelo desenvolvimento \nde software recebam treinamento para escrever código \nseguro para seu ambiente de desenvolvimento e \nresponsabilidades específicas. O treinamento deve incluir \nprincípios gerais de segurança e práticas padrão de \nsegurança para aplicações. O treinamento deve ser \nrealizado periodicamente, é interessante estabelecer uma \ncultura de segurança entre os desenvolv edores.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 2,3",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.10",
+    "titulo": "aplica princípios \nde design seguro em \narquiteturas de \naplicações",
+    "descricao": "Aplicar princípios de design seguro em arquiteturas de \naplicações. Os princípios de design seguro incluem o \nconceito de privilégio mínimo e aplicação de mediação \npara validar cada operação que o usuário faz, \npromovendo o conceito de “nunca confiar nas entradas do \nusuário”. Os exemplos incluem garantir que a verificação \nexplí cita de erros seja realizada e documentada para \ntodas as entradas, incluindo tamanho, tipo de dados e \nintervalos ou formatos aceitáveis. O design seguro \ntambém sign",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.11",
+    "titulo": "aproveita os \nmódulos ou serviços \ncontrolados para \ncomponentes de \nsegurança de aplicações",
+    "descricao": "Aproveitar módulos ou serviços controlados para \ncomponentes de segurança da aplicação, como gestão de \nidentidade, criptografia e auditoria de logs. O uso de \nrecursos para plataforma em funções críticas de \nsegurança deve reduzir a carga de trabalho dos \ndese nvolvedores e minimizará a probabilidade de erros de \ndesign ou  \nimplementação. Os sistemas operacionais modernos \nfornecem mecanismos eficazes para identificação, \nautenticação e autorização e disponibilizam esses \nmecanismos para as ap",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.12",
+    "titulo": "implementa \nverificações de segurança \nem nível de código",
+    "descricao": "Utilizar ferramentas de análise estáticas e dinâmicas \ndentro do ciclo de vida da aplicação para verificar se as \npráticas de codificação seguras estão sendo utilizadas na \norganização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 3",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.13",
+    "titulo": "realiza teste de \ninvasão de aplicação",
+    "descricao": "Realizar testes de invasão em aplicações. Para \naplicações críticas, o teste de invasão autenticado é mais \nadequado para localizar vulnerabilidades de codificação e \nde negócios do que a varredura de código e o teste de \nsegurança automatizado. O teste de invasão depende da \nhabilidade do testador para manipular manu almente uma \naplicação como um usuário autenticado e não \nautenticado.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 3",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "6.14",
+    "titulo": "realiza a \nmodelagem de ameaças",
+    "descricao": "Realizar a modelagem de ameaças. A modelagem de \nameaças é o processo de identificar e abordar as falhas \nde design de segurança da aplicação em um desenho, \nantes que o código seja criado. É conduzido por \nprofissionais especialmente treinados que avaliam o \ndesign da aplicação e medem os riscos de segurança \npara cada ponto de entrada e nível de acesso. O objetivo \né mapear a aplicação, a arquitetura e a infraestrutura de \numa forma estruturada para entender todos os pontos \nfracos.  Art. 6º, ",
+    "categoria": "Controle 6: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.1",
+    "titulo": "realiza \nvarreduras \nautomatizadas de \nvulnerabilidade em ativos \ninstitucionais internos",
+    "descricao": "Realizar varreduras automatizadas de vulnerabilidade em \nativos institucionais internos trimestralmente ou com mais \nfrequência. Realizar varreduras autenticadas e não \nautenticadas, usando uma ferramenta compatível com o \nSCAP(Security Content Automation Prot ocol).  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  2, 3",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.2",
+    "titulo": "realiza \nvarreduras \nautomatizadas de \nvulnerabilidade em ativos \ninstitucionais expostos \nexternamente",
+    "descricao": "Executar varreduras de vulnerabilidade automatizadas de \nativos institucionais expostos externamente usando uma \nferramenta de varredura de vulnerabilidade compatível \ncom o SCAP. Executar varreduras mensalmente ou com \nmais frequência.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2, 3",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.3",
+    "titulo": "estabelece e \nmantém um processo de \ngestão de \nvulnerabilidade",
+    "descricao": "Estabelecer e manter um processo de gestão de \nvulnerabilidade documentado para ativos institucionais. \nRevisar e atualizar a documentação anualmente ou \nquando ocorrerem mudanças significativas na organização \nque possam impactar essa medida de segurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 1, 2, 3",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.4",
+    "titulo": "executa a gestão \nautomatizada de patches \ndo sistema operacional",
+    "descricao": "Realizar atualizações do sistema operacional em ativos \ninstitucionais por meio da gestão automatizada de patches \nmensalmente ou com mais frequência.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 1,2,3",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.5",
+    "titulo": "executa a gestão \nautomatizada de patches \nde aplicações",
+    "descricao": "Realizar atualizações de aplicações em ativos \ninstitucionais por meio da gestão automatizada de patches \nmensalmente ou com mais frequência.  Art. 6º, inciso  \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 1,2,3",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.6",
+    "titulo": "estabelece e \nmantém um processo de \nremediação",
+    "descricao": "Estabelecer e manter uma estratégia de remediação \nbaseada em risco documentada em um processo de \nremediação, com revisões mensais ou mais frequentes.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 1, 2, 3",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.7",
+    "titulo": "corrige \nvulnerabilidades \ndetectadas",
+    "descricao": "Corrigir as vulnerabilidades detectadas no software por \nmeio de processos e ferramentas mensalmente, ou mais \nfrequentemente, com base no processo de  correção.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  ------ 2,3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.1",
+    "titulo": "designa os  \ncolaboradores para  \ngerenciar o  \ntratamento de  \nincidentes",
+    "descricao": "Designar os responsáveis para gerenciar o processo de \ntratamento de incidentes da organização. A equipe de \ngestão é responsável pela coordenação e documentação \ndos esforços de resposta e recuperação a incidentes, \nesta equipe pode formada por  \ncolaboradores internos, terceirizados ou pode contar com \nos dois tipos de colabora dores. Casos em que a equipe \nfor composta somente por funcionários terceirizados, a \norganização deve designar pelo menos um colaborador \ninterno para supervisionar qu",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.2",
+    "titulo": "estabelece e \nmantém informações de \ncontato para relatar \nincidentes de segurança",
+    "descricao": "Estabelecer e manter as informações de contato das \npessoas que precisam ser informadas sobre os \nincidentes de segurança. Os contatos podem incluir \nfuncionários internos, fornecedores terceirizados, \npoliciais, provedores de seguros cibernéticos, agências \ngovernamentais relevantes, parceiros do Information \nSharing and Analysis Center (ISAC) ou outras partes \ninteressadas. Verifique os contatos periodicamente para \ngarantir que as informações estejam atualizadas.  Art. 6º, inciso \nVII \nArt. 4",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.3",
+    "titulo": "estabelece e \nmantém um processo \ninstitucional para relatar \nincidentes",
+    "descricao": "Estabelecer e manter um processo institucional para a \ncolaborares relatarem incidentes de segurança. O \nprocesso inclui cronograma de relatórios, pessoal \nresponsável por relatar, mecanismo para relatar e as \ninformações mínimas a serem relatadas. É important e \ncertificar que o processo está publicamente disponível \npara todos os colaboradores da organização. Deve ser \nrealizada uma revisão periódica deste processo ou \nquando ocorrerem mudanças significativas na \norganização que possam impacta",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.4",
+    "titulo": "estabelece e \nmantém um processo de \nresposta a incidente",
+    "descricao": "Estabelecer e manter um processo de resposta a \nincidentes que aborde funções e responsabilidades, \nrequisitos de conformidade e um plano de comunicação. \nRealize a revisão deste processo de forma periódica ou \nquando ocorrerem mudanças significativas na \norgan ização que possam impactar esta medida de \nsegurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  \nIN nº 4/2020  \nNC 05 \n/IN01/DSIC/GSIPR, \ne seu anexo  \nNC 08 \n/IN01/DSIC/GSIPR  2, 3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.5",
+    "titulo": "atribui funções e \nresponsabilidades",
+    "descricao": "Atribuir funções e responsabilidades chave para resposta \na incidentes, incluindo equipe jurídica, TI, segurança da \ninformação, instalações, relações públicas, recursos \nhumanos, equipe de resposta a incidentes conforme \naplicável. Realize  a revisão deste processo de forma \nperiódica ou quando ocorrerem mudanças significativas \nna organização que possam impactar esta medida de \nsegurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  \nNC 05 \n/IN01/DSIC/GSIPR, \n",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.6",
+    "titulo": "define \nmecanismos de \ncomunicação durante a \nresposta a incidente",
+    "descricao": "Determinar quais mecanismos primários e secundários \nserão usados para relatar um incidente e se comunicar \ndurante um incidente de segurança. Os mecanismos \npodem incluir ligações, e -mails ou cartas. Lembre -se de \nque certos mecanismos, como e -mails, podem se r \nafetados durante um incidente de segurança. Realize a \nrevisão desta medida de forma periódica ou quando \nocorrerem mudanças significativas na organização que \npossam impactar esta medida de segurança.  Art. 6º, inciso \nVII \nArt. 46,",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.7",
+    "titulo": "conduz exercícios \nde resposta a incidentes \nregularmente",
+    "descricao": "Planejar e conduzir exercícios e cenários rotineiros de \nresposta a incidentes para a equipe envolvida na \nresposta a incidentes, de forma a manter a \nconscientização e tranquilidade no caso de resposta a \nameaças reais. Os exercícios devem testar os canais de \ncomunicação, tomada de decisão e recursos  técnicos da \nequipe de resposta a incidentes, contemplando a \nutilização das ferramentas e dados disponíveis.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  \nNC 05",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.8",
+    "titulo": "realiza análises \npós-incidente",
+    "descricao": "Realizar análises pós -incidente. As análises pós -\nincidente ajudam a prevenir a recorrência do incidente \npor meio da identificação de lições aprendidas e ações \nde acompanhamento.  Art. 6º, inciso \nVII \nArt. 46, \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  \nNC 05 \n/IN01/DSIC/GSIPR, \ne seu anexo  \nNC 08 \n/IN01/DSIC/GSIPR  2, 3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "7.9",
+    "titulo": "estabelece e \nmantém limites de \nincidentes de segurança",
+    "descricao": "Estabelecer e mante r limites de incidentes de segurança, \nincluindo, no mínimo, a diferenciação entre um incidente \ne um evento. Os exemplos podem incluir: atividade \nanormal, vulnerabilidade de segurança, ameaça de \nsegurança, violação de dados, incidente de privacidade \netc. Realize a revisão desta medid a de forma periódica \nou quando ocorrerem mudanças significativas na \norganização que possam impactar esta medida de \nsegurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 5",
+    "categoria": "Controle 7: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.1",
+    "titulo": "estabelece e \nmantém um processo de \ngestão de log de \nauditoria",
+    "descricao": "Estabelecer e manter um processo de gestão de log de \nauditoria que defina os requisitos de log da organização. \nTratar da coleta, revisão e retenção de logs de auditoria \npara ativos institucionais. Revisar e atualizar a \ndocumentação anualmente ou quando oco rrerem \nmudanças significativas na instituição que possam \nimpactar esta medida de segurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  \nIN nº 4/2020  \nIN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/I",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.2",
+    "titulo": "garante o \narmazenamento adequado \ndo registro de auditoria",
+    "descricao": "Certificar de que os destinos dos logs mantenham \narmazenamento adequado para cumprir o processo de \ngestão de log de auditoria da organização  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47, \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  1,2,3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.3",
+    "titulo": "padroniza a \nsincronização de tempo",
+    "descricao": "Padronizar a sincronização de tempo. Configurar pelo \nmenos duas fontes de tempo sincronizadas nos ativos \ninstitucionais , onde houver suporte.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  2,3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.4",
+    "titulo": "retém os logs de \nauditoria",
+    "descricao": "Reter os logs de auditoria em ativos institucionais por no \nmínimo 90 dias.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.5",
+    "titulo": "coleta logs de \nauditoria",
+    "descricao": "Coletar logs de auditoria. Certificar de que o log, de acordo \ncom o processo de gestão de log de auditoria da \norganização, tenha sido habilitado em todos os ativos.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  1, 2, 3  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.6",
+    "titulo": "coleta logs de \nauditoria detalhados",
+    "descricao": "Configurar o log de auditoria detalhado para ativos \ninstitucionais contendo dados sensíveis. Incluir a origem \ndo evento, data, nome de usuário, carimbo de data/hora, \nendereços de origem, endereços de destino e outros \nelementos úteis que podem ajudar em uma investigação \nforense.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.7",
+    "titulo": "coleta logs de \nauditoria de consulta \nDNS",
+    "descricao": "Habilitar o registro de log de consulta do servidor DNS \n(Domain Name  System) para detectar pesquisas de \nnomes de host para domínios maliciosos conhecidos.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.8",
+    "titulo": "coleta logs de \nauditoria de requisição de \nURL",
+    "descricao": "Coletar logs de auditoria de requisição de URL em ativos \ninstitucionais, quando apropriado e suportado.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.9",
+    "titulo": "coleta logs de \nauditoria de linha de \ncomando",
+    "descricao": "Coletar logs de auditoria de linha de comando. Exemplos \nde implementação incluem  a coleta de log de auditoria do \nPowerShell, BASH, terminais administrativos remotos.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.10",
+    "titulo": "centraliza os logs \nde auditoria",
+    "descricao": "Centralizar, na medida do possível, a coleta e retenção de \nlogs de auditoria nos ativos institucionais.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.11",
+    "titulo": "conduz revisões \nde log de auditoria",
+    "descricao": "Realizar análises de logs de auditoria para detectar \nanomalias ou eventos anormais que possam indicar uma \nameaça potencial. Realizar revisões semanalmente ou \ncom mais frequência.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.12",
+    "titulo": "coleta logs do \nprovedor de serviços",
+    "descricao": "Coletar logs do provedor de serviços. Exemplos de \nimplementações incluem coleta de eventos de \nautenticação e autorização, eventos de criação e de \ndescarte de dados e eventos de gestão de usuários.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 21 \n/IN01/DSIC/GSIPR  3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.1",
+    "titulo": "elabora e  \nmantém um  \nprograma de  \nteste de  \ninvasão",
+    "descricao": "Estabelecer um programa para testes de invasão \nadequado ao tamanho, complexidade e maturidade da \norganização. O programa de teste de invasão deve levar \nem consideração o escopo do teste como rede, aplicação \nweb, API,",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.2",
+    "titulo": "realiza testes  \nde invasão  \nexternos  \nperiódicos",
+    "descricao": "Conduzir testes de invasão e externos regularmente. A \nteste de invasão externo deve ser reconhecido pela \norganização e deve ser capaz de detectar informações \nexploráveis que possam impactar a segurança da \norganização. Tal teste deve ser realizado por profissionais \nqualificados.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2, 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.3",
+    "titulo": "realiza testes de \ninvasão internos \nperiódicos",
+    "descricao": "Realize testes de invasão internos periódicos com base \nnos requisitos do programa de testes de invasão.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49, \nArt. 50  ------ 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.4",
+    "titulo": "corrige os \nresultados dos testes de \ninvasão",
+    "descricao": "Corrigir as descobertas do teste de invasão com base na \npolítica da organização para o escopo e a priorização de \ncorreção de vulnerabilidades.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2, 3",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "8.5",
+    "titulo": "valida as \nmedidas  \nde segurança",
+    "descricao": "Validar as medidas de segurança após cada teste de \ninvasão. Se necessário, modificar os conjuntos de regras e \nrecursos para detectar as técnicas usadas durante o teste.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 3 \n \n  \n \n ANEXO V – TABELA DE",
+    "categoria": "Controle 8: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "9.1",
+    "titulo": "garante o uso \napenas de navegadores e \nclientes de e -mail \nsuportados plenamente",
+    "descricao": "Certificar de que apenas navegadores e clientes de e -mail \nsuportados plenamente tenham permissão para executar \nna organização, usando apenas a versão mais recente dos \nnavegadores e clientes de e -mail fornecidos pelo \nfornecedor.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  1,2,3",
+    "categoria": "Controle 9: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "9.2",
+    "titulo": "usa serviços de \nfiltragem de DNS",
+    "descricao": "Usar os serviços de filtragem de DNS em todos os ativos \ninstitucionais para bloquear o acesso a domínios mal -\nintencionados conhecidos.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  1, 2, 3",
+    "categoria": "Controle 9: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "9.3",
+    "titulo": "mantém e impõe \nfiltros de URL baseados \nem rede",
+    "descricao": "Impor e atualizar filtros de URL baseados em rede para \nlimitar um ativo institucional de se conectar a sites \npotencialmente maliciosos ou não aprovados. Exemplos de \nimplementações incluem filtragem baseada em categoria, \nfiltragem baseada em reputação ou at ravés do uso de listas \nde bloqueio. Aplique filtros para todos os ativos \ninstitucionais.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  2, 3",
+    "categoria": "Controle 9: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "9.4",
+    "titulo": "restringe \nextensões de cliente de \ne-mail e navegador \ndesnecessárias ou não \nautorizadas",
+    "descricao": "Restringir, seja desinstalando ou desabilitando, quaisquer \nplug-ins de cliente de e -mail ou navegador, extensões e \naplicações complementares não autorizados ou \ndesnecessários.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  2, 3",
+    "categoria": "Controle 9: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "9.5",
+    "titulo": "implementa o \nDMARC",
+    "descricao": "Para diminuir a chance de e -mails forjados ou modificados \nde domínios válidos, implemente a política e verificação \nDMARC, começando com a implementação dos padrões \nSender Policy Framework (SPF) e DomainKeys Identified \nMail (DKIM)  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  2,3",
+    "categoria": "Controle 9: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "9.6",
+    "titulo": "bloqueia tipos de \narquivo desnecessários",
+    "descricao": "Bloquear tipos de arquivo desnecessários que tentem \nentrar no gateway de e -mail do órgão.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  2,3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 9: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "9.7",
+    "titulo": "implanta e \nmantém proteções \nantimalware de servidor \nde e-mail",
+    "descricao": "Implantar e manter proteção antimalware  de servidores de \ne-mail, como varredura de anexos e/ou sandbox.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 1/2020  3 \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 9: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "10.1",
+    "titulo": "instala e  \nmantém um  \nsoftware antimalware",
+    "descricao": "Instalar e manter um software anti -malware  em todos os \nativos cibernéticos da organização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 10: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "10.2",
+    "titulo": "configura \natualizações automáticas \nde assinatura \nantimalware",
+    "descricao": "Realizar a configuração de atualizações automáticas para \nas assinaturas anti -malware em todos os ativos \ncibernéticos da organização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 10: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "10.3",
+    "titulo": "desabilita a \nexecução e reprodução \nautomática para mídias \nremovíveis",
+    "descricao": "Configurar os dispositivos para a não execução e \nreprodução automática de mídias removíveis.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  1,2,3",
+    "categoria": "Controle 10: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "10.4",
+    "titulo": "habilita funções \nantiexploração",
+    "descricao": "Habilitar funcionalidades \"anti -exploits\" tais como Data \nExecution Prevention (DEP) ou Address  Space Layout \nRandomization (ASLR) que estejam disponíveis no sistema \noperacional, ou implantar ferramentas apropriadas que \npossam ser configuradas para aplicar proteções sobre um \nconjunto mais amplo de aplicações e executáveis.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  2,3",
+    "categoria": "Controle 10: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "10.5",
+    "titulo": "gerencia o \nsoftware antimalware de \nmaneira centralizada",
+    "descricao": "Utilizar software anti -malware  gerenciado centralmente \npara monitorar e defender continuamente cada uma das \nestações de trabalho e servidores da organização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 10: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "10.6",
+    "titulo": "configura a \nvarredura antimalware \nautomática de mídia \nremovível",
+    "descricao": "Configure o software anti -malware para verificar \nautomaticamente a mídia removível.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  2, 3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 10: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "10.7",
+    "titulo": "utiliza software \nantimalware baseado em \ncomportamento",
+    "descricao": "Utilizar software anti -malware que consiga monitorar e \nidentificar comportamentos fora do comum dos \nequipamentos da organização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  2,3 \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 10: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "11.1",
+    "titulo": "protege os \ndados de recuperação",
+    "descricao": "Garantir que os dados de recuperação sejam protegidos \nadequadamente por meio de segurança física ou \ncriptografia quando são armazenados, bem como quando \nsão movidos pela rede. Isso inclui backups remotos e \nserviços em nuvem. Devem ser  \nestabelecidos control es que garantam que os dados de \nrecuperação sejam equivalentes aos dados originais.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  1, 2, 3",
+    "categoria": "Controle 11: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "11.2",
+    "titulo": "estabelece e  \nmantém um  \nprocesso de  \nrecuperação de  \ndados",
+    "descricao": "Estabelecer e manter um processo de recuperação de \ndados. Tal processo deve descrever em seu escopo as \natividades de recuperação de dados, priorização da \nrecuperação e a atividade de segurança dos dados de \nbackup. Periodicamente, deve ser realizada uma rev isão \ne/ou atualização deste processo, assim como em casos \nespecíficos quando ocorrerem mudanças significativas na \norganização que venham impactar a organização de forma \nsignificativa.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 4",
+    "categoria": "Controle 11: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "11.3",
+    "titulo": "executa backups \nautomatizados",
+    "descricao": "Garantir que todos os dados dos sistemas tenham cópias \nde segurança (backups) realizadas automaticamente e de \nforma regular.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 1, 2, 3",
+    "categoria": "Controle 11: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "11.4",
+    "titulo": "estabelece e \nmantém uma instância \nisolada de dados de \nrecuperação",
+    "descricao": "Criar e manter pelo menos uma instância isolada dos \ndados de recuperação. Alguns exemplos deste tipo de \nimplementação são",
+    "categoria": "Controle 11: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "11.5",
+    "titulo": "testa os dados \nde recuperação",
+    "descricao": "Realizar o teste de integridade dos dados na mídia de \nbackup regularmente, executando um processo de \nrestauração de dados para garantir que o backup esteja \nfuncionando corretamente.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2, 3 \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 11: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "12.1",
+    "titulo": "elabora e \nmantém diagramas de \narquitetura",
+    "descricao": "Elaborar e manter diagramas e demais documentações da \narquitetura de rede da organização. A revisão destas \ndocumentações deve ser realizada de forma periódica ou \nquando ocorrerem mudanças que possam impactar tais \nartefatos.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  2, 3",
+    "categoria": "Controle 12: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "12.2",
+    "titulo": "garante que a \ninfraestrutura de rede \nestá atualizada",
+    "descricao": "Garantir que a infraestrutura de rede da organização esteja \nsempre atualizada. Deve ser realizada uma revisão das \nversões de software de forma periódica, ou quando for \nidentificada uma vulnerabilidade que eleve o risco da \norganização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 1,2,3",
+    "categoria": "Controle 12: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "12.3",
+    "titulo": "garante níveis \nde segurança para a \narquitetura de rede",
+    "descricao": "Garantir que a arquitetura de rede se mantenha segura. É \ninteressante buscar implementar políticas de segurança \ncomo segmentação de rede, privilégio mínimo e níveis \nbásicos de disponibilidade.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  2, 3",
+    "categoria": "Controle 12: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "12.4",
+    "titulo": "gerencia a \ninfraestrutura de rede e \nsegurança",
+    "descricao": "Implementar e gerenciar com segurança a infraestrutura \nde rede da organização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2,3",
+    "categoria": "Controle 12: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "12.5",
+    "titulo": "centraliza a \nautenticação, autorização \ne auditoria de rede \n(AAA)",
+    "descricao": "Implementar a centralização de (AAA) de rede.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  2, 3",
+    "categoria": "Controle 12: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "12.6",
+    "titulo": "utiliza protocolos \nde comunicação e gestão \nde rede seguros",
+    "descricao": "Implementar protocolos de comunicação e rede seguros.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  2,3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 12: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "12.7",
+    "titulo": "garante que os \ndispositivos remotos \nutilizem uma VPN e se \nconectem em uma \ninfraestrutura AAA \nsegura da organização",
+    "descricao": "Fazer com que os usuários se autentiquem em serviços de \nautenticação e VPN gerenciados pela organização antes \nde acessar os dispositivos e recursos da organização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2, 3",
+    "categoria": "Controle 12: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "12.8",
+    "titulo": "utiliza e mantém \nrecursos cibernéticos \ndedicados para todo o \ntrabalho administrativo",
+    "descricao": "Habilitar a coleta de Netflow  e registros de log em cada um \ndos dispositivos existentes para a execução de tarefas \nadministrativas, utilize e mantenha recursos cibernéticos \ndedicados, estes devem estar fisicamente ou logicamente \nseparados e seguros. É importante que tais recursos \nsejam segmentados da rede primária  \nda organização, e não deve se r permitido o acesso a rede \nexterna da organização. fronteiras da rede.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 3",
+    "categoria": "Controle 12: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.1",
+    "titulo": "realiza filtragem \nde tráfego entre os \nsegmentos de rede",
+    "descricao": "Realize a filtragem de tráfego entre os segmentos de \nrede.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.2",
+    "titulo": "aplica o \ngerenciamento de controle \nde acesso em ativos \nremotos",
+    "descricao": "Aplique o gerenciamento de",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.3",
+    "titulo": "implanta soluções \npara prevenção de \nintrusão baseada em \nhost",
+    "descricao": "Implante uma solução para prevenção de intrusão \nbaseada em host e ativos institucionais, preferencialmente \ncom suporte do fornecedor.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  3",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.4",
+    "titulo": "implanta  \nsoluções para  \nprevenção de  \nintrusão de rede",
+    "descricao": "Implante uma solução para prevenção de intrusão \nbaseada em rede, preferencialmente com suporte do \nfornecedor.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  3",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.5",
+    "titulo": "implanta controle \nde acesso a nível de \nporta",
+    "descricao": "Implante o",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.6",
+    "titulo": "realiza a  \nfiltragem de  \ncamada de  \naplicação",
+    "descricao": "Realize a filtragem de camada de aplicação. Exemplos de \nimplementações são proxy de filtragem, firewall desta \ncamada ou gateway.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nIN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.7",
+    "titulo": "centraliza  \nalertas de  \neventos de  \nsegurança",
+    "descricao": "Centralize os alertas de eventos de segurança em ativos \ninstitucionais para que a organização consiga realizar a \ncorrelação e análise do log. Uma boa prática é o uso de \num SIEM que inclua alertas de correlação de eventos \ndefinidos pelo fornecedor. Outra boa prática é a adoção \nde uma platafor ma de análise de log configurada com \naletas de correlação relevantes para a segurança \ncibernética.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSI",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.8",
+    "titulo": "implanta  \nsoluções de  \ndetecção e  \nintrusão baseada  \nem host",
+    "descricao": "Implante soluções para detecção de intrusão baseada em \nhost em ativos institucionais  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.9",
+    "titulo": "implanta soluções \nde detecção e intrusão \nbaseada em rede",
+    "descricao": "Implante soluções para detecção de intrusão de rede em \nativos institucionais  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.10",
+    "titulo": "coleta logs de \nfluxo e tráfego de rede",
+    "descricao": "Realize a coleta dos logs de fluxo e tráfego de rede com o \nobjetivo de checar e alertar sobre dispositivos de rede que \nestejam com comportamento que fujam do padrão. em \nsua necessidade de acesso como parte de suas \nresponsabilidades.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  2, 3",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "13.11",
+    "titulo": "ajusta limites de \nalertas de eventos de \nsegurança",
+    "descricao": "Ajuste periodicamente os limites dos alertas de eventos \nde segurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nIN nº 5/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 12 \n/IN01/DSIC/GSIPR  3 \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 13: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "14.1",
+    "titulo": "implanta e  \nmantém um  \nprograma de  \nconscientização  \nde segurança",
+    "descricao": "Criar programa de conscientização de segurança para que \ntodos os membros da força de trabalho o realizem \nregularmente com o objetivo de garantir que eles entendam \ne exibam os conhecimentos e comportamentos necessários \npara ajudar a garantir a segurança da instituição. O \nprograma de conscientização de segurança da instituição \ndeve ser comunicado de maneira contínua e envolvente.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  IN nº 6/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC ",
+    "categoria": "Controle 14: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "14.2",
+    "titulo": "treina  \ncolaboradores  \npara reconhecer  \nataques de  \nengenharia social",
+    "descricao": "Treinar os colaborares sobre como identificar diferentes \nformas de ataques de engenharia social, como phishing, \ngolpes de telefone e chamadas realizadas por impostores.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  IN nº 6/2021  \nNC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 14: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "14.3",
+    "titulo": "treina os  \ncolaboradores nas  \nmelhores práticas de  \nautenticação",
+    "descricao": "Treinar os colaboradores sobre a importância de habilitar \nutilizar as melhores práticas de autenticação segura como \nMFA ( Multi -factor Authentication – Autenticação de \nmúltiplos fatores), composição de senha e gestão de \ncredenciais.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 14: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "14.4",
+    "titulo": "treina os \ncolaboradores nas \nMelhores Práticas de \nTratamento de Dados",
+    "descricao": "Treinar os membros da força de trabalho sobre como \nidentificar e armazenar, transferir, arquivar e destruir \ninformações sensíveis (incluindo dados pessoais) \nadequadamente. Isto também inclui o treinamento sobre \npráticas recomendadas de mesa e tela limpas, (não deixar \nsenhas expostas nas mesas de trabalho e bloquear a tela \nda estação de trabalho ao se ausentar), apagar quadros \nfísicos e virtuais após reuniões e armazenar dados e ativos \ncom segurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt.",
+    "categoria": "Controle 14: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "14.5",
+    "titulo": "treina os \ncolaboradores sobre as \ncausas da exposição não \nintencional de dados",
+    "descricao": "Treinar os membros da força de trabalho para estarem \ncientes das causas de exposições de dados não \nintencionais, como perder seus dispositivos móveis ou \nenviar e -mail para a pessoa errada devido ao \npreenchimento automático de e -mail.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 14: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "14.6",
+    "titulo": "treina os \ncolaboradores sobre \ncomo Reconhecer e \nRelatar incidentes de \nSegurança",
+    "descricao": "Treinar os colaboradores para serem capazes de identificar \nos indicadores mais comuns de um incidente e serem \ncapazes de relatar tal incidente.  Art. 6º, inciso \nVII \nArt. 46,  \n Art. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 14: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "14.7",
+    "titulo": "treina os \ncolaboradores sobre \ncomo identificar e \ncomunicar se os seus \nativos institucionais estão \ndesatualizados em \nrelação a segurança",
+    "descricao": "Treine os colaboradores para entender como verificar e \nrelatar patches de software desatualizados ou quaisquer \nfalhas em ferramentas e processos automatizados. É \nimportante incluir nesse treinamento a etapa de notificação \ndo pessoal de TI sobre quaisquer f alhas em processos e \nferramentas automatizadas que estejam ocorrendo.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1,2,3",
+    "categoria": "Controle 14: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "14.8",
+    "titulo": "treina os \ncolaboradores sobre os \nperigos de se conectar e \ntransmitir dados \ninstitucionais em redes \ninseguras",
+    "descricao": "Treine os colaboradores sobre os perigos de se conectar e \ntransmitir dados em redes inseguras para atividades \ncorporativas. Se a organização tiver funcionários remotos, o \ntreinamento deve incluir orientação para garantir que todos \nos usuários configurem com segurança sua infraestrutura \nde rede doméstic a. Art. 6º, inciso \nVII \nArt. 46,  \nArt. 50  NC 08 \n/IN01/DSIC/GSIPR  \nNC 17 \n/IN01/DSIC/GSIPR  \nNC 18 \n/IN01/DSIC/GSIPR  1, 2, 3",
+    "categoria": "Controle 14: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "14.9",
+    "titulo": "conduz \ntreinamento de \ncompetências e \nconscientização de \nsegurança para funções \nespecíficas",
+    "descricao": "Para colaboradores que atuem em funções específicas, \nrealize o treinamento de conscientização de segurança e \nde competências específicas para estas funções. Exemplos \nde implementações incluem cursos de administração de \nsistema seguro para profissionais de TI, treinamento de \nconscientização e prevenção de vulnerabilidades para \ndesenvolvedores de aplicações da web do OWASP e \ntreinamento avançado de conscientização de engenharia \nsocial para funções de níveis estratégico da organização  Art.",
+    "categoria": "Controle 14: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "15.1",
+    "titulo": "cria e  \ngerencia o  \ninventário de  \nprovedores de  \nserviços",
+    "descricao": "Crie e gerencie o inventário de provedores de serviços. \nEste inventário deve listar todos os provedores de serviços \nda organização, incluir classificações, e conter contatos \ninstitucionais para cada provedor de serviço. Deve ser \nrealizada uma revisão e/ou atualização deste inventário \nanualmente ou quando ocorrerem mudanças significativas \ndo provedor que venham impactar a organização de forma \nsignificativa.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nIN ",
+    "categoria": "Controle 15: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "15.2",
+    "titulo": "cria e gerencia \numa política de gestão \nde provedores de \nserviços",
+    "descricao": "Crie e gerencie uma política de gestão de provedores de \nserviços. Faça com que tal política trate de classificação, \ninventário, avaliação, monitoramento e \ndescomissionamento de prestadores e provedores de \nserviço da organização. Deve ser realizada uma revisão \ne/ou alteração desta política periodic amente, em casos \nespecíficos quando ocorrerem mudanças significativas na \norganização que venham impactar a organização de forma \nsignificativa.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. ",
+    "categoria": "Controle 15: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "15.3",
+    "titulo": "classifica \nprovedores de serviços",
+    "descricao": "Realize a classificação de provedores de serviços. Para \nque seja realizada a classificação podem ser levadas em \nconsideração uma ou mais característica do provedor, \ncomo a sensibilidade dos dados e informações que este \nprovedor opera/gerencia, volume deste s dados e \ninformações, regulamentações aplicáveis, requisitos de \ndisponibilidade e classificação de risco. Deve ser realizada \numa \nrevisão e/ou alteração desta classificação periodicamente, \nem casos específicos quando ocorrerem mudança",
+    "categoria": "Controle 15: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "15.4",
+    "titulo": "avalia \nprovedores de serviços",
+    "descricao": "Realizar a avaliação de provedores de serviços da \norganização. O escopo da avaliação deve levar em \nconsideração as diretrizes contidas na política de gestão \nde provedores de serviços além de classificações e \nrelatórios de avaliação padronizados, questionários, e \nprocessos rigorosos aplicáveis. A avaliação de provedores \nde serviço deve ser realizada de forma periódica e na \nmedida em que novos contratos estipulados ou renovados.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 5",
+    "categoria": "Controle 15: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "15.5",
+    "titulo": "garante que os \ncontratos dos provedores \nde serviços contenham \nrequisitos mínimos de \nsegurança",
+    "descricao": "Fazer com que os contratos do provedor de serviços \ncontenham requisitos de segurança, alguns exemplos \ndestes requisitos de segurança são, requisitos mínimos de \nsegurança do software, resposta a incidentes de \nsegurança, criptografia e descarte de dados. Tais \nrequisitos mínimos devem ser concisos com a política de \ngestão de provedores da organização. Deve ser realizada \numa revisão dos contratos de provedores de forma \nperiódica com o objetivo de atualizar e garantir que os \nrequisitos de se",
+    "categoria": "Controle 15: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "15.6",
+    "titulo": "encerra de \nforma segura o contrato \ncom o provedor de \nserviços",
+    "descricao": "Realizar de forma segura o encerramento de contrato de \nprovedores e prestadores de serviço. Algumas ações que \npossam ser utilizadas para realizar o encerramento de \ncontratos ou desligamento de prestadores são, \ndesativação de contas de usuário e serviço utilizadas \ndurante o contrato, encerramento de fluxo de dados e \ndescarte  \nseguros de dados e informações corporativas em sist emas \ndos provedores de serviço.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 4/2020  \nI",
+    "categoria": "Controle 15: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "15.7",
+    "titulo": "monitora \nprovedores de serviço",
+    "descricao": "Realizar a monitoração de provedores de acordo com a \npolítica de gestão dos provedores de serviços. Tal \nmonitoração pode incluir a avaliação periódica do \nprovedor, monitoração de artefatos entregues pelo \nprovedor  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 5/2021  3 \n  \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 15: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.1",
+    "titulo": "estabelece e  \nmantém um  \nprocesso de  \ndesenvolvimento  \nde aplicações",
+    "descricao": "Estabelecer e manter um processo de desenvolvimento \nde aplicações seguro. Este processo deve tratar de itens \ncomo padrões de design seguro de aplicações (Security \nby Design), práticas de codificação seguras, treinamentos \npara desenvolvedores, gestão de vul nerabilidades, \nsegurança de código de terceiros e procedimentos  \nde teste de segurança de aplicação. Deve ser realizada \numa revisão e/ou alteração deste processo \nperiodicamente, em casos específicos ou quando \nocorrerem mudanças na org",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.2",
+    "titulo": "estabelece e \nmantém um processo para \naceitar e endereçar \nvulnerabilidades de \nsoftware",
+    "descricao": "Estabelecer e manter um processo de aceitação e \ntratamento de informações sobre vulnerabilidades de \nsoftware, incluindo mecanismos para que entidades \nexternas contatem o grupo de segurança da instituição. É \nimportante que o processo inclua itens como: Polí tica de \ntratamento de vulnerabilidades identificadas e relatadas, \nequipe ou profissional responsável por analisar os \nrelatórios de vulnerabilidade e um processo de entrada, \natribuição, correção e testes de correção. Como parte \ndeste p",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.3",
+    "titulo": "executa análise \nde causa raiz em \nvulnerabilidades de \nsegurança",
+    "descricao": "Executar a análise de causa raiz em vulnerabilidades de \nsegurança. A análise da causa raiz é a tarefa capaz de \navaliar os problemas subjacentes que criam \nvulnerabilidades no código da aplicação e permite que as \nequipes de desenvolvimento vão além de apenas  corrigir \nvulnerabilidades individuais conforme elas surgem.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 2,3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.4",
+    "titulo": "estabelece e \ngerencia um inventário de \ncomponentes de software \nde terceiros",
+    "descricao": "Estabelecer e gerenciar um inventário atualizado de \ncomponentes de terceiros usados no desenvolvimento, \ngeralmente chamados de “lista de materiais”, bem como \ncomponentes programados para uso futuro. Este \ninventário deve incluir quaisquer riscos que cada \ncomponente de te rceiros possa representar a \norganização. Deve ser realizada uma revisão e/ou \nalteração deste inventário periodicamente, com o objetivo \nde identificar quaisquer mudanças ou atualização nesses \ncomponentes e validar a compa",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.5",
+    "titulo": "usa componentes \nde software de terceiros \natualizados e confiáveis",
+    "descricao": "Utilizar apenas componentes de terceiros atualizados e \nconfiáveis. Quando possível, escolher bibliotecas e \nestruturas pré -estabelecidas e comprovadas que \nforneçam a segurança adequada. É importante adquirir \ntais componentes de fornecedores e fontes confiáveis ou \nrealizar a avaliação de vulnerabilidades do software antes \nde usar/adquirir.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2013  \nIN nº 5/2021  \nNC 09 \n/IN01/DSIC/GSIPR  2,3",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.6",
+    "titulo": "estabelece e \nmantém um processo para \na classificação de \nseveridade de \nvulnerabilidades",
+    "descricao": "Estabelecer e manter um processo para a classificação de \ngravidade de vulnerabilidades capaz de facilitar a \npriorização na medida em que as vulnerabilidades \ndescobertas são corrigidas. Esse processo deve incluir a \ndefinição de um nível mínimo de aceitabilidade de \nsegurança para a liberação de có digo ou aplicações. A \nclassificação de gravidade deve trazer uma forma \nsistemática de triagem de vulnerabilidades que venha a \nmelhorar a gestão de riscos e ajuda a garantir que os \nbugs mais grav",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.7",
+    "titulo": "usa modelos de \nconfigurações de \nsegurança padrão para \ninfraestrutura de \naplicações",
+    "descricao": "Utilizar modelos de configuração de segurança padrão \n(Segurança by Default) recomendados pela equipe de \nsegurança em componentes de infraestrutura de \naplicações. Isso inclui servidores subjacentes, bancos de \ndados e servidores web e se aplica a contêineres  de \nnuvem, componentes de Platform as a Service (PaaS) e \ncomponentes de Security as a Service (SaaS). Não \npermita que o software desenvolvido internamente \nenfraqueça as configurações de segurança da \norganização.  Art. 6º, inciso \nVII ",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.8",
+    "titulo": "separa sistemas \nde produção e não \nprodução",
+    "descricao": "Manter ambientes separados para sistemas de produção \ne não produção.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 2,3",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.9",
+    "titulo": "treina \ndesenvolvedores em \nconceitos de segurança de \naplicações e codificação \nsegura",
+    "descricao": "Garantir que todos os responsáveis pelo desenvolvimento \nde software recebam treinamento para escrever código \nseguro para seu ambiente de desenvolvimento e \nresponsabilidades específicas. O treinamento deve incluir \nprincípios gerais de segurança e práticas padrão de \nsegurança para aplicações. O treinamento deve ser \nrealizado periodicamente, é interessante estabelecer uma \ncultura de segurança entre os desenvolv edores.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 2,3",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.10",
+    "titulo": "aplica princípios \nde design seguro em \narquiteturas de \naplicações",
+    "descricao": "Aplicar princípios de design seguro em arquiteturas de \naplicações. Os princípios de design seguro incluem o \nconceito de privilégio mínimo e aplicação de mediação \npara validar cada operação que o usuário faz, \npromovendo o conceito de “nunca confiar nas entradas do \nusuário”. Os exemplos incluem garantir que a verificação \nexplí cita de erros seja realizada e documentada para \ntodas as entradas, incluindo tamanho, tipo de dados e \nintervalos ou formatos aceitáveis. O design seguro \ntambém sign",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.11",
+    "titulo": "aproveita os \nmódulos ou serviços \ncontrolados para \ncomponentes de \nsegurança de aplicações",
+    "descricao": "Aproveitar módulos ou serviços controlados para \ncomponentes de segurança da aplicação, como gestão de \nidentidade, criptografia e auditoria de logs. O uso de \nrecursos para plataforma em funções críticas de \nsegurança deve reduzir a carga de trabalho dos \ndese nvolvedores e minimizará a probabilidade de erros de \ndesign ou  \nimplementação. Os sistemas operacionais modernos \nfornecem mecanismos eficazes para identificação, \nautenticação e autorização e disponibilizam esses \nmecanismos para as ap",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.12",
+    "titulo": "implementa \nverificações de segurança \nem nível de código",
+    "descricao": "Utilizar ferramentas de análise estáticas e dinâmicas \ndentro do ciclo de vida da aplicação para verificar se as \npráticas de codificação seguras estão sendo utilizadas na \norganização.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 3",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.13",
+    "titulo": "realiza teste de \ninvasão de aplicação",
+    "descricao": "Realizar testes de invasão em aplicações. Para \naplicações críticas, o teste de invasão autenticado é mais \nadequado para localizar vulnerabilidades de codificação e \nde negócios do que a varredura de código e o teste de \nsegurança automatizado. O teste de invasão depende da \nhabilidade do testador para manipular manu almente uma \naplicação como um usuário autenticado e não \nautenticado.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  --- 3",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "16.14",
+    "titulo": "realiza a \nmodelagem de ameaças",
+    "descricao": "Realizar a modelagem de ameaças. A modelagem de \nameaças é o processo de identificar e abordar as falhas \nde design de segurança da aplicação em um desenho, \nantes que o código seja criado. É conduzido por \nprofissionais especialmente treinados que avaliam o \ndesign da aplicação e medem os riscos de segurança \npara cada ponto de entrada e nível de acesso. O objetivo \né mapear a aplicação, a arquitetura e a infraestrutura de \numa forma estruturada para entender todos os pontos \nfracos.  Art. 6º, ",
+    "categoria": "Controle 16: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "17.1",
+    "titulo": "designa os  \ncolaboradores para  \ngerenciar o  \ntratamento de  \nincidentes",
+    "descricao": "Designar os responsáveis para gerenciar o processo de \ntratamento de incidentes da organização. A equipe de \ngestão é responsável pela coordenação e documentação \ndos esforços de resposta e recuperação a incidentes, \nesta equipe pode formada por  \ncolaboradores internos, terceirizados ou pode contar com \nos dois tipos de colabora dores. Casos em que a equipe \nfor composta somente por funcionários terceirizados, a \norganização deve designar pelo menos um colaborador \ninterno para supervisionar qu",
+    "categoria": "Controle 17: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "17.2",
+    "titulo": "estabelece e \nmantém informações de \ncontato para relatar \nincidentes de segurança",
+    "descricao": "Estabelecer e manter as informações de contato das \npessoas que precisam ser informadas sobre os \nincidentes de segurança. Os contatos podem incluir \nfuncionários internos, fornecedores terceirizados, \npoliciais, provedores de seguros cibernéticos, agências \ngovernamentais relevantes, parceiros do Information \nSharing and Analysis Center (ISAC) ou outras partes \ninteressadas. Verifique os contatos periodicamente para \ngarantir que as informações estejam atualizadas.  Art. 6º, inciso \nVII \nArt. 4",
+    "categoria": "Controle 17: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "17.3",
+    "titulo": "estabelece e \nmantém um processo \ninstitucional para relatar \nincidentes",
+    "descricao": "Estabelecer e manter um processo institucional para a \ncolaborares relatarem incidentes de segurança. O \nprocesso inclui cronograma de relatórios, pessoal \nresponsável por relatar, mecanismo para relatar e as \ninformações mínimas a serem relatadas. É important e \ncertificar que o processo está publicamente disponível \npara todos os colaboradores da organização. Deve ser \nrealizada uma revisão periódica deste processo ou \nquando ocorrerem mudanças significativas na \norganização que possam impacta",
+    "categoria": "Controle 17: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "17.4",
+    "titulo": "estabelece e \nmantém um processo de \nresposta a incidente",
+    "descricao": "Estabelecer e manter um processo de resposta a \nincidentes que aborde funções e responsabilidades, \nrequisitos de conformidade e um plano de comunicação. \nRealize a revisão deste processo de forma periódica ou \nquando ocorrerem mudanças significativas na \norgan ização que possam impactar esta medida de \nsegurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  \nIN nº 4/2020  \nNC 05 \n/IN01/DSIC/GSIPR, \ne seu anexo  \nNC 08 \n/IN01/DSIC/GSIPR  2, 3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 17: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "17.5",
+    "titulo": "atribui funções e \nresponsabilidades",
+    "descricao": "Atribuir funções e responsabilidades chave para resposta \na incidentes, incluindo equipe jurídica, TI, segurança da \ninformação, instalações, relações públicas, recursos \nhumanos, equipe de resposta a incidentes conforme \naplicável. Realize  a revisão deste processo de forma \nperiódica ou quando ocorrerem mudanças significativas \nna organização que possam impactar esta medida de \nsegurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  \nNC 05 \n/IN01/DSIC/GSIPR, \n",
+    "categoria": "Controle 17: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "17.6",
+    "titulo": "define \nmecanismos de \ncomunicação durante a \nresposta a incidente",
+    "descricao": "Determinar quais mecanismos primários e secundários \nserão usados para relatar um incidente e se comunicar \ndurante um incidente de segurança. Os mecanismos \npodem incluir ligações, e -mails ou cartas. Lembre -se de \nque certos mecanismos, como e -mails, podem se r \nafetados durante um incidente de segurança. Realize a \nrevisão desta medida de forma periódica ou quando \nocorrerem mudanças significativas na organização que \npossam impactar esta medida de segurança.  Art. 6º, inciso \nVII \nArt. 46,",
+    "categoria": "Controle 17: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "17.7",
+    "titulo": "conduz exercícios \nde resposta a incidentes \nregularmente",
+    "descricao": "Planejar e conduzir exercícios e cenários rotineiros de \nresposta a incidentes para a equipe envolvida na \nresposta a incidentes, de forma a manter a \nconscientização e tranquilidade no caso de resposta a \nameaças reais. Os exercícios devem testar os canais de \ncomunicação, tomada de decisão e recursos  técnicos da \nequipe de resposta a incidentes, contemplando a \nutilização das ferramentas e dados disponíveis.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  \nNC 05",
+    "categoria": "Controle 17: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "17.8",
+    "titulo": "realiza análises \npós-incidente",
+    "descricao": "Realizar análises pós -incidente. As análises pós -\nincidente ajudam a prevenir a recorrência do incidente \npor meio da identificação de lições aprendidas e ações \nde acompanhamento.  Art. 6º, inciso \nVII \nArt. 46, \nArt. 47,  \nArt. 49,  \nArt. 50  IN nº 3/2021  \nNC 05 \n/IN01/DSIC/GSIPR, \ne seu anexo  \nNC 08 \n/IN01/DSIC/GSIPR  2, 3 \n \n CIBERSEGURANÇA",
+    "categoria": "Controle 17: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "17.9",
+    "titulo": "estabelece e \nmantém limites de \nincidentes de segurança",
+    "descricao": "Estabelecer e mante r limites de incidentes de segurança, \nincluindo, no mínimo, a diferenciação entre um incidente \ne um evento. Os exemplos podem incluir: atividade \nanormal, vulnerabilidade de segurança, ameaça de \nsegurança, violação de dados, incidente de privacidade \netc. Realize a revisão desta medid a de forma periódica \nou quando ocorrerem mudanças significativas na \norganização que possam impactar esta medida de \nsegurança.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 5",
+    "categoria": "Controle 17: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "18.1",
+    "titulo": "elabora e  \nmantém um  \nprograma de  \nteste de  \ninvasão",
+    "descricao": "Estabelecer um programa para testes de invasão \nadequado ao tamanho, complexidade e maturidade da \norganização. O programa de teste de invasão deve levar \nem consideração o escopo do teste como rede, aplicação \nweb, API,",
+    "categoria": "Controle 18: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "18.2",
+    "titulo": "realiza testes  \nde invasão  \nexternos  \nperiódicos",
+    "descricao": "Conduzir testes de invasão e externos regularmente. A \nteste de invasão externo deve ser reconhecido pela \norganização e deve ser capaz de detectar informações \nexploráveis que possam impactar a segurança da \norganização. Tal teste deve ser realizado por profissionais \nqualificados.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2, 3",
+    "categoria": "Controle 18: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "18.3",
+    "titulo": "realiza testes de \ninvasão internos \nperiódicos",
+    "descricao": "Realize testes de invasão internos periódicos com base \nnos requisitos do programa de testes de invasão.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49, \nArt. 50  ------ 3",
+    "categoria": "Controle 18: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "18.4",
+    "titulo": "corrige os \nresultados dos testes de \ninvasão",
+    "descricao": "Corrigir as descobertas do teste de invasão com base na \npolítica da organização para o escopo e a priorização de \ncorreção de vulnerabilidades.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 2, 3",
+    "categoria": "Controle 18: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "18.5",
+    "titulo": "valida as \nmedidas  \nde segurança",
+    "descricao": "Validar as medidas de segurança após cada teste de \ninvasão. Se necessário, modificar os conjuntos de regras e \nrecursos para detectar as técnicas usadas durante o teste.  Art. 6º, inciso \nVII \nArt. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ------ 3 \n \n  \n \n ANEXO V – TABELA DE",
+    "categoria": "Controle 18: Cibersegurança",
+    "tipo": "Cibersegurança"
+  },
+  {
+    "codigo": "19.1",
+    "titulo": "mapeia os agentes de tratamento (controlador, \nco-controladores e operadores) responsáveis pelo \nprocessamento de dados pessoais",
+    "descricao": "Art. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.3",
+    "titulo": "documenta as fases do tratamento em que o \noperador atua",
+    "descricao": "Art. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.4",
+    "titulo": "mapeia os fluxos ou ações do tratamento de \ndados pessoais",
+    "descricao": "Art. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.5",
+    "titulo": "mape ia o escopo (abrangência ou área \ngeográfica) dos tratamentos de dados pessoais",
+    "descricao": "Art. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.6",
+    "titulo": "documenta a natureza (fonte) dos dados \npessoais tratados",
+    "descricao": "Art. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.7",
+    "titulo": "inventaria as categorias dos dados pessoais e \ndados pessoais sensíveis objetos dos tratamentos \nrealizados",
+    "descricao": "Art. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.9",
+    "titulo": "registra o tempo de retenção de dados pessoais \ntratados conforme a finalidade de cada processamento",
+    "descricao": "Art. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.10",
+    "titulo": "inventaria as categorias dos titulares de dados \npessoais utilizados no tratamento",
+    "descricao": "Art. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.11",
+    "titulo": "registra os compartilhamentos de dados \npessoais realizados com operadores terceiros e outras \ninstituições conforme Art. 26 e 27 da LGPD, incluindo \nquais dados pessoais foram divulgados, a quem e com \nque finalidade",
+    "descricao": "Art. 2 6 \nArt. 2 7 \nArt. 37  ABNT NBR ISO/IEC \n29151:2017 (item \nA.",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.12",
+    "titulo": "mape ia os ambientes (ex: interno, nuvem, \nterceiros, etc) em que os dados pessoais objetos dos \ntratamentos são processados",
+    "descricao": "Art. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.13",
+    "titulo": "registra as transferências internacionais de \ndados pessoais realizadas conforme o Capítulo V da \nLGPD, incluindo quais dados pessoais foram divulgados  \ne a quem",
+    "descricao": "Capítulo V  \nArt. 37  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "19.14",
+    "titulo": "mape ia os contratos estabelecidos/firmados com \nterceiros operadores responsáveis pelos tratamentos de \ndados pessoais",
+    "descricao": "Art. 37  \nArt. 39  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 19: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.1",
+    "titulo": "identifica as finalidades específicas antes da \nrealização dos tratamentos de dados pessoais",
+    "descricao": "Art. 6º, I e II  \n \nArt. 23  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.2",
+    "titulo": "identifica as hipóteses de tratamento antes da \nrealização dos processamentos de dados pessoais",
+    "descricao": "Art. 7º  \nArt. 11  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.3",
+    "titulo": "prioritariamente realiza tratamento de dados \npessoais apenas para o atendimento de finalidade \npública , na persecução do interesse público, com o \nobjetivo de executar as competências legais ou cumprir \nas atribuições legais do serviço público",
+    "descricao": "Art. 23  ISO/IEC 29151:2017 \n(item A.",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.5",
+    "titulo": "trata dados pessoais sensíveis para executar \npolíticas públicas previstas apenas em leis e \nregulamentos",
+    "descricao": "Art. 11, inciso II, \nalínea s a, b N/A N/A  1, 2, 3",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.6",
+    "titulo": "ao realizar tratamento de dados pessoais \nsensíveis baseado na hipótese de tutela da saúde, \nrestringe o tratamento exclusivamente a profissionais de \nsaúde, serviços de saúde ou autoridade sanitária",
+    "descricao": "Art. 11, inciso II, \nalínea f  N/A N/A  1, 2, 3",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.7",
+    "titulo": "adota mecanismos para assegurar que a \ndivulgação dos resultados ou de qualquer excerto do \nestudo ou da pesquisa, em nenhuma hipótese, revele \ndados pessoais",
+    "descricao": "Art. 13, § 1º  N/A N/A  1, 2, 3",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.8",
+    "titulo": "mantém processo contínuo de gerenciamento \ndas hipóteses legais de tratamento, incluindo o \ndesenvolvimento de capacidades para cumprimento de \nobrigações decorrentes da definição da hipótese legal de \ntratamento, tais como: gerenciamento do consentimento, \nelaboração de Avali ação de Legitimo Interesse, etc",
+    "descricao": "Art. 7°  \nArt. 8°  \nArt. 10  \nArt. 11  \nArt. 12  \nArt. 13  N/A N/A 1, 2, 3  \n \n PRIVACIDADE",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.10",
+    "titulo": ", ao realizar compartilhamento de dados \npessoais,  adota medidas que assegurem a \ncompatibilidade do propósito geral da  finalidade original \ninformada ao titular",
+    "descricao": "Art. 6, inciso I  N/A N/A 1, 2, 3",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.11",
+    "titulo": "ao coletar cookies identifica, no banner de \nsegundo nível, as hipóteses  legais utilizadas, de acordo \ncom cada finalidade/categoria de cookie, utilizando o \nconsentimento como principal hipótese  legal, exceção \nfeita aos cookies estritamente necessários, que podem \nse basear no legítimo interesse  ou, se for caso , \ncumprimento de obrigações ou atribuições legais",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 7° \nArt. 9º  \nArt. 11  \nArt. 18  ISO/IEC 29184 (item",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.12",
+    "titulo": "ao coletar cookies permite, no banner de \nsegundo nível, a obtenção do consentimento específico \nde acordo com as categorias identificadas , observados o \ndisposto na LGPD",
+    "descricao": "Art. 8º  \nArt. 14  \nArt. 18  ISO/IEC 29184 (item",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.13",
+    "titulo": "mantém o fornecimento do serviço quando os \ntitulares de dados pessoais se recusam a fornecer o \nconsentimento para cookies  não necessários",
+    "descricao": "Art. 7º  \nArt. 8º \nArt. 9º \nArt. 11  ISO/IEC 29151 (item \nA.3) NIST CM.AW -P8 \nNIST CT.PO -P1 1, 2, 3",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "20.14",
+    "titulo": "observa, ao tratar dados pessoais de crianças e \nadolescentes, as hipóteses legais previstas no art. 7º ou \nno art. 11 e o disposto no art. 14 da Lei Geral de \nProteção de Dados Pessoais (LGPD)",
+    "descricao": "Art. 7º  \nArt. 11  \nArt. 14  \nArt. 23 \nEnunciado \nCD/ANPD Nº 1, de \n22 de maio de \n2023  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 20: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "21.1",
+    "titulo": "adota medidas para adequar seus processos e \natividades relacionadas ao tratamento de dados pessoais \nàs legislações/normativos de privacidade e proteção de \ndados vigentes",
+    "descricao": "Art. 50 § 2º inciso \nI ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 21: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "21.2",
+    "titulo": "já elaborou e divulgou o seu Programa \nInstitucional de Privacidade de Dados, conforme \nestabelecido no art.50 da LGPD",
+    "descricao": "Art. 50, § 2º, \ninciso I  ABNT NBR ISO/IEC \n27701:2019 ( item 5 ) NIST GV.PO -P2 1, 2, 3",
+    "categoria": "Controle 21: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "21.3",
+    "titulo": "disponibiliza ao encarregado acesso direto à alta \nadministração e os recursos necessários para apoiar na \nimplementação da LGPD",
+    "descricao": "Art. 50  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 21: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "21.5",
+    "titulo": "determina as responsabilidades e respectivos \npapéis para o tratamento de dados pessoais com o(s) \ncontrolador(es) conjunto(s) envolvido(s)",
+    "descricao": "Art. 50  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 21: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "21.6",
+    "titulo": "divulga a seus colaboradores internos e externos \nas políticas e procedimentos operacionais relacionados à \nproteção de dados pessoais",
+    "descricao": "Art. 50  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 21: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "21.7",
+    "titulo": "na \nimplementação do  Programa Institucional de Privacidade \nde Dados",
+    "descricao": "Art. 50  N/A NIST GV.MT -P 2, 3 \n \n PRIVACIDADE",
+    "categoria": "Controle 21: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "21.10",
+    "titulo": "instituiu uma equipe que realiza o \nmonitoramento das vulnerabilidades técnicas dos \nserviços que tratam dados pessoais",
+    "descricao": "Art. 46  ABNT NBR ISOIEC \n27701:2019 (item",
+    "categoria": "Controle 21: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "22.1",
+    "titulo": "fornece um processo para monitorar as leis e \npolíticas de privacidade com o objetivo de identificar \nalterações que afetem o programa de proteção de dados \npessoais",
+    "descricao": "Art. 50 , § 2º, inciso \nI, alínea “h”  ISO/IEC 29151 (item \nA.13)  NIST GV.MT -P3 1, 2, 3",
+    "categoria": "Controle 22: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "22.6",
+    "titulo": "estabelece procedimento ou metodologia para \nassegurar que os princípios da LGPD estão sendo \nrespeitados desde a fase de concepção do produto ou do \nserviço até a sua execução (Privacy by Design)",
+    "descricao": "Art. 6º  \nArt. 46 § 2º  \nArt. 47  \nArt. 49  ISO/IEC 29151:2017 \n(Item",
+    "categoria": "Controle 22: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "22.8",
+    "titulo": "estabelece políticas, procedimentos e adota \nmecanismos documentados para o descarte de dados \npessoais",
+    "descricao": "Art. 50  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 22: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "22.10",
+    "titulo": "revisa periodicamente as políticas, processos, \nplanos e procedimentos de proteção de dados pessoais",
+    "descricao": "Art. 50, § 2º, inciso \nI, alínea “h”  ISO/IEC 29151 (item",
+    "categoria": "Controle 22: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "23.1",
+    "titulo": "implementa e mantêm uma estratégia \nabrangente de treinamento e conscientização a fim de \ngarantir que a força de trabalho compreenda sobre suas \nresponsabilidades e procedimentos de proteção de dados \npessoais",
+    "descricao": "Art. 50  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 23: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "23.2",
+    "titulo": "contempla treinamento adequado sobre a temática de \nprivacidade e de proteção de dados pessoais",
+    "descricao": "Art. 50  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 23: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "23.3",
+    "titulo": "executa regularmente (por exemplo, anual) ou \nconforme necessário (por exemplo, após um incidente) \ntreinamento básico e direcionado de proteção de dados \npessoais conforme as funções das pessoas envolvidas \ncom o tratamento",
+    "descricao": "Art. 50  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 23: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.1",
+    "titulo": "avalia e classifica os dados pessoais a serem \ncoletados em obrigatórios e opcionais a fim de priorizar \nsomente a coleta dos dados obrigatórios para a \nprestação do serviço",
+    "descricao": "Art. 18  ISO/IEC 29151 (item \nA.5 e A.6)  NIST CT.DP -P 2, 3",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.2",
+    "titulo": "restringe ao máximo a coleta de dados de forma \nque seja suficiente para atender a finalidade específica \ndo tratamento",
+    "descricao": "Art. 18 , inciso IV  ISO/IEC 29151 (item \nA.5 e A.6)  NIST CT.DP -P 1, 2, 3",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.3",
+    "titulo": "adota medidas para assegurar que as \nconfigurações de privacidade sejam aplicadas por \npadrão (Privacy by Default) nos serviços fornecidos",
+    "descricao": "Art. 6º - III \nArt. 46, § 2º   ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.5",
+    "titulo": "adota o princípio ' need -to-how', em que deve \nser dado acesso apenas aos dados pessoais \nnecessários para o desempenho das funções dos \ncolaboradores",
+    "descricao": "Art. 46 ISO/IEC 29151 (item \nA.6) NIST CT.DP -P 2, 3",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.6",
+    "titulo": "adota como padrão, sempre que possível, \ninterações e transações que não envolvam a \nidentificação dos titulares",
+    "descricao": "Art. 7º  \nArt. 11 \nArt. 12 \nArt. 13 \nArt. 16 \nArt. 18 ISO/IEC 29151 (item \nA.5 e A.6)  NIST CT.DP -P1 \nNIST CT.DP -P2 3",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.7",
+    "titulo": "adota mecanismos para limitar a vinculação dos \ndados pessoais coletados",
+    "descricao": "Art. 7º  \nArt. 11 \nArt. 12 \nArt. 13 \nArt. 16 \nArt. 18 ISO/IEC 29151 (item \nA.5 e A.6)  NIST CT.DP -P1 \nNIST CT.DP -P2 3",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.8",
+    "titulo": "realiza revisão periódica dos dados pessoais \ntratados para que continuem a ser o mínimo necessários \npara cumprir com a finalidade",
+    "descricao": "Art. 6º, inciso I, II e \nIII  \nArt. 18 ISO/IEC 29151 (item \nA.5 e A.6)  NIST CT.DP -P 3",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.11",
+    "titulo": "determina e desidentifica os dados pessoais \nque necessitam ser anonimizados de acordo com o \ntratamento e exigências estabelecidas por leis \naplicáveis",
+    "descricao": "Art. 7º  \nArt. 11 \nArt. 12 \nArt. 13 \nArt. 16 \nArt. 18 ISO/IEC 29151 (item \nA.5 e A.6)  NIST CT.DP -P 2, 3",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.12",
+    "titulo": "ao coletar cookies disponibiliza botão de fácil \nvisualização , no banner de primeiro  e de segundo  nível, \nque permita rejeitar todos os cookies não -necessários",
+    "descricao": "Art. 6º, inciso s III \nVI \nArt. 8º  \nArt. 9º  \nArt. 18  ISO/IEC 29184 (item",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.14",
+    "titulo": "ao coletar cookies desativa , no banner de \nprimeiro nível , cookies baseados no consentimento por \npadrão (opt -in)",
+    "descricao": "Art. 6º, inciso s III e  \nVI \nArt. 8º  \nArt. 9º  \nArt. 18  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "24.15",
+    "titulo": "ao coletar cookies classifica os cookies em \ncategorias no banner de segundo nível",
+    "descricao": "Art. 6º, inciso  VI; \nArt. 8º  \nArt. 9º  \nArt. 18  ISO/IEC 29184 (item",
+    "categoria": "Controle 24: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "25.1",
+    "titulo": "configura os sistemas para registrar a data em \nque os dados pessoais são coletados, criados, \natualizados, excluídos ou arquivados",
+    "descricao": "Art. 50 ISO/IEC 29151 (item \nA.7) NIST CT.DM -P8 2, 3",
+    "categoria": "Controle 25: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "25.2",
+    "titulo": "limita a quantidade de processamento sobre os \ndados pessoais sob sua custódia",
+    "descricao": "Art. 6º , inciso III   ISO/IEC 29151 (item \nA.7) NIST CT.DM -P 1, 2, 3",
+    "categoria": "Controle 25: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "25.3",
+    "titulo": "define e documenta os objetivos da minimização \ndo tratamento sobre os dados pessoais sob sua \ncustódia",
+    "descricao": "Art. 6º , inciso III  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 25: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "25.4",
+    "titulo": "implementa no serviço a detecção da expiração \ndo período de retenção e aviso automático de que deve \nser avaliada a possibilidade de exclusão dos dados \npessoais após o cumprimento das finalidades",
+    "descricao": "Art. 6º  \nArt. 15 \nArt. 16 ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 25: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "25.9",
+    "titulo": "bloqueia e adota medidas de proteção para \nisentar de processamento adicional os dados pessoais \nquando os propósitos informados ao titular são atingidos, \nmas a retenção for exigida pelas leis aplicáveis",
+    "descricao": "Art. 6º  \nArt. 15  \nArt. 16 ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 25: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "26.1",
+    "titulo": "adota meios para verificar a validade e exatidão \ndas solicitações de correção realizadas por parte do \ntitular de dados pessoais",
+    "descricao": "Art. 6º  \nArt. 18 \nArt. 19 ISO/IEC 29151 (item \nA.8 e)  NIST  CT.DM -P \nNIST CT.PO -P2 2, 3",
+    "categoria": "Controle 26: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "26.3",
+    "titulo": "fornece meios para que o titulares de dados \npessoais possam solicitar as correções dos dados \npessoais ou contestar a exatidão e integridade dos dados \npessoais com direito a confirmação de recebimento da \nsolicitação",
+    "descricao": "Art. 6º  \nArt. 18  \nArt. 19  ISO/IEC 29151 (item \nA.10 .1) NIST CT.DM -P \nNIST CT.PO -P2 1, 2, 3",
+    "categoria": "Controle 26: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "26.4",
+    "titulo": "fornece, na medida do possível, as respostas ao \ntitular de dados pessoais de forma equivalente àquela em \nque a solicitação foi realizada",
+    "descricao": "Art. 6º  \nArt. 18  \nArt. 19  ISO/IEC 29151 (item \nA.10 .1) NIST CT.DM -P \nNIST CT.PO -P2 2, 3",
+    "categoria": "Controle 26: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "26.5",
+    "titulo": "adota mecanismos de rastreamento para \ngarantir que todas as petições e reclamações recebidas \ndos titulares de dados pessoais sejam analisadas e \ntratadas adequadamente em tempo hábil",
+    "descricao": "Art. 6º  \nArt. 18  \nArt. 19  ISO/IEC 29151 (item \nA.10 .3) NIST CT.DM -P \nNIST CT.PO -P2 1, 2, 3",
+    "categoria": "Controle 26: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "26.6",
+    "titulo": "implementa meios práticos para permitir que os \ntitulares gerenciem os seus dados pessoais, de forma \nsimples, rápida e eficiente, e que não acarrete atrasos \nindevidos ou custo ao titular",
+    "descricao": "Art. 6º  \nArt. 18  \nArt. 19  ISO/IEC 29151  (item \nA.10 .1) NIST CT.DM -P \nNIST CT.PO -P2 2, 3",
+    "categoria": "Controle 26: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "26.8",
+    "titulo": "confirma, na medida do possível, a exatidão, \nrelevância e integridade dos dados pessoais na coleta",
+    "descricao": "Art. 6º  \nArt. 18  \nArt. 19  ISO/IEC 29151 (item \nA.8) NIST CT.DM -P \nNIST CT.PO -P2 3 \n \n PRIVACIDADE",
+    "categoria": "Controle 26: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "26.9",
+    "titulo": "revisa periodicamente e corrige , conforme \nnecessário , os dados pessoais imprecisos ou \ndesatualizados",
+    "descricao": "Art. 6º, inciso V  \nArt. 18, inciso III  ISO/IEC 29151 (item \nA.8 f) NIST CT.DM -P \nNIST CT.PO -P2 2, 3",
+    "categoria": "Controle 26: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "26.11",
+    "titulo": "fornece informações ao titular de dados pessoais \nsobre o andamento de suas solicitações",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º  \nArt. 9º  \nArt. 18  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 26: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "26.12",
+    "titulo": "comunica qualquer alteração, correção ou \nremoção dos dados pessoais para operadores e terceiros \ncom quem os dados pessoais foram compartilhados",
+    "descricao": "Art. 6º  \nArt. 18  \nArt. 39 ISO/IEC 29151 (item \nA.10 .2) NIST CT.DM -P \nNIST CT.PO -P2 \nNIST CM.AW.P5  1, 2, 3  \n  \n \n PRIVACIDADE",
+    "categoria": "Controle 26: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "27.1",
+    "titulo": "identifica os compartilhamentos de dados \npessoais realizados com operadores terceiros e outras \ninstituições conforme Art. 26 e 27 da LGPD, incluindo \nquais dados pessoais foram divulgados, a quem, a que \nhoras e com que finalidade",
+    "descricao": "Art. 26 e 27  N/A CM.AW -P4 1, 2, 3",
+    "categoria": "Controle 27: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "27.2",
+    "titulo": "identifica as transferências internacionais de \ndados pessoais realizadas conforme o Capítulo V da \nLGPD, incluindo quais dados pessoais foram \ndivulgados, a quem, a que horas e com que finalidade",
+    "descricao": "Art. 33  \nArt. 34  \nArt. 35  \nArt. 36  N/A CM.AW -P4 1, 2, 3",
+    "categoria": "Controle 27: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "27.3",
+    "titulo": "solicita descrição formal das medidas de \nproteção de dados pessoais adotadas pelas entidades \ncom quem compartilha dados pessoais",
+    "descricao": "Art. 25 \nArt. 26 \nArt. 27 \nArt. 30   N/A CT.PO -P2 2, 3",
+    "categoria": "Controle 27: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "27.5",
+    "titulo": "observa o disposto pelo art. 33 -36 da LGPD \npara a realização de transferência internacional de \ndados pessoais",
+    "descricao": "Art. 33  \nArt. 34  \nArt. 35  \nArt. 36  ABNT NBR ISO/IEC \n29151:2017 (item \nA.",
+    "categoria": "Controle 27: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.1",
+    "titulo": "estabelece as funções e responsabilidades do \noperador envolvido no tratamento de dados pessoais, \nprincipalmente a notificação em caso de violação de \ndados pessoais",
+    "descricao": "Art. 39  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.2",
+    "titulo": "estabelece no contrato que o operador não \nprocesse os dados pessoais para finalidades que \ndivergem da finalidade principal informada pelo \ncontrolador",
+    "descricao": "Art. 23  \nArt. 39  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.4",
+    "titulo": "determina por contrato o assunto e o prazo do \nserviço a ser prestado, a extensão, a forma e a finalidade \ndo tratamento de dados pessoais pelo operador, bem \ncomo os tipos de dados pessoais processados",
+    "descricao": "Art. 39  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.5",
+    "titulo": "documenta no contrato de nível de serviço os \nrequisitos de proteção de dados pessoais que os \noperadores de dados pessoais devem atender",
+    "descricao": "Art. 39  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.6",
+    "titulo": "adota meios para garantir que os sistemas do \noperador de dados pessoais tenham mecanismos de \nproteção de dados implementados",
+    "descricao": "Art. 39  ABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.7",
+    "titulo": "instrui ao  operador que implemente meios \npráticos para permitir que os titulares exerçam seu direito \nde gerenciamento dos dados pessoais",
+    "descricao": "Art. 6º, inciso s IV e \nV \nArt. 8º § 5º  \nArt. 9º § 2º  \nArt. 18  \nArt. 39  ABNT NBR ISO/IEC \n27701:2019 ( item",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.8",
+    "titulo": "exige do operador o cumprimento de todas as \ncláusulas estipuladas em contrato sobre divulgação de \ndados pessoais, a menos que proibido por lei",
+    "descricao": "Art. 39  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.9",
+    "titulo": "exige que o operador o informe sobre assuntos \nenvolvendo o tratamento de dados pessoais para que o \ncontrolador esteja em conformidade com suas \nobrigações, principalmente em casos de solicitações \njuridicamente vinculativas para divulgação de dados \npessoais, violação de dados pessoais, sobre alterações \nrelevantes ao serviço",
+    "descricao": "Art. 39  \nArt. 44  \nArt. 45  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.10",
+    "titulo": "especifica as condições sob as quais o operador \ndeve devolver ou descartar com segurança os dados \npessoais após a conclusão do serviço, rescisão de \nqualquer contrato ou de outra forma mediante solicitação \ndo controlador",
+    "descricao": "Art. 15  \nArt. 16  \nArt. 39  \nArt. 46  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.11",
+    "titulo": "especifica no contrato entre controlador e \noperador sobre o uso de subcontratados para processar \ndados pessoais",
+    "descricao": "Art. 39  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.12",
+    "titulo": "monitora e inspeciona a implementação dos \nrequisitos estabelecidos nas cláusulas contratuais pelos \noperadores",
+    "descricao": "Art. 39  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "28.13",
+    "titulo": "realizou revisão das cláusulas contratuais em \nvigência com os operadores terceiros para adequá -los à \nLGPD",
+    "descricao": "Art. 39  ISO/IEC 29151:2017 \n(Item",
+    "categoria": "Controle 28: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.1",
+    "titulo": "adota meios para apresentar as informações de \ntratamento de dados pessoais de forma clara para que \npossam ser compreendidas por uma pessoa que não \nesteja familiarizada com as tecnologias da informação, \ninternet ou jargões jurídicos",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º , § 1º   \nArt. 9º  \nArt. 18 , inciso I, VII \ne VIII  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.2",
+    "titulo": "adota meios para disponibilizar a política de \nprivacidade em local de fácil acesso, antes ou no \nmomento do tratamento de dados pessoais, sem a \nnecessidade de o titular ter que solicitá -lo \nespecificamente",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º  \nArt. 9º  \nArt. 18  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.3",
+    "titulo": "adota algum mecanismo, sempre que possível, \npara comprovar que o titular de dados pessoais obteve \nacesso à política de privacidade fornecida",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º  \nArt. 9º  \nArt. 18  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.4",
+    "titulo": "revisa a política de privacidade, cookies e outras \naplicáveis ao tratamento de dados pessoais, antes ou \nassim que possível, para refletir mudanças realizadas no \ntratamento",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º , § 1º   \nArt. 9º  \nArt. 18 , inciso I, VII \ne VIII  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.5",
+    "titulo": "destaca na Política de Privacidade informações \nsobre os dados pessoais que a organização coleta e a(s) \nfinalidade(s) do tratamento para a qual a coleta é \nrealizada, hipóteses e bases legais",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º  \nArt. 9º  \nArt. 18  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.6",
+    "titulo": "fornece informações aos titulares sobre como é \nrealizado o tratamento de dados pessoais, tais como o \nperíodo de retenção dos dados pessoais coletados, entre \noutras ações de tratamento",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º  \nArt. 9º  \nArt. 18  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.8",
+    "titulo": "fornece orientações ao titular sobre a forma e \nmeios utilizados de gerenciamento aos dados pessoais",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º  \nArt. 9º  \nArt. 18  ISO/IEC 29151 (item \nA.9) NIST CM.AW -P1 \nNIST CM.AW -P2 2, 3 \n \n PRIVACIDADE",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.10",
+    "titulo": "informa se a organização compartilha dados \npessoais com entidades externas, os dados pessoais \ncompartilhados e a finalidade para tal compartilhamento",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º  \nArt. 9º , inciso V  \nArt. 18  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.11",
+    "titulo": "fornece informações sobre a proteção e \ndescarte seguro dos dados pessoais coletados",
+    "descricao": "Art. 6º, inciso VI;  \nArt. 8º  \nArt. 9º  \nArt. 18  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "29.12",
+    "titulo": "fornece, quando solicitado por instituição \ncompetente, informações relativas a violações de \nprivacidade dos titulares, juntamente com quaisquer \nações associadas que o solicitante possa tomar para \nmitigar os riscos adicionais decorrentes da violação",
+    "descricao": "Art. 48  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 29: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.1",
+    "titulo": "observa o conteúdo mínimo a ser inserido no \nRelatório de Impacto à Proteção de Dados Pessoais - \nRIPD conforme o disposto no Art. 38, parágrafo único da \nLGPD",
+    "descricao": "Art. 5º XVII \nArt. 38  ABNT NBR ISO/IEC \n29134:2017 (Item 5, \n6 e 7 e Anexos A,B,C \ne D) \nABNT NBR ISOIEC \n27701:2019 (",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.2",
+    "titulo": "estabelece processo para avaliar o impacto na \nprivacidade ao fornecer serviços que tratam dados \npessoais",
+    "descricao": "Art. 4º,  § 3º \nArt. 10, § 3º  \nArt. 32  \nArt. 38  \nArt. 46  \nArt. 47  \nArt. 49 \nArt  50, inciso I \nalínea d  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.3",
+    "titulo": "documenta os riscos de privacidade oriundos da \navaliação de impacto à Proteção de Dados Pessoais",
+    "descricao": "Art. 10, § 3º  \nArt. 32  \nArt. 38 \nArt. 46  \nArt. 47  \nArt. 49  \nArt  50 , inciso I \nalínea d  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.5",
+    "titulo": "documenta as medidas de proteção de dados \npessoais adotadas para mitigação do impacto à Proteção \nde Dados Pessoais",
+    "descricao": "Art. 10, § 3º  \nArt. 32  \nArt. 38  \nArt. 46  \nArt. 47  \nArt. 49  \nArt  50 , inciso I \nalínea d  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.6",
+    "titulo": "realiza e documenta os resultados de uma \navaliação de impacto à Proteção de Dados Pessoais",
+    "descricao": "Art. 10, § 3º  \nArt. 32  \nArt. 38  \nArt. 46  \nArt. 47  \nArt. 49  \nArt  50 , inciso I \nalínea d  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.7",
+    "titulo": "desenvolve, divulga  (no que couber)  e atualiza \nrelatórios (por exemplo, relatórios sobre violações, \ninvestigações, auditorias), a fim de demonstrar \nresponsabilidade e conformidade com leis e \nregulamentos de proteção de dados pessoais",
+    "descricao": "Art. 10, § 3º  \nArt. 32  \nArt. 38  \nArt. 46  \nArt. 47  \nArt. 49 \nArt  50 , inciso I \nalínea d  ISO/IEC 29151 (item \nA.11. 6) NIST ID.RA -P  3",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.8",
+    "titulo": "monitora e audita regularmente as operações de \ntratamento de dados pessoais, especialmente aquelas \nenvolvendo dados pessoais sensíveis, para garantir que \nestejam em conformidade com as leis, regulamentos e \ntermos contratuais aplicáveis",
+    "descricao": "Art. 10, § 3º  \nArt. 32  \nArt. 38  \nArt. 46  \nArt. 47  \nArt. 49  \nArt  50 , inciso I \nalínea d  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.9",
+    "titulo": "implementa medidas apropriadas para monitorar \ne auditar periodicamente os controles de privacidade e a \neficácia da política de privacidade interna  (política de \nproteção de dados pessoais)  da instituição",
+    "descricao": "Art. 10, § 3º  \nArt. 32  \nArt. 38  \nArt. 46  \nArt. 47  \nArt. 49  \nArt  50 , inciso I \nalínea d  ISO/IEC 29151 ( item \nA.",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.11",
+    "titulo": "assegura que as auditorias sejam conduzidas \npor partes qualificadas e independentes (internas ou \nexternas à organização)",
+    "descricao": "Art. 10, § 3º  \nArt. 32  \nArt. 38  \nArt. 46  \nArt. 47  \nArt. 49  \nArt  50 , inciso I \nalínea d  ISO/IEC 29151  (item \nA.",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "30.12",
+    "titulo": "produz um relatório anual detalhando as ações \ntomadas para conformidade e um resumo das ações \npendentes",
+    "descricao": "Art. 10, § 3º  \nArt. 32  \nArt. 38  \nArt. 46  \nArt. 47  \nArt. 49  \nArt  50 , inciso I \nalínea d  ISO/IEC 29151 (item \nA.",
+    "categoria": "Controle 30: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "31.2",
+    "titulo": "ou entidade.  \nA lista das medidas deste controle consta do Anexo III.  Tais medidas focam, em \nmaior parte, nos papeis e estruturas fundamentais para a condução da implementação \ndeste Framework .  \nNo próximo capítulo serão abordados os controles de cibersegurança.  \n  \nGUIA DO FRAMEWORK DE PRIVACIDADE E SEGURANÇA DA INFORMAÇÃO  36 \n 3. CONTROLES DE CIBERSEGURANÇA  \nNeste capítulo , serão apresentados os controles de cibersegurança \nfundamentados no CIS  8. \n Cada seção subsequente apresenta um resumo do controle e o porquê \nimplementá -lo, b em como a aplicabilidade e as implicações (consequências) da \nimplementação do controle para a privacidade.  \nMais  detalhes sobre a aplicação dos controles de cibersegurança podem ser \nconsultados no Guia CIS Controls  v8 e sobre aspectos de privacidade, especificamente \nno que se refere aos princípios de privacidade na implementação dos controles CIS, \npodem ser observados no Guia CIS Controls Privacy Guide . \nAs medida s, em formato de pergunta,  a serem aplicadas para cada controle estão \ndetalhadas no Anexo II deste Guia . As medidas foram organizadas  de acordo com a \nsequência de funções do NIST C ybersecuri ty Framework . Além disso, foi realizado um \nmapeamento com os identificadores originais das medidas do CIS Controls v8 . \n \nNo contexto do CIS 8, o termo \"dados sensíveis\" se refere aos dados \ninstitucionais ou organizacionais utilizados no intuito de obter insights  valiosos \npara a tomada de decisão, otimizar processos, mitigar riscos, cumprir com \nrequisitos legais e promover a inovação, entre outras utilidades, que, se \ndivulgadas ou acessadas sem autorização, podem causar danos significativos à \norganização ou às par tes interessadas envolvidas. Esses dados são geralmente \nprotegidos por leis de privacidade, de sigilo fiscal, de pr opriedade intelectual ou \nde segredo comercial e industrial, entre outros regulamentos de segurança e de \nproteção de dados. Aqui estão alguns exemplos de dados sensíveis:  \n• Informações de Identificação Pessoal (PII) ou dados pessoais: \nNomes, endereços, números de telefone, endereços de e -mail, \nnúmeros de CPF ou RG, dados de passaporte , etc. \n• Dados Financeiros: Informações bancárias, detalhes de cartões de \ncrédito, informações de contas financeiras, registros de transações \nfinanceiras , etc. \n• Informações de Saúde: Prontuários médicos, históricos de saúde, \nresultados de exames, diagnósticos médicos , etc. \nGUIA DO FRAMEWORK DE PRIVACIDADE E SEGURANÇA DA INFORMAÇÃO  37 \n • Propriedade Intelectual: Segredos comerciais, patentes, designs de \nprodutos, fórmulas, códigos -fonte de software , etc. \n• Dados de Funcionários: Registros de emprego, avaliações de \ndesempenho, salários, informações de benefícios, etc.  \n• Dados de Clientes: Informações de clientes, históricos de compras, \npreferências, feedbacks, etc.  \n• Informações Contratuais: Termos de contratos, acordos \nconfidenciais, propostas comerciais, etc.  \n• Dados de Segurança: Informações sobre medidas de segurança, \nplanos de resposta a incidentes, vulnerabilidades de sistemas, etc.  \nComo pode -se observar, os dados pessoais sensíveis, definidos na LGPD, \nsão um subconjunto dos dados sensíveis no contexto do CIS. Dessa forma, a fim \nde diferenciá -los neste Guia, quando for mencionado o termo \"dados sensíveis\", \nestaremos diante do contexto do CIS, já quando for mencionado \"dados \npessoais sensíveis\", estaremos diante do contexto da LGPD.  \n \n3.1 Controle 1: Inventário e Controle de Ativos Institucionais   \nGerenciar ativamente (inventariar, rastrear e corrigir) todos os ativos institucionais \nconectados à rede, com o objetivo de identificar precisamente quais necessitam ser \nmonitorados e/ou protegidos dentro da empresa, mapeando todos os ativos não \nautorizados para uma  possível remoção ou remediação futura.  \nPor que implementar",
+    "descricao": "As instituições  não podem defender aquilo que não está mapeado ou não se tem \nconhecimento  de sua existência . Por  esta razão , ter um inventário de ativos \ninstitucionais  é essencial  para que uma atitude de defesa possa acontecer. Neste \nintuito o Inventário e",
+    "categoria": "Controle 31: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "31.1",
+    "titulo": "submete os controles de privacidade e \nsegurança da informação adotados a revisão e \nreavaliação periódicas resultantes da avaliação de \nimpacto na privacidade",
+    "descricao": "Art. 46  \nArt. 47 \nArt. 49 \nArt. 50 ISO/IEC 29151 (item \nA.12  f) NIST PR.PO -P \nNIST PR.AC -P \nNIST PR.DS -P \nNIST PR.MA -P \nNIST PR.PT -P 2, 3",
+    "categoria": "Controle 31: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "31.3",
+    "titulo": "adota mecanismos para restauração de dados \npessoais",
+    "descricao": "Art. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ISO/IEC 27018 (item \nA.10 .3) \nABNT NBR ISO/IEC \n27701:2019 (item",
+    "categoria": "Controle 31: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "31.10",
+    "titulo": "restringe e controla a impressão de documentos \nque contenha dados pessoais encaminhados para as \nimpressoras corporativas",
+    "descricao": "Art. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ISO/IEC 27018 (item \nA.10 .2)  \nNIST PR.PT -P 1, 2, 3",
+    "categoria": "Controle 31: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "31.11",
+    "titulo": "descarta materiais impressos de forma segura",
+    "descricao": "Art. 46,  \nArt. 47,  \nArt. 49,  \nArt. 50  ISO/IEC 27018 (item \nA.10 .7) NIST PR.PO -P \nNIST PR.DS -P 1, 2, 3",
+    "categoria": "Controle 31: Privacidade",
+    "tipo": "Privacidade"
+  },
+  {
+    "codigo": "31.12",
+    "titulo": "submete  os controles  de privacidade e segurança da \ninformação adotados  a revisão  e reavaliação  periódicas  resultantes da \navaliação de impacto na privacidade",
+    "descricao": "Mudanças da Versão",
+    "categoria": "Controle 31: Privacidade",
+    "tipo": "Privacidade"
+  }
+]

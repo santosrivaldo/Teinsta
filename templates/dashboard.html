@@ -1,0 +1,608 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - ISO 27001{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="page-header">
+        <h2>Dashboard</h2>
+        <p>Visão geral do sistema de gestão ISO 27001</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div class="stat-info">
+                <h3>{{ controles_implementados }} / {{ total_controles }}</h3>
+                <p>Controles Implementados</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📋</div>
+            <div class="stat-info">
+                <h3>{{ politicas_aprovadas }}</h3>
+                <p>Políticas Aprovadas</p>
+            </div>
+        </div>
+
+        <div class="stat-card warning">
+            <div class="stat-icon">⚠️</div>
+            <div class="stat-info">
+                <h3>{{ nc_abertas }}</h3>
+                <p>Não Conformidades Abertas</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📊</div>
+            <div class="stat-info">
+                <h3>{{ "%.1f"|format((controles_implementados / total_controles * 100) if total_controles > 0 else 0) }}%</h3>
+                <p>Taxa de Conformidade</p>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-icon">📚</div>
+            <div class="stat-info">
+                <h3>{{ modulos_concluidos }} / {{ total_modulos }}</h3>
+                <p>Módulos Concluídos</p>
+            </div>
+        </div>
+
+        <div class="stat-card {% if normas_faltantes > 0 %}warning{% else %}success{% endif %}">
+            <div class="stat-icon">📜</div>
+            <div class="stat-info">
+                <h3>{{ normas_faltantes }} / {{ total_normas }}</h3>
+                <p>Normas Faltantes</p>
+                <small>{{ total_normas - normas_faltantes }} completa(s)</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Progresso por Norma -->
+    <div class="dashboard-section">
+        <div class="section-header">
+            <h3>📜 Progresso por Norma</h3>
+        </div>
+        <div class="normas-grid">
+            {% for norma in normas_progresso %}
+            <div class="norma-card {% if norma.completa %}norma-completa{% endif %}">
+                <div class="norma-header">
+                    <div>
+                        <h4>{{ norma.nome }}</h4>
+                        <p class="norma-codigo">{{ norma.codigo }}</p>
+                    </div>
+                    {% if norma.completa %}
+                    <span class="badge badge-success">✅ Completa</span>
+                    {% else %}
+                    <span class="badge badge-warning">⚠️ {{ norma.percentual }}%</span>
+                    {% endif %}
+                </div>
+                
+                <div class="norma-stats">
+                    <div class="norma-stat-item">
+                        <div class="norma-stat-label">Controles</div>
+                        <div class="norma-stat-value">
+                            <strong>{{ norma.controles_implementados }}</strong> / {{ norma.total_controles }}
+                        </div>
+                    </div>
+                    <div class="norma-stat-item">
+                        <div class="norma-stat-label">Tasks</div>
+                        <div class="norma-stat-value">
+                            <strong>{{ norma.tasks_concluidas }}</strong> / {{ norma.total_tasks }}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="norma-progress">
+                    <div class="progress-bar-norma">
+                        <div class="progress-fill-norma" style="width: {{ norma.percentual }}%"></div>
+                    </div>
+                    <div class="progress-text-norma">{{ norma.percentual }}% implementado</div>
+                </div>
+                
+                {% if norma.total_tasks > 0 %}
+                <div class="norma-progress-tasks">
+                    <div class="progress-bar-tasks">
+                        <div class="progress-fill-tasks" style="width: {{ norma.percentual_tasks }}%"></div>
+                    </div>
+                    <div class="progress-text-tasks">{{ norma.percentual_tasks }}% tasks concluídas</div>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% if tasks_compartilhadas_count > 0 %}
+        <div class="tasks-compartilhadas-info">
+            <div class="info-icon">🔄</div>
+            <div class="info-text">
+                <strong>{{ tasks_compartilhadas_count }} tasks compartilhadas</strong> entre as normas
+                <small>Tasks iguais são contabilizadas para ambas as normas</small>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Seção de Obrigatórios vs Boas Práticas -->
+    <div class="dashboard-section">
+        <div class="section-header">
+            <h3>Controles: Obrigatórios vs Boas Práticas</h3>
+            <a href="{{ url_for('controles') }}" class="btn btn-secondary">Ver Todos os Controles →</a>
+        </div>
+        <div class="obrigatorios-bp-grid">
+            <div class="obrigatorios-card">
+                <div class="obrigatorios-header">
+                    <h4>🔴 Controles Obrigatórios</h4>
+                    <span class="badge badge-obrigatorio">{{ total_obrigatorios }}</span>
+                </div>
+                <div class="obrigatorios-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: #dc2626;">{{ total_obrigatorios }}</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: #dc2626;">{{ obrigatorios_implementados }}</div>
+                        <div class="stat-label">Implementados</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: #dc2626;">{{ perc_obrigatorios }}%</div>
+                        <div class="stat-label">do Total de Controles</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: #dc2626;">{{ perc_obrigatorios_impl }}%</div>
+                        <div class="stat-label">Taxa de Implementação</div>
+                    </div>
+                </div>
+                <div class="progress-bar-obrigatorio">
+                    <div class="progress-fill-obrigatorio" style="width: {{ perc_obrigatorios_impl }}%"></div>
+                </div>
+            </div>
+
+            <div class="boas-praticas-card">
+                <div class="boas-praticas-header">
+                    <h4>🟢 Boas Práticas</h4>
+                    <span class="badge badge-boa-pratica">{{ total_boas_praticas }}</span>
+                </div>
+                <div class="boas-praticas-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: #059669;">{{ total_boas_praticas }}</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: #059669;">{{ boas_praticas_implementadas }}</div>
+                        <div class="stat-label">Implementadas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: #059669;">{{ perc_boas_praticas }}%</div>
+                        <div class="stat-label">do Total de Controles</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: #059669;">{{ perc_boas_praticas_impl }}%</div>
+                        <div class="stat-label">Taxa de Implementação</div>
+                    </div>
+                </div>
+                <div class="progress-bar-boa-pratica">
+                    <div class="progress-fill-boa-pratica" style="width: {{ perc_boas_praticas_impl }}%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-section">
+        <h3>Progresso dos Módulos</h3>
+        <div class="modules-mini-grid">
+            {% for mod in modulos_progresso %}
+            <div class="module-mini-card {% if mod.concluido %}module-mini-completed{% endif %}">
+                <div class="module-mini-header">
+                    <strong>{{ mod.codigo }}</strong>
+                    {% if mod.concluido %}
+                    <span class="badge-mini">✓</span>
+                    {% endif %}
+                </div>
+                <div class="module-mini-name">{{ mod.nome }}</div>
+                <div class="progress-bar-mini">
+                    <div class="progress-fill-mini" style="width: {{ mod.percentual }}%"></div>
+                </div>
+                <div class="module-mini-progress">{{ mod.percentual }}%</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div style="margin-top: 1rem;">
+            <a href="{{ url_for('modulos') }}" class="btn btn-primary">Ver Todos os Módulos →</a>
+        </div>
+    </div>
+
+    <div class="dashboard-section">
+        <h3>Controles por Categoria</h3>
+        <div class="controls-by-category">
+            {% for categoria, total, implementados in controles_categoria %}
+            <div class="category-card">
+                <h4>{{ categoria }}</h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ (implementados / total * 100) if total > 0 else 0 }}%"></div>
+                </div>
+                <p class="progress-text">{{ implementados }} / {{ total }} implementados</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="quick-actions">
+        <h3>Ações Rápidas</h3>
+        <div class="action-buttons">
+            <a href="{{ url_for('modulos') }}" class="btn btn-primary">📚 Gerenciar Módulos</a>
+            <a href="{{ url_for('cronograma') }}" class="btn btn-primary">📅 Ver Cronograma</a>
+            <a href="{{ url_for('adicionar_controle') }}" class="btn btn-primary">+ Novo Controle</a>
+            <a href="{{ url_for('adicionar_politica') }}" class="btn btn-primary">+ Nova Política</a>
+            <a href="{{ url_for('adicionar_nao_conformidade') }}" class="btn btn-secondary">+ Nova Não Conformidade</a>
+            <a href="{{ url_for('adicionar_auditoria') }}" class="btn btn-secondary">+ Nova Auditoria</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.modules-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.module-mini-card {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-left: 3px solid var(--primary-color);
+    transition: transform 0.2s;
+}
+
+.module-mini-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.module-mini-card.module-mini-completed {
+    border-left-color: var(--success-color);
+    background: #f0fdf4;
+}
+
+.module-mini-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.module-mini-name {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.progress-bar-mini {
+    width: 100%;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill-mini {
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.module-mini-completed .progress-fill-mini {
+    background: var(--success-color);
+}
+
+.module-mini-progress {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-align: right;
+}
+
+.badge-mini {
+    background: var(--success-color);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+}
+
+.obrigatorios-bp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.obrigatorios-card, .boas-praticas-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.obrigatorios-card {
+    border-left: 4px solid #dc2626;
+}
+
+.boas-praticas-card {
+    border-left: 4px solid #059669;
+}
+
+.obrigatorios-header, .boas-praticas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.obrigatorios-header h4, .boas-praticas-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.obrigatorios-stats, .boas-praticas-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.progress-bar-obrigatorio, .progress-bar-boa-pratica {
+    width: 100%;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.progress-bar-obrigatorio {
+    background: #fee2e2;
+}
+
+.progress-bar-boa-pratica {
+    background: #d1fae5;
+}
+
+.progress-fill-obrigatorio {
+    height: 100%;
+    background: #dc2626;
+    transition: width 0.3s;
+}
+
+.progress-fill-boa-pratica {
+    height: 100%;
+    background: #059669;
+    transition: width 0.3s;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-header h3 {
+    margin: 0;
+}
+
+.stat-card small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+}
+
+/* Estilos para seção de normas */
+.normas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.norma-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.norma-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.norma-card.norma-completa {
+    border-color: #10b981;
+    background: linear-gradient(to bottom, #f0fdf4, var(--card-bg));
+}
+
+.norma-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.norma-header h4 {
+    margin: 0 0 0.25rem 0;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.norma-codigo {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.badge-success {
+    background: #10b981;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badge-warning {
+    background: #f59e0b;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.norma-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.norma-stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 0.5rem;
+}
+
+.norma-stat-label {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.norma-stat-value {
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+.norma-stat-value strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.norma-progress {
+    margin-bottom: 1rem;
+}
+
+.progress-bar-norma {
+    width: 100%;
+    height: 1.5rem;
+    background: var(--bg-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.progress-fill-norma {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), #3b82f6);
+    transition: width 0.3s ease;
+}
+
+.progress-text-norma {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.norma-progress-tasks {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.progress-bar-tasks {
+    width: 100%;
+    height: 1rem;
+    background: var(--bg-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+    border: 1px solid var(--border-color);
+}
+
+.progress-fill-tasks {
+    height: 100%;
+    background: linear-gradient(90deg, #059669, #10b981);
+    transition: width 0.3s ease;
+}
+
+.progress-text-tasks {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.tasks-compartilhadas-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #eff6ff;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.info-icon {
+    font-size: 2rem;
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-text strong {
+    display: block;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.info-text small {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+</style>
+{% endblock %}

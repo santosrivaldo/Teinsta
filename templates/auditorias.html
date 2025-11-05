@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Auditorias - ISO 27001{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h2>Auditorias</h2>
+        <a href="{{ url_for('adicionar_auditoria') }}" class="btn btn-primary">+ Nova Auditoria</a>
+    </div>
+
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Tipo</th>
+                    <th>Escopo</th>
+                    <th>Data</th>
+                    <th>Auditor</th>
+                    <th>Resultado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for auditoria in auditorias %}
+                <tr>
+                    <td><strong>{{ auditoria.codigo }}</strong></td>
+                    <td>{{ auditoria.tipo or '-' }}</td>
+                    <td>{{ auditoria.escopo or '-' }}</td>
+                    <td>{{ auditoria.data_auditoria or '-' }}</td>
+                    <td>{{ auditoria.auditor or '-' }}</td>
+                    <td>
+                        <span class="badge">
+                            {{ auditoria.resultado or '-' }}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn-icon" onclick="viewAuditoria({{ auditoria.id }})" title="Ver">👁️</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

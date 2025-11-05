@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Não Conformidades - ISO 27001{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h2>Não Conformidades</h2>
+        <a href="{{ url_for('adicionar_nao_conformidade') }}" class="btn btn-primary">+ Nova Não Conformidade</a>
+    </div>
+
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Título</th>
+                    <th>Severidade</th>
+                    <th>Status</th>
+                    <th>Responsável</th>
+                    <th>Prazo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nc in nao_conformidades %}
+                <tr>
+                    <td><strong>{{ nc.codigo }}</strong></td>
+                    <td>{{ nc.titulo }}</td>
+                    <td>
+                        <span class="badge severity-{{ nc.severidade.lower().replace(' ', '-') }}">
+                            {{ nc.severidade }}
+                        </span>
+                    </td>
+                    <td>
+                        <span class="status-badge status-{{ nc.status.lower().replace(' ', '-') }}">
+                            {{ nc.status }}
+                        </span>
+                    </td>
+                    <td>{{ nc.responsavel or '-' }}</td>
+                    <td>{{ nc.prazo or '-' }}</td>
+                    <td>
+                        <button class="btn-icon" onclick="viewNC({{ nc.id }})" title="Ver">👁️</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+.severity-alta { background: #fee2e2; color: #991b1b; }
+.severity-média { background: #fef3c7; color: #92400e; }
+.severity-baixa { background: #d1fae5; color: #065f46; }
+</style>
+{% endblock %}

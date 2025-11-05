@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block title %}Módulos ISO 27001{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h2>Módulos ISO 27001</h2>
+        <p>Gerencie o progresso de implementação de cada módulo</p>
+    </div>
+
+    <div class="modules-grid">
+        {% for modulo in modulos %}
+        <div class="module-card {% if modulo.concluido %}module-completed{% endif %}">
+            <div class="module-header">
+                <h3>{{ modulo.codigo }} - {{ modulo.nome }}</h3>
+                {% if modulo.concluido %}
+                <span class="badge badge-success">✓ Concluído</span>
+                {% endif %}
+            </div>
+            
+            <p class="module-description">{{ modulo.descricao }}</p>
+            
+            <div class="module-progress">
+                <div class="progress-info">
+                    <span>{{ modulo.controles_implementados }} / {{ modulo.total_controles }} controles</span>
+                    <strong>{{ modulo.percentual }}%</strong>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ modulo.percentual }}%"></div>
+                </div>
+            </div>
+            
+            <div class="module-dates">
+                {% if modulo.data_planejada_inicio %}
+                <small>📅 Início: {{ modulo.data_planejada_inicio }}</small>
+                {% endif %}
+                {% if modulo.data_planejada_fim %}
+                <small>📅 Fim Planejado: {{ modulo.data_planejada_fim }}</small>
+                {% endif %}
+                {% if modulo.data_conclusao %}
+                <small class="completion-date">✓ Concluído: {{ modulo.data_conclusao }}</small>
+                {% endif %}
+            </div>
+            
+            <div class="module-actions">
+                <a href="{{ url_for('modulo_detalhe', codigo=modulo.codigo) }}" class="btn btn-primary">Ver Detalhes</a>
+                {% if not modulo.concluido %}
+                <button class="btn btn-success" onclick="concluirModulo('{{ modulo.codigo }}')">Concluir Módulo</button>
+                {% else %}
+                <button class="btn btn-secondary" onclick="reabrirModulo('{{ modulo.codigo }}')">Reabrir</button>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Modal de Conclusão -->
+<div id="conclusionModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Concluir Módulo</h3>
+        <form id="conclusionForm">
+            <input type="hidden" id="moduloCodigo">
+            <div class="form-group">
+                <label>Observações (opcional):</label>
+                <textarea id="observacoes" rows="4" placeholder="Adicione observações sobre a conclusão do módulo"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar Conclusão</button>
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+        </form>
+    </div>
+</div>
+
+<style>
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.module-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 4px solid var(--primary-color);
+}
+
+.module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.module-card.module-completed {
+    border-left-color: var(--success-color);
+    background: linear-gradient(to right, #f0fdf4 0%, var(--card-bg) 5%);
+}
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.module-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: 0;
+    flex: 1;
+}
+
+.module-description {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.module-progress {
+    margin-bottom: 1.5rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.progress-info strong {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.module-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.completion-date {
+    color: var(--success-color);
+    font-weight: 500;
+}
+
+.module-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.badge-success {
+    background: var(--success-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.btn-success {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+</style>
+
+<script>
+let currentModulo = '';
+
+function concluirModulo(codigo) {
+    currentModulo = codigo;
+    document.getElementById('moduloCodigo').value = codigo;
+    document.getElementById('observacoes').value = '';
+    document.getElementById('conclusionModal').style.display = 'block';
+}
+
+function reabrirModulo(codigo) {
+    if (!confirm('Tem certeza que deseja reabrir este módulo?')) return;
+    
+    fetch(`/modulos/${codigo}/reabrir`, { method: 'POST' })
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) location.reload();
+        });
+}
+
+function closeModal() {
+    document.getElementById('conclusionModal').style.display = 'none';
+}
+
+document.getElementById('conclusionForm').onsubmit = function(e) {
+    e.preventDefault();
+    const codigo = document.getElementById('moduloCodigo').value;
+    const observacoes = document.getElementById('observacoes').value;
+    
+    fetch(`/modulos/${codigo}/concluir`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ observacoes: observacoes })
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            closeModal();
+            location.reload();
+        }
+    });
+};
+
+window.onclick = function(event) {
+    const modal = document.getElementById('conclusionModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+</script>
+{% endblock %}

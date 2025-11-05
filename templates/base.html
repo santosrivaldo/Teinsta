@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ISO 27001{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>🔒 ISO 27001</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}" class="nav-link">Dashboard</a></li>
+                <li><a href="{{ url_for('modulos') }}" class="nav-link">Módulos</a></li>
+                <li><a href="{{ url_for('cronograma') }}" class="nav-link">Cronograma</a></li>
+                <li><a href="{{ url_for('controles') }}" class="nav-link">Controles</a></li>
+                <li><a href="{{ url_for('politicas') }}" class="nav-link">Políticas</a></li>
+                <li><a href="{{ url_for('nao_conformidades') }}" class="nav-link">Não Conformidades</a></li>
+                <li><a href="{{ url_for('auditorias') }}" class="nav-link">Auditorias</a></li>
+                <li><a href="{{ url_for('logout') }}" class="nav-link">Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

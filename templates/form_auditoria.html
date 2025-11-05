@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Nova Auditoria - ISO 27001{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h2>Nova Auditoria</h2>
+        <a href="{{ url_for('auditorias') }}" class="btn btn-secondary">← Voltar</a>
+    </div>
+
+    <div class="form-container">
+        <form id="auditoriaForm">
+            <div class="form-group">
+                <label>Código *</label>
+                <input type="text" id="codigo" placeholder="Ex: AUD-001" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Tipo</label>
+                <select id="tipo">
+                    <option value="Interna">Interna</option>
+                    <option value="Externa">Externa</option>
+                    <option value="Certificação">Certificação</option>
+                    <option value="Manutenção">Manutenção</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Escopo</label>
+                <textarea id="escopo" rows="3" placeholder="Descrição do escopo da auditoria"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Data da Auditoria</label>
+                <input type="date" id="data_auditoria">
+            </div>
+            
+            <div class="form-group">
+                <label>Auditor</label>
+                <input type="text" id="auditor" placeholder="Nome do auditor">
+            </div>
+            
+            <div class="form-group">
+                <label>Resultado</label>
+                <select id="resultado">
+                    <option value="">Selecione...</option>
+                    <option value="Conforme">Conforme</option>
+                    <option value="Não Conforme">Não Conforme</option>
+                    <option value="Parcialmente Conforme">Parcialmente Conforme</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Observações</label>
+                <textarea id="observacoes" rows="4" placeholder="Observações da auditoria"></textarea>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="{{ url_for('auditorias') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById('auditoriaForm').onsubmit = function(e) {
+    e.preventDefault();
+    
+    const data = {
+        codigo: document.getElementById('codigo').value,
+        tipo: document.getElementById('tipo').value,
+        escopo: document.getElementById('escopo').value,
+        data_auditoria: document.getElementById('data_auditoria').value || null,
+        auditor: document.getElementById('auditor').value,
+        resultado: document.getElementById('resultado').value,
+        observacoes: document.getElementById('observacoes').value
+    };
+    
+    fetch('/auditorias/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = '/auditorias';
+        }
+    });
+};
+</script>
+{% endblock %}
