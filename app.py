@@ -580,19 +580,33 @@ def init_db():
             INSERT INTO controles (codigo, titulo, descricao, categoria, obrigatorio)
             VALUES (?, ?, ?, ?, ?)
         ''', controles_padrao_com_obrigatorio)
-    else:
-        # Atualizar controles existentes que são padrão da ISO 27001 para obrigatórios
-        # Se o controle existe e não tem obrigatorio definido (NULL ou 0), e é um controle padrão
-        codigos_padrao = [codigo for codigo, _, _, _ in controles_padrao]
-        for codigo in codigos_padrao:
-            c.execute('''
-                UPDATE controles 
-                SET obrigatorio = 1 
-                WHERE codigo = ? AND (obrigatorio = 0 OR obrigatorio IS NULL)
-            ''', (codigo,))
+    # Sempre atualizar controles existentes que são padrão da ISO 27001 para obrigatórios
+    # Isso garante que mesmo se o banco já tiver dados, eles serão corrigidos
+    codigos_padrao = [codigo for codigo, _, _, _ in controles_padrao]
+    if codigos_padrao:
+        placeholders = ','.join(['?' for _ in codigos_padrao])
+        c.execute(f'''
+            UPDATE controles 
+            SET obrigatorio = 1 
+            WHERE codigo IN ({placeholders}) AND (obrigatorio = 0 OR obrigatorio IS NULL)
+        ''', codigos_padrao)
     
     conn.commit()
     conn.close()
+
+# Inicializar banco de dados quando o módulo Flask carregar
+# Isso garante que funcione tanto em desenvolvimento quanto em produção (Gunicorn)
+def initialize_app():
+    """Inicializa o banco de dados quando a aplicação inicia"""
+    try:
+        init_db()
+    except Exception as e:
+        # Se houver erro, logar mas não impedir a aplicação de iniciar
+        import sys
+        print(f"AVISO: Erro ao inicializar banco de dados: {e}", file=sys.stderr)
+
+# Chamar na inicialização do módulo
+initialize_app()
 
 @app.route('/')
 @login_required
