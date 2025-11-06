@@ -88,7 +88,6 @@ sudo ufw allow 5001/tcp
 **Acesse:** `http://localhost:5001` ou `http://SEU_IP:5001`
 
 📖 **Guias detalhados:**
-- [Guia Rápido](README_DEPLOY.md) - Deploy simplificado
 - [Deploy Completo](DEPLOY.md) - Todas as opções (Docker, Cloud, VPS, etc.)
 - [Sincronização de Dados](SYNC_DATA.md) - Sincronizar dados entre dev e produção
 

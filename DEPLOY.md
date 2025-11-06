@@ -1,6 +1,36 @@
-# Guia de Deploy para Produção - Sistema ISO 27001
+# 🚀 Guia de Deploy para Produção - Sistema ISO 27001
 
 Este guia apresenta várias opções para fazer o deploy do sistema para produção.
+
+## ⚡ Deploy Rápido (3 Passos)
+
+**Para deploy local ou servidor:**
+
+1. **Configurar senha:**
+   ```bash
+   # Criar arquivo .env
+   echo SECRET_KEY=$(python -c "import secrets; print(secrets.token_hex(32))") > .env
+   echo DASHBOARD_PASSWORD=sua-senha-forte >> .env
+   ```
+
+2. **Fazer deploy:**
+   ```bash
+   # Linux/Mac
+   ./deploy.sh
+   
+   # Windows
+   deploy.bat
+   ```
+
+3. **Acessar:**
+   - Local: `http://localhost:5001`
+   - Externo: `http://SEU_IP:5001`
+
+**Pronto!** 🎉
+
+---
+
+## 📋 Guia Completo
 
 ## ⚠️ Preparações Antes do Deploy
 
