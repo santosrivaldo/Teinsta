@@ -92,6 +92,19 @@ sudo ufw allow 5001/tcp
 - [Deploy Completo](DEPLOY.md) - Todas as opções (Docker, Cloud, VPS, etc.)
 - [Sincronização de Dados](SYNC_DATA.md) - Sincronizar dados entre dev e produção
 
+### 🔄 Sincronizar Banco de Dados (Dev → Prod)
+
+**Método rápido:**
+```bash
+# Linux/Mac
+./deploy_db.sh usuario@servidor /caminho/do/projeto
+
+# Windows
+deploy_db.bat usuario@servidor /caminho/do/projeto
+```
+
+Isso copia EXATAMENTE o banco de desenvolvimento para produção, mantendo todos os dados.
+
 ## Desenvolvimento
 
 Este é um sistema básico criado para facilitar a gestão inicial da ISO 27001. Para uso em produção, considere:

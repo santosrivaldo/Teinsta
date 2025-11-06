@@ -34,9 +34,23 @@ except ImportError:
 data_dir = Path(os.environ.get('DATA_DIR', '.'))
 if not data_dir.exists():
     data_dir = Path('.')
-data_dir.mkdir(exist_ok=True)
 
-DB_PATH = data_dir / 'iso27001.db'
+# Tentar encontrar banco em vários locais
+def find_db_file():
+    possible_paths = [
+        Path('iso27001.db'),
+        data_dir / 'iso27001.db',
+        Path('data/iso27001.db'),
+        Path('./data/iso27001.db'),
+    ]
+    for path in possible_paths:
+        if path.exists():
+            return path
+    return None
+
+DB_FILE_FOUND = find_db_file()
+DB_PATH = DB_FILE_FOUND if DB_FILE_FOUND else (data_dir / 'iso27001.db')
+
 UPLOADS_DIR = data_dir / 'uploads'
 if not UPLOADS_DIR.exists():
     UPLOADS_DIR = Path('uploads')

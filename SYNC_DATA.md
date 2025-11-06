@@ -2,6 +2,40 @@
 
 Este guia explica como sincronizar dados (banco de dados e uploads) entre o ambiente de desenvolvimento e produção.
 
+## 🚀 Método Rápido (Recomendado)
+
+**Para copiar EXATAMENTE o banco de desenvolvimento para produção:**
+
+### Windows:
+```bash
+deploy_db.bat usuario@servidor /caminho/do/projeto
+```
+
+### Linux/Mac:
+```bash
+chmod +x deploy_db.sh
+./deploy_db.sh usuario@servidor /caminho/do/projeto
+```
+
+**Exemplo:**
+```bash
+./deploy_db.sh root@192.168.1.100 /root/Teinsta
+```
+
+Este script:
+1. ✅ Encontra o banco local automaticamente
+2. ✅ Mostra estatísticas (controles, módulos, etc.)
+3. ✅ Cria backup automático no servidor
+4. ✅ Copia o banco para produção
+5. ✅ Reinicia o container
+6. ✅ Verifica se está funcionando
+
+---
+
+## 📋 Métodos Detalhados
+
+Este guia explica como sincronizar dados (banco de dados e uploads) entre o ambiente de desenvolvimento e produção.
+
 ## 📋 O que é sincronizado?
 
 - ✅ Banco de dados SQLite (`iso27001.db`)
