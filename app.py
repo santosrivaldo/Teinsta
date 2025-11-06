@@ -1559,6 +1559,17 @@ def initialize_app():
     """Inicializa o banco de dados quando a aplicação inicia"""
     try:
         init_db()
+        # Importar dados padrão após criar as tabelas
+        try:
+            from app.utils.seed_data import import_default_data
+            import_default_data(DB_PATH)
+        except ImportError:
+            # Se o módulo não existir ainda, continuar normalmente
+            pass
+        except Exception as e:
+            # Se houver erro ao importar dados, logar mas não impedir a aplicação
+            import sys
+            print(f"AVISO: Erro ao importar dados padrão: {e}", file=sys.stderr)
     except Exception as e:
         # Se houver erro, logar mas não impedir a aplicação de iniciar
         import sys

@@ -19,3 +19,10 @@ sync_temp_*.tar.gz
 iso27001_prod.db
 pdf_content.txt
 ppsi_controles.*
+
+# Arquivos de backup e desenvolvimento
+app_old.py
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class

@@ -35,5 +35,7 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 6000
 
 # Comando para iniciar a aplicação
+# O banco de dados é inicializado automaticamente quando a aplicação inicia
+# Usar app.py por enquanto (estrutura modular em desenvolvimento)
 CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:6000", "--workers", "3", "--timeout", "120"]
 

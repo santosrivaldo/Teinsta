@@ -55,11 +55,22 @@ http://localhost:5001
 4. **Não Conformidades**: Registre e acompanhe não conformidades
 5. **Auditorias**: Registre auditorias e seus resultados
 
+## Estrutura do Projeto
+
+O projeto está em processo de modularização:
+
+- **app.py** - Aplicação Flask principal (legado, ainda em uso)
+- **app/** - Estrutura modular (em desenvolvimento)
+  - **routes/** - Blueprints (rotas organizadas por funcionalidade)
+  - **utils/** - Utilitários (database, decorators, helpers)
+  - **config.py** - Configurações centralizadas
+
 ## Notas
 
 - O banco de dados SQLite é criado automaticamente na primeira execução
 - Alguns controles padrão da ISO 27001 são inseridos automaticamente
 - Os dados são armazenados localmente no arquivo `iso27001.db`
+- No Docker, o banco é inicializado automaticamente durante o build
 
 ## 🚀 Deploy para Produção
 
@@ -103,6 +114,27 @@ deploy_db.bat usuario@servidor /caminho/do/projeto
 ```
 
 Isso copia EXATAMENTE o banco de desenvolvimento para produção, mantendo todos os dados.
+
+## 📦 Importar Dados Padrão
+
+Os dados padrão (módulos, passos de ação e controles da ISO 27001) são importados **automaticamente** quando a aplicação inicia pela primeira vez.
+
+**Para importar manualmente:**
+
+```bash
+# Linux/Mac
+python3 import_data.py
+
+# Windows
+python import_data.py
+# ou
+import_data.bat
+```
+
+**O que é importado:**
+- ✅ 14 módulos da ISO 27001 (A.5 a A.18)
+- ✅ 32 passos de ação padrão
+- ✅ 93 controles padrão da ISO 27001
 
 ## Desenvolvimento
 
